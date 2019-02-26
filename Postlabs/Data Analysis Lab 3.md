@@ -116,7 +116,7 @@ plt.legend(['data'])
 plt.savefig('GranQ2.png')
 plt.show()
 ```
-The calulated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.790561 mL).
+The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.790561 mL).
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
