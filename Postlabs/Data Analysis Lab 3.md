@@ -120,6 +120,8 @@ The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.79056
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
+**Figure 2:** Gran Plotdata from the titration curve of the t=0 sample
+
 3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?
 
 ```python
@@ -197,3 +199,7 @@ plt.xlim(0,2)
 plt.savefig('ANCplots3')
 plt.show()
 ```
+
+<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
+
+**Figure 2:** 
