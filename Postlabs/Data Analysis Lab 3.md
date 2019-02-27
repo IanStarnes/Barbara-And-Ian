@@ -200,6 +200,6 @@ plt.savefig('ANCplots3')
 plt.show()
 ```
 
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplots3.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2:** 
+**Figure 3:** Measured ANC of the lake at different states
