@@ -2,15 +2,20 @@
 #### Ian Starnes and Barbara Oramah
 
 ####Introduction
+
+In this lab, we ran experiment to determine the
+
+"Acid neutralizing capacity (ANC) is a measure of the ability of water to neutralize acid inputs. Lakes with high ANC (such as Cayuga Lake) can maintain a neutral pH even with some acid rain input whereas lakes with an ANC less than the acid input will not maintain a neutral pH. In the Adirondack region of New York State, lakes typically receive large inputs of acids during the spring thaw when the accumulated winter snow melts and runs off into the lakes. The ANC of Adirondack lakes is not always sufficient to neutralize these inputs."
+
 Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
 
 This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report.
 ##### Objective
+The goal for this lab is to gather experimental data to
 
 #### Procedure
 Provide an overview of the methods that you used in your investigation. The best procedures give an overview of the method with an explanation of why you used those methods. There is no need to restate the step-by-step procedures as outlined in the lab manual: it is sufficient to cite the lab manual and include information on any deviations from the manual procedures. When method development is part of the laboratory exercise, a detailed description of the methods should be included. Methods and procedures need to be detailed enough so that one of your classmates could duplicate your work.
 #### Results and Discussion
-
 
 1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).
 
@@ -25,7 +30,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-Gran_data = 'https://raw.githubusercontent.com/barbaraoramah/my-CEE4530/master/Lab%203%20Data/time_equals_0_Gran_Plot.xls'
+Gran_data = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_0_Gran_Plot_v2.xls'
 # The epa.Gran function imports data from your Gran data file as saved by ProCoDA.
 # The epa.Gran function assigns all of the outputs in one statement
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data)
@@ -44,13 +49,15 @@ ax.grid(True)
 plt.ylim(2.5,6.5)
 plt.xlim(0.2,1.5)
 
+ax.annotate('Ve', xy=(0.813005 , 2.51), xytext=(0.813005, 3.2), arrowprops=dict(facecolor='black', shrink=0.10),)
+
 plt.text(0.45, 6, '<-- bicarbonate to')
 plt.text(0.55, 5.75, 'carbonic acid')
 plt.text(1.1, 3.25, '<-- approaching')
 plt.text(1.2, 3.05, 'input pH')
 # Here I save the file to my local harddrive. You will need to change this to work on your computer.
 # We don't need the file type (png) here.
-plt.savefig('gran_t=0')
+plt.savefig('gran_t=0-2')
 plt.show()
 
 ```
@@ -58,6 +65,13 @@ plt.show()
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/gran_t=0.png?raw=true" heights=310 width=927> </p>
 
 **Figure 1:** Titration curve of the t=0 sample with 0.05 N HCl
+
+The equivalent volume is found from the excel file of data from ProCoDA.
+The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
+
+ bicarbonate to carbonic acid is:
+
+ $$ [HCO_3^-] -> [H_2CO_3]  $$
 
 
 
@@ -77,7 +91,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-Gran_data = 'https://raw.githubusercontent.com/barbaraoramah/my-CEE4530/master/Lab%203%20Data/time_equals_0_Gran_Plot.xls'
+Gran_data = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_0_Gran_Plot_v2.xls'
 # The epa.Gran function imports data from your Gran data file as saved by ProCoDA.
 # The epa.Gran function assigns all of the outputs in one statement
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data)
@@ -102,25 +116,28 @@ print('The r value for this curve fit is', ut.round_sf(r_value,5))
 print('The equivalent volume was', ut.round_sf(V_eq,2))
 print('The acid neutralizing capacity was',ut.round_sf(ANC_sample.to(u.meq/u.L),2))
 
+fig, ax = plt.subplots()
 #The equivalent volume agrees well with the value calculated by ProCoDA.
 #create an array of points to draw the linear regression line
 x=[V_eq.magnitude,V_titrant[-1].magnitude ]
 y=[0,(V_titrant[-1]*slope+intercept).magnitude]
 #Now plot the data and the linear regression
+ax.grid(True)
+
 plt.plot(V_titrant, F1_data,'o')
 plt.plot(x, y,'r')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('Gran function (mole/L)')
 plt.legend(['data'])
 
-plt.savefig('GranQ2.png')
+plt.savefig('GranQ2-2.png')
 plt.show()
 ```
-The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.790561 mL).
+The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.813005  mL).
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2:** Gran Plotdata from the titration curve of the t=0 sample
+**Figure 2:** Gran Plot data from the titration curve of the t=0 sample
 
 3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?
 
@@ -203,3 +220,8 @@ plt.show()
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplots3.png?raw=true" heights=310 width=927> </p>
 
 **Figure 3:** Measured ANC of the lake at different states
+
+
+### Conclusions
+
+###
