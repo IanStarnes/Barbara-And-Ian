@@ -198,18 +198,14 @@ ANC_0
 ANC_out = ANC_0*(np.exp(-res_time))+ANC_in*(1-(np.exp(-res_time)))
 ANC_out
 
-
-
 lake_pH = df.iloc[:,1].values
 ANC_cl=epa.ANC_closed(lake_pH,ANC_0)
 ANC_cl = ANC_cl[0:1496]
 ANC_cl
 
-
 ANC_o = epa.ANC_open(lake_pH)
 ANC_o = ANC_o[0:1496]
 # Now create a figure and plot the data and the line from the linear regression.
-
 
 fig, ax = plt.subplots()
 ax.plot(time.to(u.min), ANC_out.to(u.meq/u.L), 'r', time.to(u.min), ANC_cl.to(u.meq/u.L), 'b', time.to(u.min), ANC_o.to(u.meq/u.L), 'g')
@@ -221,7 +217,7 @@ ax.plot(time_lake, ANC_lake, 'p')
 # Add axis labels using the column labels from the dataframe
 ax.set(xlabel= 'time (min)')
 ax.set(ylabel= 'ANC (meq/L)')
-ax.set(title = "Hydraulic residence time vs Various ANC scenarios")
+
 ax.legend([ 'Conservative ANC','Nonvolatile ANC', 'Volatile ANC','ANC measured'])
 ax.grid(True)
 plt.ylim((-1,2))
@@ -233,11 +229,11 @@ plt.savefig('ANCplotmeasured')
 plt.show()
 ```
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplots3.png?raw=true" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplotmeasured1.png?raw=true" heights=310 width=927> </p>
 
 **Figure 3:** Measured ANC of the lake at different states
 
 
 ### Conclusions
 
-###
+###Suggestions
