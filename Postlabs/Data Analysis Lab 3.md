@@ -48,7 +48,7 @@ In Lab 2, the 5 different samples were used to perform titrations in order to fi
 
 #### Data Analysis
 
-As mentioned previously, the NaHCO3 was used as the ANC supplement for the lake. Figure 1 clearly shows the pH levels decreasing over time after the ANC was added at t = 0. This is because the bicarbonate ions react with hydrogen ions to form carbonic acid.
+As mentioned previously, the NaHCO3 was used as the ANC supplement for the lake. Figure 1 clearly shows the pH levels decreasing over time after the ANC was added at t = 0. The area on the graph with the slower change in pH is is because of the buffering effect of bicarbonate ions reacting with hydrogen ions to form carbonic acid.
 
 $$  [HCO_3^- ] + [H^+] \rightarrow [H_2CO_3]$$
 
@@ -57,32 +57,36 @@ This observation exactly matched expectaions
 
 **Figure 1:** pH versus hydraulic residence time.
 
-All samples were titrated to find the equivalence volume. Figure 2 displays the pH as a function of the volume of titrant added into the lake representing the acid rain at t=0. At t=0, the sample is expected to be the most basic solution as NaHCO3 was just added, therefore the equivalent volume would be the largest. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
+The samples taken in the first lab at five minute intervals were titrated to find the equivalence volume.
 
-Similarly, Figure 3 is a Gran plot at t=0. In the collected data, there is a first Gran function, F1, attributed to each data point. F1 is defined as a straight line. $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
-The abscissa intercept is the equivalent volume. Both figure 1 and 2 clearly show that the equivalent volume for sample t = 0 is 0.831005 ml. This is approximately the same as the calculated equivalent volume of 0.79ml. This was determined.....
+We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
 
-There are 3 notable regions of figure 2. As labeled the first region is where bicarbonate ions react with hydrogen ions and form carbonic acid. There is a steep slope
+Figure 2 displays the pH as a function of the volume of titrant added into the lake at t=0. At t=0, the sample is expected to be the most basic solution as NaHCO3 was just added, therefore the equivalent volume would be the largest. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC.
+
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/gran_t=0-line.png?raw=true" heights=310 width=927> </p>
 
 **Figure 2:** Titration curve of the t=0 sample with 0.05 N HCl
 
+There are 3 notable regions of figure 2. As labeled the first region is where bicarbonate ions react with hydrogen ions and form carbonic acid. There is a steep slope that occurs at the equivalent volume and the third region is where the hydrogen ions contribute directly to the decrease in pH.
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
 **Figure 3:** Gran Plot data from the titration curve of the t=0 sample
 
+Similarly, Figure 3 is a Gran plot at t=0. In the collected data, there is a first Gran function, F1, attributed to each data point. F1 is defined as a straight line. $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+The abscissa intercept is the equivalent volume. Both figure 1 and 2 clearly show that the equivalent volume for sample t = 0 is 0.831005 ml. This is approximately the same as the calculated equivalent volume of 0.79ml. This was determined.....
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplotmeasured1.png?raw=true" heights=310 width=927> </p>
 
 **Figure 4:** Measured ANC of the lake at different states
 
+In figure 4, there are four different ANCs being plotted. The conservative ANC is from assuming the lake is a CMFR and ANC is a conservative species. The Nonvolatile ANC is from the assumption that is no carbonates exchanged with the atmosphere during the experiment. The Volatile ANC is from assuming there is carbonate exchange with the atmosphere and that the carbonates are at equilibrium with the atmosphere. The ANC measured points are the data points found from doing titrations of the lake samples at five minute intervals during the experiment. The graph shows that the ANC measured partially agrees with the conservative ANC model but deviates towards the Volatile ANC model. 
+
 **-Present results in a clearly labeled format. Data analysis methods, equations, graphs, and tables should be presented in this section. The report text should refer to each equation, figure, and table. Include a table of relevant experimental parameters (e.g., measured flow rates, sample sizes, concentrations of reagents, etc.).
 -Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.
 -Make sure that responses to specific questions and data analysis requested in the lab manual are included in this section. But don't answer the questions in a list format. Instead, include your answers as part of the narrative that is designed to meet your objectives.**
 
-We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
 
 ### Conclusion
 
