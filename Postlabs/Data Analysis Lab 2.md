@@ -53,16 +53,15 @@ ax.plot(((x - (0.607747546*u.day))/theta)*100000*u.s, y, 'r')
 ax.set(xlabel= 'hydraulic residence time (unitless)')
 ax.set(ylabel= 'pH')
 
-ax.set(title = "Measured pH vs Hydraulic residence time")
 ax.grid(True)
 # Here I save the file to my local harddrive. You will need to change this to work on your computer.
 # We don't need the file type (png) here.
-plt.savefig('phplot0')
+plt.savefig('phplot01')
 plt.show()
 
 ```
 
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/phplot0.png?raw=true" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/phplot01.png?raw=true" heights=310 width=927> </p>
 
 **Figure 1**
 
@@ -75,7 +74,7 @@ $$ANC_0 = [ANC_{out} - ANC_{in} (1-e^{-t/\theta})]e^{t/\theta}$$
 $$ANC_{out}= \frac {ANC_0}{e^{t/\theta}} + ANC_{in} (1-e^{-t/\theta}) $$
 
 
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/ANCplots2.png?raw=true" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplots02.png?raw=true" heights=310 width=927> </p>
 
 **Figure 2**
 
@@ -144,7 +143,7 @@ ax.plot(res_time, ANC_out.to(u.meq/u.L), 'r', res_time, ANC_cl.to(u.meq/u.L), 'b
 # Add axis labels using the column labels from the dataframe
 ax.set(xlabel= 'Hydraulic residence time (unitless)')
 ax.set(ylabel= 'ANC (meq/L)')
-ax.set(title = "Hydraulic residence time vs Various ANC scenarios")
+
 ax.legend([ 'Expected ANC','Closed ANC', 'Open ANC'])
 ax.grid(True)
 plt.ylim((-1,2))
@@ -152,7 +151,7 @@ plt.xlim(0,2)
 
 # Here I save the file to my local harddrive. You will need to change this to work on your computer.
 # We don't need the file type (png) here.
-plt.savefig('ANCplots2')
+plt.savefig('ANCplots02')
 plt.show()
 ```
 
@@ -208,8 +207,6 @@ fig, ax = plt.subplots()
 
 # plot the data as red circles
 ax.plot(((x - (0.6350743*u.day))/theta)*100000*u.s, y, 'r')
-
-#plot the linear regression as a black line
 
 
 # Add axis labels using the column labels from the dataframe
