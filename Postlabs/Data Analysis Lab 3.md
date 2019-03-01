@@ -17,9 +17,9 @@
 
 #### Introduction
 
-This lab is modelled to highlight how acid rain affects the acid neutralizing capacity (ANC) of lakes. Acid precipitation results from the combustion of fossil fuels which produce oxides of sulfur and nitrogen that react in the earth’s atmosphere to form sulfuric and nitric acid. [(1)](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html] ) The lab report shows the results from two seperate labs, [Lab 1](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#experimental-objectives) and [Lab 2](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures). In Lab 1, the data collected were lake samples in 5 minutes intervals over a 20 minutes time period as an acid rain storage was pumped at a constant flow rate into a modelled lake. This was done in order see the change of pH over time and calculate ANC. In Lab 2, the samples collected in Lab 1 used to determine the ANC of each sample.
+This lab is modelled to highlight how acid rain affects the acid neutralizing capacity (ANC) of lakes. Acid precipitation results from the combustion of fossil fuels which produce oxides of sulfur and nitrogen that react in the earth’s atmosphere to form sulfuric and nitric acid. [(1)](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html] ) The lab report shows the results from two seperate labs, [Lab 1](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#experimental-objectives) and [Lab 2](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures). In Lab 1, the data collected were lake samples in 5 minutes intervals over a 20 minutes time period as acid rain was pumped at a constant flow rate into a modelled lake. This was done in order see the change of pH over time and calculate ANC. In Lab 2, the samples collected in Lab 1 used to determine the ANC of each sample.
 
-The observations of the lab were to be used as supporting evidence that that is possible.
+The observations of the lab were to be used as supporting evidence that this is applicable to real world lakes that are at risk of acidification from acid rain.
 
 The equations that were used for this lab report:
 
@@ -33,7 +33,7 @@ $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 
 
 #### Objective
-The goal for this lab is to gather experimental data to determine that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
+The goal for this lab is to gather experimental data to show that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
 
 This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at a pH of 3. The pH of the lake was then monitored over a 20 minutes time frame.
 
@@ -43,7 +43,7 @@ The detailed procedure for Lab 1 can be found [here](https://monroews.github.io/
 
 In Lab 1, a pre-calculated mass of NaHCO3 was weighed out and added into a 4 L lake that had a stirrer bar inside. The stirrer bar was placed to model the lake as a completely mixed flow reactor, CMFR. A pH probe was placed in the lake to measure the change over a course of 20 minutes. In 5 minute intervals, a 100 mL sample of the lake was taken, labelled and set aside. The samples were kept to be used later in Lab 2.
 
-In Lab 2, the 5 different samples were used to perform titrations in order to find the equivalent volume. The titrant used was 0.05 N HCl. The pH probe recorded the data necessary for ProCoDA to create Gran plot analysis.
+In Lab 2, the 5 different samples were used to perform titrations in order to find the equivalent volume. The titrant used was 0.05 N HCl. The pH probe recorded the data necessary for ProCoDA to execute a Gran plot analysis.
 
 
 #### Data Analysis
@@ -56,19 +56,18 @@ $$  [HCO_3^- ] + [H^+] \rightarrow [H_2CO_3]$$
 
 **Figure 1:** pH versus hydraulic residence time.
 
-If enough NaHCO3 were added to the lake to maintain an ANC greater than 50μeq/L for 3 residence times with the stirrer turned off, some of it will dissolve the water while some of it will sink to the bottom due to the greater density of NaHCO3 than water. The water in which some of the NaHCO3 dissolved in more dense than the rest of the water and it will also sink. Therefore, as the acid is added the pH will be different throughout the lake. The pH will be lower at the source of the acid, at the top of the lake, and higher farther away, at the bottom of the lake. A second experiment was conducted in Lab 1 where the mass of NaHCO3 was doubled. By doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate.
+If enough NaHCO3 were added to the lake to maintain an ANC greater than 50μeq/L for 3 residence times with the stirrer turned off, some of it will dissolve in the water while some of it will sink to the bottom due to the greater density of NaHCO3 than water. The water in which some of the NaHCO3 dissolved in more dense than the rest of the water and it will also sink. Therefore, as the acid is added the pH will be different throughout the lake. The pH will be lower at the source of the acid, at the top of the lake, and higher farther away, at the bottom of the lake. A second experiment was conducted in Lab 1 where the mass of NaHCO3 was doubled. By doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate.
 
-CaCO3 is another carbonate that was tested to see the effect it could have for lake remediation. There are some problems that could be encountered if CaCO3 were used to remediate acid rain in a lake. The solubility of the CaCO3 is very low in water. Therefore, it might not work to just add in a lot of it at the same time. Instead if a steady amount was added during the during of the acid rain, the solubility might not be a problem. If all of the CaCO3 is added at the same time, a lot of it will not go into solution but rather settle at the bottom. The effect of this is that the ANC will not use the full potential of the CaCO3 added.
+CaCO3 is another carbonate that was tested to see the effect it would have for lake remediation. There were some problems that were encountered when CaCO3 was used to remediate acid rain in the lake. The solubility of the CaCO3 is very low in water. Therefore, it might not work to just add in a lot of CaCO3 at the same time. Instead, if a steady amount was added during the during of the acid rain, the solubility might not be a problem. If all of the CaCO3 is added at the same time, a lot of it will not go into solution but rather it will settle at the bottom. The effect of this is that the ANC will not use the full potential of the CaCO3 added.
 
-
-The samples taken in the Lab 1 at five minute intervals were titrated to find the equivalence volume. Figure 2 displays the pH as a function of the volume of titrant added into the lake at t=0. At t=0, the sample is expected to be the most basic solution as NaHCO3 was just added, therefore the equivalent volume would be the largest. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC.
+The samples taken in the Lab 1 at five minute intervals were titrated to find the respective equivalence volume. Figure 2 displays the pH as a function of the volume of titrant added into the lake at t=0. At t=0, the sample is expected to be the most basic solution as NaHCO3 was just added, therefore the equivalent volume would be the largest. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC.
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/gran_t=0-line.png?raw=true" heights=310 width=927> </p>
 
 **Figure 2:** Titration curve of the t=0 sample with 0.05 N HCl
 
-There are 3 notable regions of figure 2. As labeled the first region is where bicarbonate ions react with hydrogen ions and form carbonic acid. There is a steep slope that occurs at the equivalent volume and the third region is where the hydrogen ions contribute directly to the decrease in pH.
+There are 3 notable regions of figure 2. As labeled, the first region is where bicarbonate ions react with hydrogen ions and form carbonic acid. There is a steep slope that occurs at the equivalent volume and the third region is where the hydrogen ions contribute directly to the decrease in pH.
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
@@ -88,15 +87,15 @@ $$ANC_0 = [ANC_{out} - ANC_{in} (1-e^{-t/\theta})]e^{t/\theta}$$
 
 $$ANC_{out}= \frac {ANC_0}{e^{t/\theta}} + ANC_{in} (1-e^{-t/\theta}) $$
 
-The nonvolatile ANC is from the assumption that is no carbonates exchanged with the atmosphere during the experiment. The volatile ANC is from assuming there is carbonate exchange with the atmosphere and that the carbonates are at equilibrium with the atmosphere. The ANC measured points are the data points found from doing titrations of the lake samples at five minute intervals during the experiment. The graph shows that the ANC measured partially agrees with the conservative ANC model but agrees move with the nonvolatile ANC model.
+The nonvolatile ANC is from the assumption that is no carbonates exchanged with the atmosphere during the experiment. The volatile ANC is from assuming there is carbonate exchange with the atmosphere and that the carbonates are at equilibrium with the atmosphere. The ANC measured points are the data points found from doing titrations of the lake samples at five minute intervals during the experiment. The graph shows that the ANC measured partially agrees with the conservative ANC model but agrees more with the nonvolatile ANC model.
 
 ### Conclusion
 
-After looking at the titration curve for the t=0 sample, we were able to see two regions of slow change in pH. The first region corresponds to the buffering effect of HCO3 which becomes H2CO3 as it adds a proton and the second corresponds to a region where hydrogen ions contribute directly to the change in pH. The equivalent volume is seen in the region of this graph where there is a steep change in pH. We calculated an equivalent volume that was very close to the ProCoDa value and this is seen in the linear part of the Gran function. The measured ANC over the duration of the experiment is similar to the conservative ANC model but deviates towards the volatile ANC model. This experiment showed us how carbonate species can act as a buffer to prevent the decrease in pH associated with acid rain in lakes.
+After looking at the titration curve for the t=0 sample, two regions of slow change in pH were observed. The first region corresponds to the buffering effect of HCO3 ions which becomes H2CO3 as it adds a proton, and the second corresponds to a region where hydrogen ions contribute directly to the change in pH. The equivalent volume is seen in the region of this graph where there is a steep change in pH. The calculated equivalent volume is  very close to the ProCoDa value and this is seen in the linear part of the Gran function. The measured ANC over the duration of the experiment most similar to the nonvolatile ANC model. This experiment showed us how carbonate species can act as a buffer to prevent the decrease in pH associated with acid rain in lakes.
 
 ### Suggestions
 
-One change that could be made to the lab is when doing the titrations. We were able to same time when doing the titrations in the beginning by putting in larger amounts of titrant in order to get an idea of what the equivalent volume was. Then on the second try we were able to put in smaller increment of titrant once we were approaching the that equivalent volume. By doing this we were able to get an idea of how much titrant would be needed in each titration.
+One change that could be made to the lab is when doing the titrations. In order to save time when doing the titrations, a useful recommendation is adding in larger amounts of titrant in order to get an idea of what the equivalent volume is. Therefore, on the second try the increment of titrant added can be smaller as the equivalent volume is approached. By doing this a more precise estimate of the volume of titrant needed in each titration is obtained.
 
 
 ### References
