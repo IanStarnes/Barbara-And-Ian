@@ -1,6 +1,6 @@
 ### Lab 3 Report, Group 6
 #### Ian Starnes and Barbara Oramah
-##### Time Spent on Lab: Ian Starnes - | Barbara Oramah - 10 hours
+##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah - 10 hours
 
 
 ### Table of Contents
@@ -11,6 +11,7 @@
 - [Data Analysis](#Data-analysis)
 - [Conclusion](#Conclusion)
 - [Suggestions](#Suggestions)
+- [References](#References)
 - [Appendix](#Appendix)
 
 
@@ -23,16 +24,18 @@ The observations of the lab were to be used as supporting evidence that that is 
 The equations that were used for this lab report:
 
 $$ANC_0 = [ANC_{out} - ANC_{in} (1-e^{-t/\theta})]e^{t/\theta}$$
-This equation
 
 $$ANC =2[CO_{3}^{2-}]+[HCO_{3}^{-}]+[OH^{-}]-[H^{+}]$$
+$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+
+The ANC can be calculated from the equivalent volume from $$ANC=\frac{V_e N_t }{V_s }$$
 
 
 **Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
 
-This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report."**
+This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report.**
 
-##### Objective
+#### Objective
 The goal for this lab is to gather experimental data to determine that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
 
 This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at a pH of 3. The pH of the lake was then monitored over a 20 minutes time frame.
@@ -51,13 +54,11 @@ The equivalence point is defined as the point in the titration where titrant vol
 
  bicarbonate to carbonic acid is:
 
- $$ [HCO_3^-] -> [H_2CO_3]  $$
+ $$ [HCO_3^-] to [H_2CO_3]  $$
 
 
 
-$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 
-The ANC can be calculated from the equivalent volume from $$ANC=\frac{V_e N_t }{V_s }$$
 
 
 
@@ -79,6 +80,11 @@ The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.81300
 We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
 
 ### Suggestions
+
+
+
+### References
+(1) - https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html]
 
 ### Appendix
 ```Python
