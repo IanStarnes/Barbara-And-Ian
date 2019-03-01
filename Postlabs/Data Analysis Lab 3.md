@@ -6,7 +6,7 @@
 ### Table of Contents
 
 - [Introduction](#Introduction)
-- [Observation](#Observation)
+- [Objective](#Objective)
 - [Procedure](#Procedure)
 - [Data Analysis](#Data-analysis)
 - [Conclusion](#Conclusion)
@@ -35,7 +35,7 @@ This is the section where you can present the equations that you will be using. 
 ##### Objective
 The goal for this lab is to gather experimental data to determine that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
 
-This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at a pH of 3. The pH of the lake was then monitored over a 20 minutes time frame. 
+This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at a pH of 3. The pH of the lake was then monitored over a 20 minutes time frame.
 
 #### Procedure
 Provide an overview of the methods that you used in your investigation. The best procedures give an overview of the method with an explanation of why you used those methods. There is no need to restate the step-by-step procedures as outlined in the lab manual: it is sufficient to cite the lab manual and include information on any deviations from the manual procedures. When method development is part of the laboratory exercise, a detailed description of the methods should be included. Methods and procedures need to be detailed enough so that one of your classmates could duplicate your work.
