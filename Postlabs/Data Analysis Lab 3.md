@@ -1,6 +1,6 @@
 ### Lab 3 Report, Group 6
 #### Ian Starnes and Barbara Oramah
-##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah - 10 hours
+##### Time Spent on Lab Report: Ian Starnes - 10 | Barbara Oramah - 10 hours
 
 
 ### Table of Contents
