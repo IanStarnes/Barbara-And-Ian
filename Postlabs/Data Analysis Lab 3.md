@@ -1,15 +1,18 @@
 ### Lab 3 Report, Group 6
 #### Ian Starnes and Barbara Oramah
-
+##### Time Spent on Lab: Ian Starnes - | Barbara Oramah - 10 hours
 ####Introduction
 
-In this lab, we ran experiment to determine the
+This lab is modelled to highlight how acid rain affects the acid neutralizing capacity (ANC) of lakes. Acid precipitation results from the combustion of fossil fuels which produce oxides of sulfur and nitrogen that react in the earth’s atmosphere to form sulfuric and nitric acid. [(1)](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html] ) The lab report shows the results from two seperate labs, [Lab 1](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#experimental-objectives) and [Lab 2](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures). In Lab 1, the data collected were lake samples in 5 minutes intervals over a 20 minutes time period as an acid rain storage was pumped at a constant flow rate into a modelled lake. This was done in order see the change of pH over time and calculate ANC. In Lab 2, the samples collected in Lab 1 used to determine the ANC of each sample.
 
-"Acid neutralizing capacity (ANC) is a measure of the ability of water to neutralize acid inputs. Lakes with high ANC (such as Cayuga Lake) can maintain a neutral pH even with some acid rain input whereas lakes with an ANC less than the acid input will not maintain a neutral pH. In the Adirondack region of New York State, lakes typically receive large inputs of acids during the spring thaw when the accumulated winter snow melts and runs off into the lakes. The ANC of Adirondack lakes is not always sufficient to neutralize these inputs."
 
-Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
+The aim of the lab was to determine that remediation of lake can be obtained by increasing the ANC added. The observations of the lab were to be used as supporting evidence that that is possible.
 
-This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report.
+
+**Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
+
+This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report."**
+
 ##### Objective
 The goal for this lab is to gather experimental data to
 
