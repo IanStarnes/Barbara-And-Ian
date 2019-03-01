@@ -49,12 +49,13 @@ ax.grid(True)
 plt.ylim(2.5,6.5)
 plt.xlim(0.2,1.5)
 
-ax.annotate('Ve', xy=(0.813005 , 2.51), xytext=(0.813005, 3.2), arrowprops=dict(facecolor='black', shrink=0.10),)
+ax.annotate('Ve -->', xy=(0.813005 , 2.51), xytext=(0.68, 2.75),) #arrowprops=dict(facecolor='black', shrink=0.10),)
 
-plt.text(0.45, 6, '<-- bicarbonate to')
-plt.text(0.55, 5.75, 'carbonic acid')
-plt.text(1.1, 3.25, '<-- approaching')
-plt.text(1.2, 3.05, 'input pH')
+plt.axvline(x=V_equivalent.magnitude, color='g')
+plt.text(0.45, 5.75, '<-- bicarbonate to')
+plt.text(0.56, 5.5, 'carbonic acid')
+plt.text(0.95, 3.0, '<-- approaching')
+plt.text(1, 2.75, 'input pH')
 # Here I save the file to my local harddrive. You will need to change this to work on your computer.
 # We don't need the file type (png) here.
 plt.savefig('gran_t=0-2')
@@ -148,7 +149,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
-data_set = "https://raw.githubusercontent.com/barbaraoramah/my-CEE4530/master/Lab%202%20-%20Acid%20Rain%20(1).txt"
+
 import aguaclara.research.environmental_processes_analysis as epa
 import math
 from aguaclara import *
@@ -156,26 +157,18 @@ from aguaclara import *
 df = pd.read_csv(data_set,delimiter='\t')
 print(df)
 
+data_set_0 = "https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Lab%203%20Data/time_equals_0_Gran_Plot_v2.xls"
+data_set_5 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_5_Gran_Plot_v2.xls"
+data_set_10 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_10_Gran_Plot.xls"
+data_set_15 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_15_Gran_Plot.xls"
 
-mass_total = 4.563 * u.kg
-mass_bucket = 0.592* u.kg
-mass_water = mass_total-mass_bucket
-print(mass_water)
-volume_water = (mass_water/(1*u.kg/u.L))
-print (volume_water)
-ANC_in = -0.001*u.eq/u.L
-pH_0 = 7.77
-mass_nahco3 = 0.623 * u.g
-mwt_nahco3 = 84* u.g/u.eq
-conc_nahco3 = mass_nahco3/mwt_nahco3/volume_water
-print(conc_nahco3)
-ANC_0 = conc_nahco3
-print(ANC_0)
+Gran_data_0 = epa.Gran(data_set_0)
+Gran_data_5 = epa.Gran(data_set_5)
+Gran_data_10 = epa.Gran(data_set_10)
+Gran_data_15 = epa.Gran(data_set_15)
 
-flow_rate = 0.074/15*u.L/u.s
-print(flow_rate)
-theta = volume_water/flow_rate
-print(theta)
+
+
 
  # Q2
 time = epa.column_of_time(data_set,1,-1)

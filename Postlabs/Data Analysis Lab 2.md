@@ -77,7 +77,7 @@ $$ANC_{out}= \frac {ANC_0}{e^{t/\theta}} + ANC_{in} (1-e^{-t/\theta}) $$
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/ANCplots2.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2** 
+**Figure 2**
 
 ```python
 # Part 2: CMFR graph
