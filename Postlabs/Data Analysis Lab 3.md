@@ -26,12 +26,11 @@ The equations that were used for this lab report:
 $$ANC_0 = [ANC_{out} - ANC_{in} (1-e^{-t/\theta})]e^{t/\theta}$$
 
 $$ANC =2[CO_{3}^{2-}]+[HCO_{3}^{-}]+[OH^{-}]-[H^{+}]$$
+
 $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 
-The ANC can be calculated from the equivalent volume from $$ANC=\frac{V_e N_t }{V_s }$$
+ $$ANC=\frac{V_e N_t }{V_s }$$
 
-
-**Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on? This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report.**
 
 #### Objective
 The goal for this lab is to gather experimental data to determine that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
@@ -40,61 +39,61 @@ This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at 
 
 #### Procedure
 
-The procedure for Lab 1 can be found [here](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#procedures), and the Lab 2 procedure can be found [here](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures).
+The detailed procedure for Lab 1 can be found [here](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#procedures), and the Lab 2 procedure can be found [here](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures).
 
-In Lab 1
+In Lab 1, a pre-calculated mass of NaHCO3 was weighed out and added into a 4 L lake that had a stirrer bar inside. The stirrer bar was placed to model the lake as a completely mixed flow reactor, CMFR. A pH probe was placed in the lake to measure the change over a course of 20 minutes. In 5 minute intervals, a 100 mL sample of the lake was taken, labelled and set aside. The samples were kept to be used later in Lab 2.
 
+In Lab 2, the 5 different samples were used to perform titrations in order to find the equivalent volume. The titrant used was 0.05 N HCl. The pH probe recorded the data necessary for ProCoDA to create Gran plot analysis.
 
-In Lab 2
-
-
-
-**Provide an overview of the methods that you used in your investigation. The best procedures give an overview of the method with an explanation of why you used those methods. There is no need to restate the step-by-step procedures as outlined in the lab manual: it is sufficient to cite the lab manual and include information on any deviations from the manual procedures. When method development is part of the laboratory exercise, a detailed description of the methods should be included. Methods and procedures need to be detailed enough so that one of your classmates could duplicate your work.**
 
 #### Data Analysis
 
+As mentioned previously, the NaHCO3 was used as the ANC supplement for the lake. Figure 1 clearly shows the pH levels decreasing over time after the ANC was added at t = 0. This is because the bicarbonate ions react with hydrogen ions to form carbonic acid.
 
+$$  [HCO_3^- ] + [H^+] \rightarrow [H_2CO_3]$$
 
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/gran_t=0.png?raw=true" heights=310 width=927> </p>
+This observation exactly matched expectaions
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/phplot01.png?raw=true" heights=310 width=927> </p>
 
-**Figure 1:** Titration curve of the t=0 sample with 0.05 N HCl
+**Figure 1:** pH versus hydraulic residence time.
 
-Figure 1 displays the pH as a function of the volume of titrant added into the lake representing the acid rain. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
+All samples were titrated to find the equivalence volume. Figure 2 displays the pH as a function of the volume of titrant added into the lake representing the acid rain at t=0. At t=0, the sample is expected to be the most basic solution as NaHCO3 was just added, therefore the equivalent volume would be the largest. The equivalent volume is found from the excel file of data from ProCoDA. The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
 
- bicarbonate to carbonic acid is:
+Similarly, Figure 3 is a Gran plot at t=0. In the collected data, there is a first Gran function, F1, attributed to each data point. F1 is defined as a straight line. $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+The abscissa intercept is the equivalent volume. Both figure 1 and 2 clearly show that the equivalent volume for sample t = 0 is 0.831005 ml. This is approximately the same as the calculated equivalent volume of 0.79ml. This was determined.....
 
- $$ [HCO_3^-] to [H_2CO_3]  $$
+There are 3 notable regions of figure 2. As labeled the first region is where bicarbonate ions react with hydrogen ions and form carbonic acid. There is a steep slope
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/gran_t=0-line.png?raw=true" heights=310 width=927> </p>
 
+**Figure 2:** Titration curve of the t=0 sample with 0.05 N HCl
 
-
-
-
-
-The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.813005  mL).
 
 <p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2:** Gran Plot data from the titration curve of the t=0 sample
-
+**Figure 3:** Gran Plot data from the titration curve of the t=0 sample
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplotmeasured1.png?raw=true" heights=310 width=927> </p>
 
-**Figure 3:** Measured ANC of the lake at different states
+**Figure 4:** Measured ANC of the lake at different states
 
 **-Present results in a clearly labeled format. Data analysis methods, equations, graphs, and tables should be presented in this section. The report text should refer to each equation, figure, and table. Include a table of relevant experimental parameters (e.g., measured flow rates, sample sizes, concentrations of reagents, etc.).
 -Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.
 -Make sure that responses to specific questions and data analysis requested in the lab manual are included in this section. But don't answer the questions in a list format. Instead, include your answers as part of the narrative that is designed to meet your objectives.**
 
+We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
 
 ### Conclusion
 
-We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
+After looking at the titration curve for the t=0 sample, we were able to see two regions of slow change in pH. The first region corresponds to the buffering effect of HCO3 which becomes H2CO3 as it adds a proton and the second corresponds to a region where hydrogen ions contribute directly to the change in pH. The equivalent volume is seen in the region of this graph where there is a steep change in pH. We calculated an equivalent volume that was very close to the ProCoDa value and this is seen in the linear part of the Gran function. The measured ANC over the duration of the experiment is similar to the conservative ANC model but deviates towards the volatile ANC model. This experiment showed us how carbonate species can act as a buffer to prevent the decrease in pH associated with acid rain in lakes.
 
 **The conclusions section should not include any new observation. It is the place to summarize the results in a few sentences. Make sure you connect your conclusions to your objectives for doing the research.**
 
 ### Suggestions
+
+One change that could be made to the lab is when doing the titrations. We were able to same time when doing the titrations in the beginning by putting in larger amounts of titrant in order to get an idea of what the equivalent volume was. Then on the second try we were able to put in smaller increment of titrant once we were approaching the that equivalent volume. By doing this we were able to get an idea of how much titrant would be needed in each titration.
+
 **I value your thoughts on where changes are needed as well as what is working well. Please provide very clear ideas that I can add to the lab manual or change in how we run the lab. Include ideas for: improving the data acquisition software
 modifying the experimental apparatus (Explain what you would like to change and why)
 making the experiment easier to understand (provide proposed change to the lab manual)
@@ -129,7 +128,6 @@ fig, ax = plt.subplots()
 ax.plot(V_titrant, pH, 'r')
 ax.set(xlabel= 'Titrant Volume (mL)')
 ax.set(ylabel= 'pH')
-ax.set(title = "Measured pH vs Titrant Volume")
 ax.grid(True)
 plt.ylim(2.5,6.5)
 plt.xlim(0.2,1.5)
@@ -140,7 +138,7 @@ plt.text(0.45, 5.75, '<-- bicarbonate to')
 plt.text(0.56, 5.5, 'carbonic acid')
 plt.text(0.95, 3.0, '<-- approaching')
 plt.text(1, 2.75, 'input pH')
-plt.savefig('gran_t=0-2')
+plt.savefig('gran_t=0-line')
 plt.show()
 
 # Data Analysis - Question Two code
