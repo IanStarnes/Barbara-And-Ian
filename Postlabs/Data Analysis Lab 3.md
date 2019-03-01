@@ -149,26 +149,44 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
-
+data_set = "https://raw.githubusercontent.com/barbaraoramah/my-CEE4530/master/Lab%202%20-%20Acid%20Rain%20(1).txt"
 import aguaclara.research.environmental_processes_analysis as epa
 import math
 from aguaclara import *
 
 df = pd.read_csv(data_set,delimiter='\t')
-print(df)
+df
 
-data_set_0 = "https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Lab%203%20Data/time_equals_0_Gran_Plot_v2.xls"
+data_set_0 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_0_Gran_Plot_v2.xls"
 data_set_5 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_5_Gran_Plot_v2.xls"
 data_set_10 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_10_Gran_Plot.xls"
 data_set_15 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Lab%203%20Data/time_equals_15_Gran_Plot.xls"
 
-Gran_data_0 = epa.Gran(data_set_0)
-Gran_data_5 = epa.Gran(data_set_5)
-Gran_data_10 = epa.Gran(data_set_10)
-Gran_data_15 = epa.Gran(data_set_15)
+V_titrant_0, pH_0, V_Sample_0, Normality_Titrant_0, V_equivalent_0, ANC_0 = epa.Gran(data_set_0)
+V_titrant_5, pH_5, V_Sample_5, Normality_Titrant_5, V_equivalent_5, ANC_5  = epa.Gran(data_set_5)
+V_titrant_10, pH_10, V_Sample_10, Normality_Titrant_10, V_equivalent_10, ANC_10  = epa.Gran(data_set_10)
+V_titrant_15, pH_15, V_Sample_15, Normality_Titrant_15, V_equivalent_15, ANC_15 = epa.Gran(data_set_15)
 
 
+mass_total = 4.563 * u.kg
+mass_bucket = 0.592* u.kg
+mass_water = mass_total-mass_bucket
+print(mass_water)
+volume_water = (mass_water/(1*u.kg/u.L))
+print (volume_water)
+ANC_in = -0.001*u.eq/u.L
+pH_0 = 7.77
+mass_nahco3 = 0.623 * u.g
+mwt_nahco3 = 84* u.g/u.eq
+conc_nahco3 = mass_nahco3/mwt_nahco3/volume_water
+print(conc_nahco3)
+ANC_0 = conc_nahco3
+print(ANC_0)
 
+flow_rate = 0.074/15*u.L/u.s
+print(flow_rate)
+theta = volume_water/flow_rate
+print(theta)
 
  # Q2
 time = epa.column_of_time(data_set,1,-1)
@@ -176,37 +194,42 @@ time
 # note: you cannot print a list that has units, you must call it on its own. refer to 't' variable.
 res_time = (time/theta).to('dimensionless')
 res_time
+ANC_0
 ANC_out = ANC_0*(np.exp(-res_time))+ANC_in*(1-(np.exp(-res_time)))
 ANC_out
 
-# Q3
+
 
 lake_pH = df.iloc[:,1].values
 ANC_cl=epa.ANC_closed(lake_pH,ANC_0)
 ANC_cl = ANC_cl[0:1496]
 ANC_cl
 
-# Q4
+
 ANC_o = epa.ANC_open(lake_pH)
 ANC_o = ANC_o[0:1496]
 # Now create a figure and plot the data and the line from the linear regression.
+
+
 fig, ax = plt.subplots()
+ax.plot(time.to(u.min), ANC_out.to(u.meq/u.L), 'r', time.to(u.min), ANC_cl.to(u.meq/u.L), 'b', time.to(u.min), ANC_o.to(u.meq/u.L), 'g')
 
+time_lake = np.array([0,5,10,15])*u.min
+ANC_lake = np.array([(ANC_0.to(u.meq/u.L)).magnitude, (ANC_5.to(u.meq/u.L)).magnitude, (ANC_10.to(u.meq/u.L)).magnitude, (ANC_15.to(u.meq/u.L)).magnitude])
 
-ax.plot(res_time, ANC_out.to(u.meq/u.L), 'r', res_time, ANC_cl.to(u.meq/u.L), 'b', res_time, ANC_o.to(u.meq/u.L), 'g')
-
+ax.plot(time_lake, ANC_lake, 'p')
 # Add axis labels using the column labels from the dataframe
-ax.set(xlabel= 'Hydraulic residence time (unitless)')
+ax.set(xlabel= 'time (min)')
 ax.set(ylabel= 'ANC (meq/L)')
 ax.set(title = "Hydraulic residence time vs Various ANC scenarios")
-ax.legend([ 'Conservative ANC','Nonvolatile ANC', 'Volatile ANC'])
+ax.legend([ 'Conservative ANC','Nonvolatile ANC', 'Volatile ANC','ANC measured'])
 ax.grid(True)
 plt.ylim((-1,2))
-plt.xlim(0,2)
+plt.xlim(-0.2,25)
 
 # Here I save the file to my local harddrive. You will need to change this to work on your computer.
 # We don't need the file type (png) here.
-plt.savefig('ANCplots3')
+plt.savefig('ANCplotmeasured')
 plt.show()
 ```
 
