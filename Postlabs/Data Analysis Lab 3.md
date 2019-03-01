@@ -1,12 +1,31 @@
 ### Lab 3 Report, Group 6
 #### Ian Starnes and Barbara Oramah
 ##### Time Spent on Lab: Ian Starnes - | Barbara Oramah - 10 hours
+
+
+### Table of Contents
+
+- [Introduction](#Introduction)
+- [Observation](#Observation)
+- [Procedure](#Procedure)
+- [Data Analysis](#Data-analysis)
+- [Conclusion](#Conclusion)
+- [Suggestions](#Suggestions)
+- [Appendix](#Appendix)
+
+
 ####Introduction
 
 This lab is modelled to highlight how acid rain affects the acid neutralizing capacity (ANC) of lakes. Acid precipitation results from the combustion of fossil fuels which produce oxides of sulfur and nitrogen that react in the earth’s atmosphere to form sulfuric and nitric acid. [(1)](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html] ) The lab report shows the results from two seperate labs, [Lab 1](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#experimental-objectives) and [Lab 2](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures). In Lab 1, the data collected were lake samples in 5 minutes intervals over a 20 minutes time period as an acid rain storage was pumped at a constant flow rate into a modelled lake. This was done in order see the change of pH over time and calculate ANC. In Lab 2, the samples collected in Lab 1 used to determine the ANC of each sample.
 
+The observations of the lab were to be used as supporting evidence that that is possible.
 
-The aim of the lab was to determine that remediation of lake can be obtained by increasing the ANC added. The observations of the lab were to be used as supporting evidence that that is possible.
+The equations that were used for this lab report:
+
+$$ANC_0 = [ANC_{out} - ANC_{in} (1-e^{-t/\theta})]e^{t/\theta}$$
+This equation
+
+$$ANC =2[CO_{3}^{2-}]+[HCO_{3}^{-}]+[OH^{-}]-[H^{+}]$$
 
 
 **Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
@@ -14,16 +33,56 @@ The aim of the lab was to determine that remediation of lake can be obtained by 
 This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report."**
 
 ##### Objective
-The goal for this lab is to gather experimental data to
+The goal for this lab is to gather experimental data to determine that remediation of lake can be obtained by increasing the ANC added so pH can be at an acceptable level and maintained over a desired period. The lab used sodium bicarbonate, NaHCO3, to be the source of ANC.
+
+This was achieved by adding NaHCO3 to the lake surface and pumping acid rain at a pH of 3. The pH of the lake was then monitored over a 20 minutes time frame. 
 
 #### Procedure
 Provide an overview of the methods that you used in your investigation. The best procedures give an overview of the method with an explanation of why you used those methods. There is no need to restate the step-by-step procedures as outlined in the lab manual: it is sufficient to cite the lab manual and include information on any deviations from the manual procedures. When method development is part of the laboratory exercise, a detailed description of the methods should be included. Methods and procedures need to be detailed enough so that one of your classmates could duplicate your work.
-#### Results and Discussion
 
-1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).
+#### Data Analysis
+
+<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/gran_t=0.png?raw=true" heights=310 width=927> </p>
+
+**Figure 1:** Titration curve of the t=0 sample with 0.05 N HCl
+
+The equivalent volume is found from the excel file of data from ProCoDA.
+The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
+
+ bicarbonate to carbonic acid is:
+
+ $$ [HCO_3^-] -> [H_2CO_3]  $$
 
 
+
+$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+
+The ANC can be calculated from the equivalent volume from $$ANC=\frac{V_e N_t }{V_s }$$
+
+
+
+The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.813005  mL).
+
+<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
+
+**Figure 2:** Gran Plot data from the titration curve of the t=0 sample
+
+
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplotmeasured1.png?raw=true" heights=310 width=927> </p>
+
+**Figure 3:** Measured ANC of the lake at different states
+
+
+###Conclusion
+
+We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
+
+###Suggestions
+
+###Appendix
 ```Python
+#Data Analysis - Question One code
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
 import aguaclara.core.utility as ut
@@ -65,27 +124,8 @@ plt.savefig('gran_t=0-2')
 plt.show()
 
 ```
-
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/gran_t=0.png?raw=true" heights=310 width=927> </p>
-
-**Figure 1:** Titration curve of the t=0 sample with 0.05 N HCl
-
-The equivalent volume is found from the excel file of data from ProCoDA.
-The equivalence point is defined as the point in the titration where titrant volume that has been added equals the “equivalent” volume (Ve). The equivalence point is a good way to determine ANC
-
- bicarbonate to carbonic acid is:
-
- $$ [HCO_3^-] -> [H_2CO_3]  $$
-
-
-
-$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
-
-The ANC can be calculated from the equivalent volume from $$ANC=\frac{V_e N_t }{V_s }$$
-
-
-2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of Ve with that was calculated by ProCoDA.
 ```python
+# Data Analysis - Question Two code
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
 import aguaclara.core.utility as ut
@@ -137,15 +177,8 @@ plt.legend(['data'])
 plt.savefig('GranQ2-2.png')
 plt.show()
 ```
-The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.813005  mL).
-
-<p align="center"> <img src="https://github.com/barbaraoramah/my-CEE4530/blob/master/images/GranQ2.png?raw=true" heights=310 width=927> </p>
-
-**Figure 2:** Gran Plot data from the titration curve of the t=0 sample
-
-3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?
-
 ```python
+#Data Analysis - Question 3 code
 from aguaclara.core.units import unit_registry as u
 u.define("equivalent = mole = eq")
 import numpy as np
@@ -231,12 +264,3 @@ plt.xlim(-0.2,25)
 plt.savefig('ANCplotmeasured')
 plt.show()
 ```
-
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ANCplotmeasured1.png?raw=true" heights=310 width=927> </p>
-
-**Figure 3:** Measured ANC of the lake at different states
-
-
-### Conclusions
-
-###Suggestions
