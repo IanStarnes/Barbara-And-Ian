@@ -14,7 +14,7 @@
 - [Appendix](#Appendix)
 
 
-####Introduction
+#### Introduction
 
 This lab is modelled to highlight how acid rain affects the acid neutralizing capacity (ANC) of lakes. Acid precipitation results from the combustion of fossil fuels which produce oxides of sulfur and nitrogen that react in the earth’s atmosphere to form sulfuric and nitric acid. [(1)](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html] ) The lab report shows the results from two seperate labs, [Lab 1](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#experimental-objectives) and [Lab 2](https://monroews.github.io/EnvEngLabTextbook/Acid_Neutralizing_Capacity/Acid_Neutralizing_Capacity.html#procedures). In Lab 1, the data collected were lake samples in 5 minutes intervals over a 20 minutes time period as an acid rain storage was pumped at a constant flow rate into a modelled lake. This was done in order see the change of pH over time and calculate ANC. In Lab 2, the samples collected in Lab 1 used to determine the ANC of each sample.
 
@@ -74,13 +74,13 @@ The calculated Ve (0.79 mL) is approximately the same as the ProCoDa Ve (0.81300
 **Figure 3:** Measured ANC of the lake at different states
 
 
-###Conclusion
+### Conclusion
 
 We learned that by doubling the ANC added, the pH took a longer time to drop. This is because there was a higher buffer capacity, causing the lake to acidify at a slower rate. (from lab 2 data analysis)
 
-###Suggestions
+### Suggestions
 
-###Appendix
+### Appendix
 ```Python
 #Data Analysis - Question One code
 from aguaclara.core.units import unit_registry as u
