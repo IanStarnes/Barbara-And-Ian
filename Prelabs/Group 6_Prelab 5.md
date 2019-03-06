@@ -19,12 +19,16 @@ import numpy as np
 from aguaclara import *
 
 RatioVCOrifice=0.63
-Diameter=0.001 * u.m
-FlowRate=0.00000228 * (u.m ** 3)/u.s
+d=0.001 * u.m
+q=0.000006333 * (u.m ** 3)/u.s
+g=9.81 * u.m / (u.s ** 2)
+a=(3.1415*d*d/4)
 n=6
-head=ep.head_orifice(Diameter,RatioVCOrifice,FlowRate)
+head=ep.head_orifice(d,RatioVCOrifice,q/n)
+h = (q/(n*RatioVCOrifice*a))**2/(2*g)
+h
 head
-total_head=head/(n*n)
+total_head=head
 total_head
 ```
 
@@ -52,6 +56,6 @@ plt.savefig('Peplot.png')
 plt.show()
 
 ```
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Peplot.png" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Peplot.png?raw=true" heights=310 width=927> </p>
 
 With higher Peclet numbers, more and more of the mass leaves the reactor at one residence time. This happens because as the Peclet number approaches infinity if becomes more like a perfect plug flow reactor. A Peclet number of 100 has some dispersion but is most like a plug flow reactor out of these three options. As the Peclet number decreases, there is more dispersion. Therefore, some of the mass exits the reactor before one residence time. This effect is seen to be more important for Peclet numbers 1 and 10. For these scenarios, more mass is leaving the reactor much sooner but it also has mass leaving the reactor at much higher residence times. The mass flow out of the reactor tappers off unlike when the Peclet number is 100.
