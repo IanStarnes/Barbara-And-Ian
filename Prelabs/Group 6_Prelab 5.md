@@ -20,7 +20,7 @@ from aguaclara import *
 
 RatioVCOrifice=0.63
 Diameter=0.001 * u.m
-FlowRate=0.00633 * (u.m ** 3)/u.s
+FlowRate=0.00000228 * (u.m ** 3)/u.s
 n=6
 head=ep.head_orifice(Diameter,RatioVCOrifice,FlowRate)
 head
