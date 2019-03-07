@@ -46,8 +46,6 @@ def aeration_data(DO_column, dirpath):
     aeration_results = aeration_collection(filepaths, airflows, DO_data, time_data)
     return aeration_results
 
-
-
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
 dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
@@ -62,14 +60,8 @@ for i in range(airflows.size):
   idx_end = (np.abs(DO_data[i]-DO_max)).argmin()
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
-  # Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
-<<<<<<< HEAD
+
 # this is hardcoded but i believe a for loop can work
-=======
-
-
-# th is is hardcoded but i believe a for loop can work
->>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
 
 data = [175, 350, 575, 725, 850]
 
@@ -84,12 +76,12 @@ plt.show()
 #Calculate C* , what was the pressure we found that day?
 
 P_air = 101.3*u.kPa
+
 temp = 22*u.degC
 
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-<<<<<<< HEAD
 #time_data
 
 #t_0 = time_data[0]
@@ -97,59 +89,27 @@ C_star
 
 #C_0 = DO_data[0]
 #C_initial = C_0[0]
-=======
+
 t_0 = time_data[0]
 t_initial = t_0[0]
 C_0 = DO_data[0]
 C_initial = C_0[0]
->>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
 
-x = time_data[0]-t_initial
-y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+# need to create an empty array so data can loop into it, the x is delta t and y is the concentration change
+#intercept = intercept * y.units
+#slope = slope * y.units/x.units
 
-plt.plot(x,y)
-plt.xlabel(r'$time (s)$')
-plt.ylabel(r'k_vl (s-1)')
-#plt.legend(data)
-plt.savefig('kvl0')
-plt.show()
-
-kvl = []
-# need to create an empty arry so data can loop into it, the x is delta t and y is the concentration change
-#for i in range(airflows.size):
-  #x = time_data[i]-t_initial
+#list_airflow =[]
+#int_avg = np.empty(airflows.size)
+#slope_avg = np.empty(airflows.size)
+#slope_avg[i]=np.mean(y)
+#slope_avg
 
 time_data
-
-delta_t=np.empty(airflows.size,dtype="object")
-for o in range(airflows.size):
-  t = time_data[o].magnitude
-  delta_time= t - t[0]
-  delta_t[o] = delta_time
-
-
-# delta_t=np.append(delta_t,[delta_t_temp])
-x = delta_t
-print(Cstar)
-print(Cstar.magnitude)
-
-
-y=np.empty(airflows.size,dtype="object")
-for i in range(airflows.size):
-<<<<<<< HEAD
-  do_temp=DO_data[i].magnitude
-  numerator = Cstar.magnitude - do_temp
-  denominator = Cstar.magnitude - do_temp[0]
-  y_temp = np.log(numerator/denominator)
-  y[i] = y_temp
-
-kvl = np.empty(airflows.size,dtype="object")
-for i in range(airflows.size):
-  x_temp = delta_t[i]
-  y_temp = y[i]
-  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
-  kvl[i] = slope
-=======
+airflows.size
+arr=np.empty(12, dtype="object")
+arr
+for i in range(11):
   t_0 = time_data[i]
   t_initial = t_0[i]
 
@@ -158,15 +118,39 @@ for i in range(airflows.size):
 
   x = time_data[i]-t_initial
   y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
-
+  arr[i]=np.mean(y)
   plt.plot(x,y)
-
+arr
+t_0 = time.data.magnitude
+t_0
 plt.xlabel(r'$time (s)$')
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
 plt.savefig('kvlt')
 plt.show()
->>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
+#t_0 = time_data[i]
+#t_initial = t_0[i]
+
+#C_0 = DO_data[i]
+#C_initial = C_0[i]
+
+#x = time_data[i]-t_initial
+#y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+
+delta_t=np.empty(airflows.size,dtype="object")
+for i in range(airflows.size):
+  t_temp=time_data[i].magnitude
+  delta_t_temp=t_temp - t_temp[0]
+  delta_t[i] = delta_t_temp
+  # delta_t=np.append(delta_t,[delta_t_temp])
+x=delta_t
+print(Cstar)
+print(Cstar.magnitude)
+
+slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
+
+
+
 ```
 
 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
