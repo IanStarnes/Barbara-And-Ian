@@ -1,6 +1,6 @@
 ### Data Analysis and Questions: Lab 4, Group 6
 #### Ian Starnes and Barbara Oramah
-##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah -
+##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah - 4
 
 Data Analysis
 This lab will use the power of python to streamline repetitive data analysis. Use the data from the entire class for the analysis. You can use for loops to cycle through all of the data sets.
@@ -81,7 +81,7 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-time_data = 
+time_data =
 np.shape(time_data)
 len(time_data)
 t_initial = time_data[0]
