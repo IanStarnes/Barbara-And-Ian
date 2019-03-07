@@ -8,6 +8,7 @@ This lab will use the power of python to streamline repetitive data analysis. Us
 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.
 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/airflows.png?raw=true" heights=310 width=927> </p>
 
 **Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
 
@@ -81,16 +82,17 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-time_data =
-np.shape(time_data)
-len(time_data)
-t_initial = time_data[0]
-len(t_initial)
-C_initial = DO_data[0]
+time_data
 
+t_0 = time_data[0]
+t_initial = t_0[0]
+
+C_0 = DO_data[0]
+C_initial = C_0[0]
+
+# need to create an empty arry so data can loop into it, the x is delta t and y is the concentration change
 for i in range(airflows.size):
   x = time_data[i]-t_initial
-  y = ln*[(C_star-DO_data)/(C_star-C_initial)]
 
 ```
 
