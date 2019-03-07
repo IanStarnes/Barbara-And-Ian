@@ -11,8 +11,9 @@ This lab will use the power of python to streamline repetitive data analysis. Us
 
 **Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
 
-```python
+3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.
 
+```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
 import numpy as np
@@ -22,6 +23,7 @@ from scipy import stats
 import collections
 import os
 from pathlib import Path
+import math
 
 
 def aeration_data(DO_column, dirpath):
@@ -59,7 +61,7 @@ for i in range(airflows.size):
   DO_data[i] = DO_data[i][idx_start:idx_end]
   # Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
 
-airflows
+# this is hardcoded but i believe a for loop can work
 
 data = [175, 350, 575, 725, 850]
 
@@ -71,23 +73,27 @@ plt.legend(data)
 plt.savefig('airflows')
 plt.show()
 
-
-
 #Calculate C* , what was the pressure we found that day?
-P_air = 101.4*u.kPa
+
+P_air = 101.3*u.kPa
 temp = 22*u.degC
 
 C_star = epa.O2_sat(P_air,temp)
+C_star
 
+time_data = 
+np.shape(time_data)
+len(time_data)
+t_initial = time_data[0]
+len(t_initial)
+C_initial = DO_data[0]
 
-
+for i in range(airflows.size):
+  x = time_data[i]-t_initial
+  y = ln*[(C_star-DO_data)/(C_star-C_initial)]
 
 ```
 
-
-
-
-3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.
 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).
 6. Plot k̂ v,l as a function of airflow rate (μmole/s).
