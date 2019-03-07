@@ -61,7 +61,6 @@ for i in range(airflows.size):
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
   # Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
-
 # this is hardcoded but i believe a for loop can work
 
 data = [175, 350, 575, 725, 850]
@@ -82,18 +81,47 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-time_data
+#time_data
 
-t_0 = time_data[0]
-t_initial = t_0[0]
+#t_0 = time_data[0]
+#t_initial = t_0[0]
 
-C_0 = DO_data[0]
-C_initial = C_0[0]
+#C_0 = DO_data[0]
+#C_initial = C_0[0]
 
 # need to create an empty arry so data can loop into it, the x is delta t and y is the concentration change
-for i in range(airflows.size):
-  x = time_data[i]-t_initial
+#for i in range(airflows.size):
+  #x = time_data[i]-t_initial
 
+time_data
+
+delta_t=np.empty(airflows.size,dtype="object")
+for o in range(airflows.size):
+  t = time_data[o].magnitude
+  delta_time= t - t[0]
+  delta_t[o] = delta_time
+
+
+# delta_t=np.append(delta_t,[delta_t_temp])
+x = delta_t
+print(Cstar)
+print(Cstar.magnitude)
+
+
+y=np.empty(airflows.size,dtype="object")
+for i in range(airflows.size):
+  do_temp=DO_data[i].magnitude
+  numerator = Cstar.magnitude - do_temp
+  denominator = Cstar.magnitude - do_temp[0]
+  y_temp = np.log(numerator/denominator)
+  y[i] = y_temp
+
+kvl = np.empty(airflows.size,dtype="object")
+for i in range(airflows.size):
+  x_temp = delta_t[i]
+  y_temp = y[i]
+  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
+  kvl[i] = slope
 ```
 
 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
