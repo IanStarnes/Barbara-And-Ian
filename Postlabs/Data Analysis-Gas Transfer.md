@@ -47,9 +47,11 @@ def aeration_data(DO_column, dirpath):
     return aeration_results
 
 
+
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
 dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
+dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
 #delete data that is less than 2 or greater than 6 mg/L
@@ -61,7 +63,13 @@ for i in range(airflows.size):
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
   # Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
+<<<<<<< HEAD
 # this is hardcoded but i believe a for loop can work
+=======
+
+
+# th is is hardcoded but i believe a for loop can work
+>>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
 
 data = [175, 350, 575, 725, 850]
 
@@ -81,6 +89,7 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
+<<<<<<< HEAD
 #time_data
 
 #t_0 = time_data[0]
@@ -88,7 +97,24 @@ C_star
 
 #C_0 = DO_data[0]
 #C_initial = C_0[0]
+=======
+t_0 = time_data[0]
+t_initial = t_0[0]
+C_0 = DO_data[0]
+C_initial = C_0[0]
+>>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
 
+x = time_data[0]-t_initial
+y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+
+plt.plot(x,y)
+plt.xlabel(r'$time (s)$')
+plt.ylabel(r'k_vl (s-1)')
+#plt.legend(data)
+plt.savefig('kvl0')
+plt.show()
+
+kvl = []
 # need to create an empty arry so data can loop into it, the x is delta t and y is the concentration change
 #for i in range(airflows.size):
   #x = time_data[i]-t_initial
@@ -110,6 +136,7 @@ print(Cstar.magnitude)
 
 y=np.empty(airflows.size,dtype="object")
 for i in range(airflows.size):
+<<<<<<< HEAD
   do_temp=DO_data[i].magnitude
   numerator = Cstar.magnitude - do_temp
   denominator = Cstar.magnitude - do_temp[0]
@@ -122,6 +149,24 @@ for i in range(airflows.size):
   y_temp = y[i]
   slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
   kvl[i] = slope
+=======
+  t_0 = time_data[i]
+  t_initial = t_0[i]
+
+  C_0 = DO_data[i]
+  C_initial = C_0[i]
+
+  x = time_data[i]-t_initial
+  y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+
+  plt.plot(x,y)
+
+plt.xlabel(r'$time (s)$')
+plt.ylabel(r'k_vl (s-1)')
+#plt.legend(data)
+plt.savefig('kvlt')
+plt.show()
+>>>>>>> c0582f62801fc461f4d111dd7732c4d5ce9e5629
 ```
 
 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
