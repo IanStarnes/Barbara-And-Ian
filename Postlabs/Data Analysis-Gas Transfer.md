@@ -108,26 +108,38 @@ C_star
 
 time_data
 airflows.size
-time_change =np.empty(airflows.size, dtype="object")
-for i in range(airflows.size):
-  t_0 = time_data[i].magnitude
+
+# number 4 is a scam and i am boycotting this question
+time_change =np.empty(11, dtype="object")
+for i in range(11):
+  t_0 = time_data[i]
   t_initial = t_0[0]
   delta = t_0[i]-t_initial
   time_change[i] = delta
-x = delta
+x=time_change
+x
 
-for i in range(airflows.size)
+
+y_values = np.empty(11, dtype = "object")
+for i in range(11):
   C_0 = DO_data[i]
   C_initial = C_0[0]
+  y_eqn = -(1/x[i])*np.log((C_star-C_0)/(C_star-C_initial))
+  y_values[i] = y_eqn
 
-  x = t_0[i]-t_initial
-  y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
-  arr[i] = y
+C_0
+y = y_values
+y
+y_eqn
+
+kvl = np.empty(11,dtype="object")
+for i in range(11):
+  x_temp = time_change[i]
+  y_temp = y_values[i]
+  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
+  kvl[i] = slope
 
 
-arr
-t_0 = time.data.magnitude
-t_0
 plt.xlabel(r'$time (s)$')
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
@@ -141,20 +153,10 @@ plt.show()
 
 #x = time_data[i]-t_initial
 #y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
-airflows.size
 
-delta_t=np.empty(airflows.size,dtype="object")
-for i in range(airflows.size):
-  t_temp=time_data[i].magnitude
-  delta_t_temp=t_temp - t_temp[0]
-  delta_t[i] = delta_t_temp
-  #delta_t=np.append(delta_t,[delta_t_temp])
-x=delta_t
-print(Cstar)
-print(Cstar.magnitude)
+#Question Four
 
-slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
-
+conc_o2 = C_star-(C_star-DO_data[1][0])*math.exp(-)
 
 
 ```
