@@ -26,6 +26,7 @@ import os
 from pathlib import Path
 import math
 import time
+import statistics
 
 
 def aeration_data(DO_column, dirpath):
@@ -49,8 +50,8 @@ def aeration_data(DO_column, dirpath):
 
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
-dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
-#dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
+#dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
+dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
 #delete data that is less than 2 or greater than 6 mg/L
@@ -65,6 +66,7 @@ for i in range(airflows.size):
 # this is hardcoded but i believe a for loop can work
 
 data = [175, 350, 575, 725, 850]
+data1 = [100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950]
 
 plt.plot(time_data[3],DO_data[3],time_data[7],DO_data[7],time_data[14],DO_data[14],time_data[17],DO_data[17],time_data[22],DO_data[22])
 
@@ -114,9 +116,11 @@ time_change =np.empty(11, dtype="object")
 for i in range(11):
   t_0 = time_data[i]
   t_initial = t_0[0]
-  delta = t_0[i]-t_initial
+  delta = t_0-t_initial
   time_change[i] = delta
+time_change[10]
 x=time_change
+
 x
 
 
@@ -134,12 +138,15 @@ y_eqn
 
 kvl = np.empty(11,dtype="object")
 for i in range(11):
-  x_temp = time_change[i]
-  y_temp = y_values[i]
-  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
-  kvl[i] = slope
-
-
+  #x_temp = x[i]
+  #y_temp = y_values[i]
+  #slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
+  #kvl[i] = slope
+  kvl[i]=statistics.mean(y[i].magnitude)
+kvl
+data1 = [100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950]
+data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
+plt.plot(data1,kvl)
 plt.xlabel(r'$time (s)$')
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
