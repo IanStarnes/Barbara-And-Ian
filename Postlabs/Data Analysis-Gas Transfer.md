@@ -25,6 +25,7 @@ import collections
 import os
 from pathlib import Path
 import math
+import time
 
 
 def aeration_data(DO_column, dirpath):
@@ -49,7 +50,7 @@ def aeration_data(DO_column, dirpath):
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
 dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
-dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
+#dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
 #delete data that is less than 2 or greater than 6 mg/L
@@ -90,10 +91,10 @@ C_star
 #C_0 = DO_data[0]
 #C_initial = C_0[0]
 
-t_0 = time_data[0]
-t_initial = t_0[0]
-C_0 = DO_data[0]
-C_initial = C_0[0]
+#t_0 = time_data[0]
+#t_initial = t_0[0]
+#C_0 = DO_data[0]
+#C_initial = C_0[0]
 
 # need to create an empty array so data can loop into it, the x is delta t and y is the concentration change
 #intercept = intercept * y.units
@@ -107,19 +108,23 @@ C_initial = C_0[0]
 
 time_data
 airflows.size
-arr=np.empty(12, dtype="object")
-arr
-for i in range(11):
-  t_0 = time_data[i]
-  t_initial = t_0[i]
+time_change =np.empty(airflows.size, dtype="object")
+for i in range(airflows.size):
+  t_0 = time_data[i].magnitude
+  t_initial = t_0[0]
+  delta = t_0[i]-t_initial
+  time_change[i] = delta
+x = delta
 
+for i in range(airflows.size)
   C_0 = DO_data[i]
-  C_initial = C_0[i]
+  C_initial = C_0[0]
 
-  x = time_data[i]-t_initial
+  x = t_0[i]-t_initial
   y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
-  arr[i]=np.mean(y)
-  plt.plot(x,y)
+  arr[i] = y
+
+
 arr
 t_0 = time.data.magnitude
 t_0
@@ -136,13 +141,14 @@ plt.show()
 
 #x = time_data[i]-t_initial
 #y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+airflows.size
 
 delta_t=np.empty(airflows.size,dtype="object")
 for i in range(airflows.size):
   t_temp=time_data[i].magnitude
   delta_t_temp=t_temp - t_temp[0]
   delta_t[i] = delta_t_temp
-  # delta_t=np.append(delta_t,[delta_t_temp])
+  #delta_t=np.append(delta_t,[delta_t_temp])
 x=delta_t
 print(Cstar)
 print(Cstar.magnitude)
