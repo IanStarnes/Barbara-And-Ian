@@ -85,86 +85,54 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-#time_data
-
-#t_0 = time_data[0]
-#t_initial = t_0[0]
-
-#C_0 = DO_data[0]
-#C_initial = C_0[0]
-
-#t_0 = time_data[0]
-#t_initial = t_0[0]
-#C_0 = DO_data[0]
-#C_initial = C_0[0]
-
-# need to create an empty array so data can loop into it, the x is delta t and y is the concentration change
-#intercept = intercept * y.units
-#slope = slope * y.units/x.units
-
-#list_airflow =[]
-#int_avg = np.empty(airflows.size)
-#slope_avg = np.empty(airflows.size)
-#slope_avg[i]=np.mean(y)
-#slope_avg
-
 time_data
 airflows.size
 
 # number 4 is a scam and i am boycotting this question
-time_change =np.empty(11, dtype="object")
-for i in range(11):
+time_change =np.empty(23, dtype="object")
+for i in range(23):
   t_0 = time_data[i]
   t_initial = t_0[0]
   delta = t_0-t_initial
   time_change[i] = delta
-time_change[10]
 x=time_change
-
 x
 
-
-y_values = np.empty(11, dtype = "object")
-for i in range(11):
-  C_0 = DO_data[i]
-  C_initial = C_0[0]
-  y_eqn = -(1/x[i])*np.log((C_star-C_0)/(C_star-C_initial))
-  y_values[i] = y_eqn
-
-C_0
+y_values = np.empty(23, dtype = "object")
+for j in range(23):
+  C = DO_data[j]
+  C_initial = C[0]
+  y_eqn = np.log((C_star-C)/(C_star-C_initial))
+  y_values[j] = y_eqn
 y = y_values
-y
-y_eqn
 
-kvl = np.empty(11,dtype="object")
-for i in range(11):
-  #x_temp = x[i]
-  #y_temp = y_values[i]
-  #slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
-  #kvl[i] = slope
-  kvl[i]=statistics.mean(y[i].magnitude)
+kvl = np.empty(23, dtype="object")
+for k in range(23):
+  slope, intercept, r_value, p_value, std_err = stats.linregress(-x[k], y[k])
+  kvl[k]=slope
 kvl
+
+ts=np.linspace(0, x[0][36], num=100)
+Cs=C_star-((C_star-DO_data[0][0])*np.exp(-kvl[0]*ts))
+tp=x[0]
+Cp= C_star-((C_star-DO_data[0][0])*np.exp(y[0]))
+plt.plot(ts,Cs,x[0],DO_data[0],'ro')
+plt.xlabel(r'$Time (sec)$')
+plt.ylabel(r'DO concentraion (mg/L)')
+plt.legend(['Model Curve','Data from experiment'])
+plt.savefig('OneSet.png')
+plt.show()
+
 data1 = [100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950]
-data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
-plt.plot(data1,kvl)
-plt.xlabel(r'$time (s)$')
+#data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
+plt.plot(data1,kvl, 'ro')
+plt.xlabel(r'$Flow Rate (muM/s)$')
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
 plt.savefig('kvlt')
 plt.show()
-#t_0 = time_data[i]
-#t_initial = t_0[i]
-
-#C_0 = DO_data[i]
-#C_initial = C_0[i]
-
-#x = time_data[i]-t_initial
-#y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
-
-#Question Four
 
 conc_o2 = C_star-(C_star-DO_data[1][0])*math.exp(-)
-
 
 ```
 
