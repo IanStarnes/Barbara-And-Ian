@@ -54,8 +54,8 @@ def aeration_data(DO_column, dirpath):
 
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
-#dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
-dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
+dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
+#dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
 #delete data that is less than 2 or greater than 6 mg/L
@@ -111,17 +111,7 @@ for j in range(23):
   y_values[j] = y_eqn
 y = y_values
 
-<<<<<<< HEAD
-kvl = np.empty(11,dtype="object")
-for i in range(11):
-  x_temp = x[i]
-  y_temp = y[i]
-  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
-  kvl[i] = slope
 
-x_temp
-plt.xlabel(r'$time (s)$')
-=======
 kvl = np.empty(23, dtype="object")
 for k in range(23):
   slope, intercept, r_value, p_value, std_err = stats.linregress(-x[k], y[k])
@@ -144,7 +134,6 @@ data1 = np.array([100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700
 #data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
 plt.plot(data1,kvl, 'ro')
 plt.xlabel(r'$Flow Rate (muM/s)$')
->>>>>>> fa92eb8f2d0c6b77ee0e8b508d6fb720aa33113d
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
 plt.savefig('kvlt')
