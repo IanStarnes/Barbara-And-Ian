@@ -163,7 +163,12 @@ plt.show()
 ```
 
 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
+
+As the air flow rate increases, the oxygen transfer efficiency (OTE) decreases.
+
 9. Propose a change to the experimental apparatus that would increase the efficiency.
+
+A change that c
 
 ### Lab exploration
 
