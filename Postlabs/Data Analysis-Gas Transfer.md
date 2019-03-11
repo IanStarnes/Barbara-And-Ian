@@ -118,6 +118,7 @@ for i in range(11):
   time_change[i] = delta
 x=time_change
 x
+len(x)
 
 
 y_values = np.empty(11, dtype = "object")
@@ -134,12 +135,12 @@ y_eqn
 
 kvl = np.empty(11,dtype="object")
 for i in range(11):
-  x_temp = time_change[i]
-  y_temp = y_values[i]
+  x_temp = x[i]
+  y_temp = y[i]
   slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y_temp)
   kvl[i] = slope
 
-
+x_temp
 plt.xlabel(r'$time (s)$')
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
