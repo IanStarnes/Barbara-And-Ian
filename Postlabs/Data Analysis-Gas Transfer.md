@@ -27,14 +27,21 @@ This lab will use the power of python to
 streamline repetitive data analysis. Use the data from the entire class for the analysis. You can use for loops to cycle through all of the data sets.
 
 
-
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/airflows.png?raw=true" heights=310 width=927> </p>
 
 **Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/OneSet.png?raw=true" heights=310 width=927> </p>
 
+**Figure 2** Representative plot showing the model curve (as a smooth curve) and the data from 100 moles/second flow rate.
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/kvlt.png?raw=true" heights=310 width=927> </p>
 
+**Figure 3**  kv,l  as a function of airflow rate (μmole/s)
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ote-airflow.png?raw=true" heights=310 width=927> </p>
+
+**Figure 4** OTE as a function of airflow rate (μmole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.
 
 
 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
@@ -50,7 +57,7 @@ Make sure to keep the DO probe is close to the bottom of the reactor. This will 
 
 ### Conclusion
 
-
+To conclude, cvre
 
 ### Suggestion
 Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected
