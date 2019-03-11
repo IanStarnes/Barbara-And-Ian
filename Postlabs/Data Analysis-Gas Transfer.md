@@ -13,6 +13,10 @@ This lab will use the power of python to streamline repetitive data analysis. Us
 **Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
 
 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.
+4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
+5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).
+6. Plot k̂ v,l as a function of airflow rate (μmole/s).
+7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -26,6 +30,7 @@ import os
 from pathlib import Path
 import math
 import time
+import statistics
 
 
 def aeration_data(DO_column, dirpath):
@@ -49,8 +54,8 @@ def aeration_data(DO_column, dirpath):
 
 # The column of data containing the dissolved oxygen concentrations
 DO_column = 2
-dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
-#dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
+#dirpath = "/Users/barbaraoramah/github/Barbara-And-Ian/Aeration_Data"
+dirpath = "/Users/Ian/github/Barbara-And-Ian/Aeration_Data"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
 #delete data that is less than 2 or greater than 6 mg/L
@@ -65,6 +70,7 @@ for i in range(airflows.size):
 # this is hardcoded but i believe a for loop can work
 
 data = [175, 350, 575, 725, 850]
+data1 = [100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950]
 
 plt.plot(time_data[3],DO_data[3],time_data[7],DO_data[7],time_data[14],DO_data[14],time_data[17],DO_data[17],time_data[22],DO_data[22])
 
@@ -83,56 +89,29 @@ temp = 22*u.degC
 C_star = epa.O2_sat(P_air,temp)
 C_star
 
-#time_data
-
-#t_0 = time_data[0]
-#t_initial = t_0[0]
-
-#C_0 = DO_data[0]
-#C_initial = C_0[0]
-
-#t_0 = time_data[0]
-#t_initial = t_0[0]
-#C_0 = DO_data[0]
-#C_initial = C_0[0]
-
-# need to create an empty array so data can loop into it, the x is delta t and y is the concentration change
-#intercept = intercept * y.units
-#slope = slope * y.units/x.units
-
-#list_airflow =[]
-#int_avg = np.empty(airflows.size)
-#slope_avg = np.empty(airflows.size)
-#slope_avg[i]=np.mean(y)
-#slope_avg
-
 time_data
 airflows.size
 
 # number 4 is a scam and i am boycotting this question
-time_change =np.empty(11, dtype="object")
-for i in range(11):
+time_change =np.empty(23, dtype="object")
+for i in range(23):
   t_0 = time_data[i]
   t_initial = t_0[0]
-  delta = t_0[i]-t_initial
+  delta = t_0-t_initial
   time_change[i] = delta
 x=time_change
 x
 len(x)
 
-
-y_values = np.empty(11, dtype = "object")
-for i in range(11):
-  C_0 = DO_data[i]
-  C_initial = C_0[0]
-  y_eqn = -(1/x[i])*np.log((C_star-C_0)/(C_star-C_initial))
-  y_values[i] = y_eqn
-
-C_0
+y_values = np.empty(23, dtype = "object")
+for j in range(23):
+  C = DO_data[j]
+  C_initial = C[0]
+  y_eqn = np.log((C_star-C)/(C_star-C_initial))
+  y_values[j] = y_eqn
 y = y_values
-y
-y_eqn
 
+<<<<<<< HEAD
 kvl = np.empty(11,dtype="object")
 for i in range(11):
   x_temp = x[i]
@@ -142,30 +121,80 @@ for i in range(11):
 
 x_temp
 plt.xlabel(r'$time (s)$')
+=======
+kvl = np.empty(23, dtype="object")
+for k in range(23):
+  slope, intercept, r_value, p_value, std_err = stats.linregress(-x[k], y[k])
+  kvl[k]=slope
+kvl
+
+ts=np.linspace(0, x[0][36], num=100)
+Cs=C_star-((C_star-DO_data[0][0])*np.exp(-kvl[0]*ts))
+tp=x[0]
+Cp= C_star-((C_star-DO_data[0][0])*np.exp(y[0]))
+plt.plot(ts,Cs,x[0],DO_data[0],'ro')
+plt.xlabel(r'$Time (sec)$')
+plt.ylabel(r'DO concentraion (mg/L)')
+plt.legend(['Model Curve','Data from experiment'])
+plt.savefig('OneSet.png')
+plt.show()
+
+
+data1 = np.array([100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950])*u.mole/u.s/10**6
+#data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
+plt.plot(data1,kvl, 'ro')
+plt.xlabel(r'$Flow Rate (muM/s)$')
+>>>>>>> fa92eb8f2d0c6b77ee0e8b508d6fb720aa33113d
 plt.ylabel(r'k_vl (s-1)')
 #plt.legend(data)
 plt.savefig('kvlt')
 plt.show()
-#t_0 = time_data[i]
-#t_initial = t_0[i]
 
-#C_0 = DO_data[i]
-#C_initial = C_0[i]
+#Question 7\
+store=kvl/u.s
+V = 0.75*u.L
+f = 0.21
+MW_O2 = 32*u.g/u.mole
+R = 8.314*u.J/u.mole/u.K
+temp1=295*u.K
+D=0.006*u.g/u.L
+P_air = 101300*u.Pa
+n_air = (data1)
+n_air.to_base_units
 
-#x = time_data[i]-t_initial
-#y = -(1/x)*np.log((C_star-C_0)/(C_star-C_initial))
+OTE=(V*store*D)/(f*n_air*MW_O2)
+OTE
 
-#Question Four
-
-conc_o2 = C_star-(C_star-DO_data[1][0])*math.exp(-)
-
+plt.plot(data1, OTE, 'ro')
+plt.xlabel(r'Airflow rate (mole/sec)')
+plt.ylabel(r' OTE')
+plt.savefig('ote-airflow.png')
+plt.show()
 
 ```
 
-4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
-5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).
-6. Plot k̂ v,l as a function of airflow rate (μmole/s).
-7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.
 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
 9. Propose a change to the experimental apparatus that would increase the efficiency.
-10. Verify that your report and graphs meet the requirements.
+
+### Lab exploration
+
+1. ProCoDa switches from the “prepare to calibrate” state to the “calibrate” state when the pressure below the prerdefined threshold.
+
+2. ProCoDA switches from the “calibrate” state to the “Pause” state when the pressure in the accumulator reaches 60% of the source pressure. During the “Pause” state both valves are closed.
+
+3. The “Pause” state knows which state to go to next because the “Pause” state stops when the elapsed time in the current state (“pause” state) is greater than the calibrate to aeration lag, then the next state is set to “Aerate”.
+
+4. The equation that is used to calculate the maximum calibration pressure is (source pressure) * (max cal/ source). This equation better than using a constant for the maximum calibration pressure because our source pressure is not constant.
+
+5. ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate by using the constant “(R*T/V)” and “Delta P” ( max cal pressure – min cal pressure) to calculate the “fill time”. This variable is used along with max calibration pressure and min calibration pressure to plot the air fill model.
+
+6. The inputs to the “air valve control” are the air slope and the air flow rate.
+
+7. “Air valve control” controls the solenoid valve which controls the air flow rate in our system and the two states that use it are “aerate” and “fill accumulator”.
+
+8. Jonathan saw our program execute properly.
+
+
+### Conclusion
+
+### Suggestion
