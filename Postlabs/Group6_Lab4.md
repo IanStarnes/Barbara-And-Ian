@@ -1,6 +1,6 @@
 ### Data Analysis and Questions: Lab 4, Group 6
 #### Ian Starnes and Barbara Oramah
-##### Time Spent (hrs) on Lab Report: Ian Starnes - | Barbara Oramah - 12
+##### Time Spent (hrs) on Lab Report: Ian Starnes - 12 | Barbara Oramah - 12
 
 ### Lab exploration
 
