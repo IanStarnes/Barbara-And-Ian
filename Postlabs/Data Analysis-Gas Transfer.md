@@ -1,10 +1,10 @@
 ### Data Analysis and Questions: Lab 4, Group 6
 #### Ian Starnes and Barbara Oramah
-##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah - 4
+##### Time Spent (hrs) on Lab Report: Ian Starnes - | Barbara Oramah - 12
 
 ### Lab exploration
 
-1. ProCoDa switches from the “prepare to calibrate” state to the “calibrate” state when the pressure below the prerdefined threshold.
+1. ProCoDa switches from the “prepare to calibrate” state to the “calibrate” state when the pressure below the predefined threshold.
 
 2. ProCoDA switches from the “calibrate” state to the “Pause” state when the pressure in the accumulator reaches 60% of the source pressure. During the “Pause” state both valves are closed.
 
@@ -23,44 +23,40 @@
 
 ### Data Analysis
 
-This lab will use the power of python to
-streamline repetitive data analysis. Use the data from the entire class for the analysis. You can use for loops to cycle through all of the data sets.
-
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/airflows.png?raw=true" heights=310 width=927> </p>
 
-**Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
+**Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/OneSet.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2** Representative plot showing the model curve (as a smooth curve) and the data from 100 moles/second flow rate.
+**Figure 2** Representative plot showing the model curve (as a smooth curve) and the data from 100 micromoles/second flow rate.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/kvlt.png?raw=true" heights=310 width=927> </p>
 
-**Figure 3**  kv,l  as a function of airflow rate (μmole/s)
+**Figure 3**  kv,l  as a function of airflow rate (μmole/s).
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/ote-airflow.png?raw=true" heights=310 width=927> </p>
 
 **Figure 4** OTE as a function of airflow rate (μmole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.
 
+ ***Comment on the oxygen transfer efficiency and the trend or trends that you observe.***
 
-8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
+As the air flow rate increases, the oxygen transfer efficiency (OTE) decreases. As the flow rate increased, it observed that the air bubbles in the system increase in size, thus reducing the surface area to volume ratio for gas transfer. Additionally, the speed of the bubbles increased. This means that the the time of each bubble spent in the reactor decreased. With this in consideration, the bubbles at a higher flow rate do not transfer as high a percent of the oxygen into the solution.
 
-As the air flow rate increases, the oxygen transfer efficiency (OTE) decreases. As the flow rate increased, it observed that the air bubbles in the system increase in size, thus reducing the surface area to volume ratio for gas transfer. Additionally, the speed of the bubbles increased. This means that the the time of each bubble spent in the reactor decreased. With this in consideration, the bubbles at a higher flow rate do not transfer o
 
-9. Propose a change to the experimental apparatus that would increase the efficiency.
+***Propose a change to the experimental apparatus that would increase the efficiency.***
 
-A change that would increase the efficiency of the experiment would be using a deeper reactor. This would allow the bubbles to stay within the reactor for a longer period of time.
-
-Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected
+A change that would increase the efficiency of the experiment would be using a deeper reactor. This would allow the bubbles to stay within the reactor for a longer period of time. Additionally, by using smaller pores in the nozzle, this would allow for smaller air bubbles to form which have a higher surface area to volume ratio.
 
 
 ### Conclusion
 
-To conclude, cvre
+To conclude, after removing the data that contains dissolved oxygen concentrations outside the range the DO probe measures accurately, we plotted DO concentrations versus time for a selection of flow rates. Then, the DO saturation level could be calculated with the atmospheric pressure and temperature. Using this and linear regressions, we found the k_vl values for each flow rate. For one of the flow rates, the dissolved oxygen was plotted as a function of time, and the model curve agreed with the data points. Another graph made was k_vl versus flow rate. It showed that the k_vl increased as a function of flow rate, as expected. Finally, the oxygen transfer efficiency was plotted as a function of flow rate. This graph showed the OTE decreased as a function of flow rate because at higher flow rates the air bubbles are larger (smaller surface area to volume ratio) and spend less time in the reactor.
 
 ### Suggestion
-Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected
+
+Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected.
 
 ### Appendix
 ```python
@@ -125,17 +121,11 @@ plt.legend(data)
 plt.savefig('airflows')
 plt.show()
 
-#Calculate C* , what was the pressure we found that day?
-
+#Calculate C*
 P_air = 101.3*u.kPa
-
 temp = 22*u.degC
-
 C_star = epa.O2_sat(P_air,temp)
-C_star
-
-time_data
-airflows.size
+print(C_star)
 
 # number 4 is a scam and i am boycotting this question
 time_change =np.empty(23, dtype="object")
@@ -146,7 +136,6 @@ for i in range(23):
   time_change[i] = delta
 x=time_change
 x
-len(x)
 
 y_values = np.empty(23, dtype = "object")
 for j in range(23):
@@ -155,7 +144,6 @@ for j in range(23):
   y_eqn = np.log((C_star-C)/(C_star-C_initial))
   y_values[j] = y_eqn
 y = y_values
-
 
 kvl = np.empty(23, dtype="object")
 for k in range(23):
@@ -173,7 +161,6 @@ plt.ylabel(r'DO concentraion (mg/L)')
 plt.legend(['Model Curve','Data from experiment'])
 plt.savefig('OneSet.png')
 plt.show()
-
 
 data1 = np.array([100, 125, 175, 200,225,250,350,400,450,475,500,525,575,650,700,725,750,775,800,825,850,925,950])*u.mole/u.s/10**6
 #data1 = [100, 125, 175, 200,225,250,350,400,450,475,500]
