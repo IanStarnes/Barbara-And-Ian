@@ -2,22 +2,60 @@
 #### Ian Starnes and Barbara Oramah
 ##### Time Spent on Lab Report: Ian Starnes - | Barbara Oramah - 4
 
-Data Analysis
-This lab will use the power of python to streamline repetitive data analysis. Use the data from the entire class for the analysis. You can use for loops to cycle through all of the data sets.
+### Lab exploration
 
-1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.
-2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.
+1. ProCoDa switches from the “prepare to calibrate” state to the “calibrate” state when the pressure below the prerdefined threshold.
+
+2. ProCoDA switches from the “calibrate” state to the “Pause” state when the pressure in the accumulator reaches 60% of the source pressure. During the “Pause” state both valves are closed.
+
+3. The “Pause” state knows which state to go to next because the “Pause” state stops when the elapsed time in the current state (“pause” state) is greater than the calibrate to aeration lag, then the next state is set to “Aerate”.
+
+4. The equation that is used to calculate the maximum calibration pressure is (source pressure) * (max cal/ source). This equation better than using a constant for the maximum calibration pressure because our source pressure is not constant.
+
+5. ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate by using the constant “(R*T/V)” and “Delta P” ( max cal pressure – min cal pressure) to calculate the “fill time”. This variable is used along with max calibration pressure and min calibration pressure to plot the air fill model.
+
+6. The inputs to the “air valve control” are the air slope and the air flow rate.
+
+7. “Air valve control” controls the solenoid valve which controls the air flow rate in our system and the two states that use it are “aerate” and “fill accumulator”.
+
+8. Jonathan saw our program execute properly.
+
+
+### Data Analysis
+
+This lab will use the power of python to
+streamline repetitive data analysis. Use the data from the entire class for the analysis. You can use for loops to cycle through all of the data sets.
+
+
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/airflows.png?raw=true" heights=310 width=927> </p>
 
 **Figure 1** Representative subset of 5 data sets showing the dissolved oxygen vs. time
 
-3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.
-4. Estimate k̂ v,l using linear regression and equation (103) for each data set.
-5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).
-6. Plot k̂ v,l as a function of airflow rate (μmole/s).
-7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.
 
+
+
+
+
+8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
+
+As the air flow rate increases, the oxygen transfer efficiency (OTE) decreases. As the flow rate increased, it observed that the air bubbles in the system increase in size, thus reducing the surface area to volume ratio for gas transfer. Additionally, the speed of the bubbles increased. This means that the the time of each bubble spent in the reactor decreased. With this in consideration, the bubbles at a higher flow rate do not transfer o
+
+9. Propose a change to the experimental apparatus that would increase the efficiency.
+
+A change that would increase the efficiency of the experiment would be using a deeper reactor. This would allow the bubbles to stay within the reactor for a longer period of time.
+
+Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected
+
+
+### Conclusion
+
+
+
+### Suggestion
+Make sure to keep the DO probe is close to the bottom of the reactor. This will make sure that there are no air bubbles covering the DO probe which will affect the data that is collected
+
+### Appendix
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -139,7 +177,7 @@ plt.ylabel(r'k_vl (s-1)')
 plt.savefig('kvlt')
 plt.show()
 
-#Question 7\
+#Question 7
 store=kvl/u.s
 V = 0.75*u.L
 f = 0.21
@@ -161,34 +199,3 @@ plt.savefig('ote-airflow.png')
 plt.show()
 
 ```
-
-8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.
-
-As the air flow rate increases, the oxygen transfer efficiency (OTE) decreases.
-
-9. Propose a change to the experimental apparatus that would increase the efficiency.
-
-A change that c
-
-### Lab exploration
-
-1. ProCoDa switches from the “prepare to calibrate” state to the “calibrate” state when the pressure below the prerdefined threshold.
-
-2. ProCoDA switches from the “calibrate” state to the “Pause” state when the pressure in the accumulator reaches 60% of the source pressure. During the “Pause” state both valves are closed.
-
-3. The “Pause” state knows which state to go to next because the “Pause” state stops when the elapsed time in the current state (“pause” state) is greater than the calibrate to aeration lag, then the next state is set to “Aerate”.
-
-4. The equation that is used to calculate the maximum calibration pressure is (source pressure) * (max cal/ source). This equation better than using a constant for the maximum calibration pressure because our source pressure is not constant.
-
-5. ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate by using the constant “(R*T/V)” and “Delta P” ( max cal pressure – min cal pressure) to calculate the “fill time”. This variable is used along with max calibration pressure and min calibration pressure to plot the air fill model.
-
-6. The inputs to the “air valve control” are the air slope and the air flow rate.
-
-7. “Air valve control” controls the solenoid valve which controls the air flow rate in our system and the two states that use it are “aerate” and “fill accumulator”.
-
-8. Jonathan saw our program execute properly.
-
-
-### Conclusion
-
-### Suggestion
