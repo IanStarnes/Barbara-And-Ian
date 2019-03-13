@@ -95,5 +95,6 @@ Observation: test 1 we had the two pumps and then we removed the tubing that wou
 Volume of red Dye = 1000 microliters
 Diluted with 22 mL of water
 
+there are three trials of plug flow
 
-Final measured concentration = 0 mg/L (assumed there is no dye)
+Final measured concentration = 0 mg/L (ran until there is no dye)
