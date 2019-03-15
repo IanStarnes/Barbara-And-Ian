@@ -22,4 +22,5 @@ t_water = (length_column*porosity/v_a).to(u.s)
 R_adsorption = (q_0*bulk_density/(porosity*C_0))
 t_mtz = t_water*R_adsorption
 t_mtz/3600 * u.hr/u.s
+
 ```
