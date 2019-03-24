@@ -141,7 +141,7 @@ Final measured concentration = 0 mg/L (ran until there is no dye)
 6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
 
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=310 width=927> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=210 width=727> </p>
 
 **Figure 1** CMFR
 
@@ -149,15 +149,15 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/2%20baffles.png?raw=true" heights=310 width=927> </p>
 
-**Figure 1** Two Baffles
+**Figure 2** Two Baffles
 
 For the experiment with two baffles, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=310 width=927> </p>
 
-**Figure 2** Four Baffles
+**Figure 3** Four Baffles
 
-For the experiment with four baffles, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model.
+For the experiment with four baffles, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the AD model. This is seen
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_noholes.png?raw=true" heights=310 width=927> </p>
