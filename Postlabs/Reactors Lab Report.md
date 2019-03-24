@@ -12,67 +12,53 @@
 - [Data Analysis](#Data-analysis)
 - [Conclusion](#Conclusion)
 - [Suggestions](#Suggestions)
-- [References](#References)
 - [Appendix](#Appendix)
 
 #### Introduction
 
-Reactors can be found in chemical, biological and physical processes all around the environment. Reactors are defined by a real or imaginary boundaries, such as a lake or a section of a river respectively.
-There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model and plug flow reactor (PFR) model.  In this lab, the set-up for the experiment modelled both a CMFR and PFR.
+Reactors can be found in chemical, biological and physical processes all around the environment. Reactors can be defined by as real or imaginary boundaries and closed and open, such as a lake or a section of a river respectively.
+
+There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. The reactors can be
 
 #### Objective
-The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model.
+The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align.
 
 #### Procedure
 The detailed procedure for the lab can be found [here](https://monroews.github.io/EnvEngLabTextbook/Reactor_Characteristics/Reactor_Characteristics.html#procedures)
 
-[For your description of exactly what you did it would be best to add the details of what the actual masses and volumes were that you used.]: #
-Following the lab procedure, we ran 6 different reactor experiments.
+Following the cited lab procedure, we ran 6 different reactor experiments over a span of 2 lab sessions.
 
-From test 1 to test 5, all the experiments use a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
+From test 1 to test 5, all the experiments used a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
-Test 6 is where the experiment is modelled as a PFR. The length  of the tubing was 12.5 ft and the inner diameter 0.03125 ft. Thus the volume is calculated to be 0.000271 m3. We used a flow rate of ____.
+Test 6 is where the experiment is modelled as a PFR. The length  of the tubing was 12.5 ft and the inner diameter 0.03125 ft. Thus the volume is calculated to be 0.000271 m3. The flow rate was also at 380 mL/min.
 
 
 ###### Test 1: CMFR with no baffles
-Test 1, the reactor is modelled as a CMFR with a stirrer in the center  on high speed.
-
+Test 1, the reactor is modelled as a CMFR with a stirrer in the center on a high speed.
 
 Red dye concentration = 25.8 mg/L
 Volume of red dye = 765 microliters
 
 
-Mass of water remaining: 2537 g
-Bucket alone = 560g
-Bucket with water = 3097g
 
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
 Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles.
 
-- opposing sides of the reactor
-- funky data cut it at around 4:25 pm
 
 
 Red dye concentration = 13 mg/L (from 100 g/L of red dye)
 volume of red dye =  400 microliters
 
 
-Bucket alone = 492g
-Bucket with water = 3075g
-
-3/13
-Note to self: remember to turn on photometer so you can read your data
 
 ###### Test 3: 4 baffles with 2 holes of 7.74 mm diameter (taped)
 
-Test 3 has the same set up as test 2 however this experiment used 4 baffles as opposed to 2.
+Test 3 has the same set up as test 2 however this experiment used 4 baffles as opposed to 2. The red dye that was added however had a concentration of 10g/L and we added the tracer volume of 800 microliters.
 
 Red dye concentration used = 10 g/L
 Volume of red Dye = 800 microliters
 
-Bucket alone =  557 g
-Bucket with water = 3139 g
 
 Final measured concentration = -1.02 mg/L
 
@@ -84,8 +70,7 @@ Observations: There are some dead zones in this test. The dye is not completely 
 Red dye concentration used = 10 g/L
 Volume of red Dye = 800 microliters
 
-Bucket alone =  557 g
-Bucket with water = 3099 g
+
 
 Final measured concentration =  -1.08 mg/L
 
@@ -99,8 +84,7 @@ Observations: we observed some side slip through the edges of the baffles becaus
 Red dye conc used = 10 g/L
 Volume of red Dye = 800 microliters
 
-Bucket alone =  557 g
-Bucket with water = 2985 g
+
 
 Final measured concentration = -0.3 mg/L
 
@@ -151,22 +135,26 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 
 **Figure 2** Two Baffles
 
-For the experiment with two baffles, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
+For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
 **Figure 3** Four Baffles
 
-For the experiment with four baffles, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the AD model. The CMFR model expected the dye to leave the reactor more quickly that it did.
+For the experiment with four baffles with alternating orientation, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled well by both the CMFR and AD model. However, the CMFR model expected the dye to leave the reactor slightly more quickly that it did.
 
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_noholes.png?raw=true" heights=110 width=427> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_no_holes.png?raw=true" heights=110 width=427> </p>
 
 **Figure 4** Four Baffles with no holes
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/seven_baffle.png?raw=true" heights=110 width=427> </p>
+For this experiment four different baffles were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
 **Figure 5** Seven Baffles
+
+In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
 
 #### Conclusion
 #### Suggestions
@@ -348,8 +336,8 @@ plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'g'
 #plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
 plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
-plt.legend(['Measured dye No holes','CMFR Model q', 'AD Model q','Measured dye Holes','CMFR Model 2', 'AD Model 2'])
-plt.savefig('four_baffle_noholes.png', bbox_inches = 'tight')
+plt.legend(['Measured dye No holes','CMFR Model', 'AD Model' ])
+plt.savefig('four_baffle_no_holes.png', bbox_inches = 'tight')
 plt.show()
 
 
@@ -393,11 +381,34 @@ plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model,'g')
 #plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'k')
 #plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'m')
 #plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'b')
+
 plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
-plt.legend(['Measured dye seven baffles','CMFR Model q', 'AD Model q','Measured dye Holes','CMFR Model 2', 'AD Model 2','Measured dye No holes','CMFR Model q', 'AD Model q'])
-plt.savefig('seven_baffle.png', bbox_inches = 'tight')
+plt.legend(['Measured dye seven baffles','CMFR Model ', 'AD Model'])
+plt.savefig('sevenbaffle.png', bbox_inches = 'tight')
 plt.show()
+
+
+
+plt.plot(CMFR_time_data.to(u.s), CMFR_CMFR_model,'')
+plt.plot(one_baffle_time_data.to(u.s), one_baffle_CMFR_model*1.91,'')
+plt.xlabel(r'$time (seconds)$')
+plt.ylabel(r'Normailized Concentration $\left ( \frac{mg}{L} \right )$')
+plt.legend(['CMFR - CFMR model', 'Two Baffles - CMFR model'])
+plt.savefig('Total.png', bbox_inches = 'tight')
+plt.show()
+
+
+plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model*9,56,'')
+plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model*9.56, color='orange')
+plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model*9.56, color = 'red')
+
+plt.xlabel(r'$time (seconds)$')
+plt.ylabel(r'Normailized Concentration $\left ( \frac{mg}{L} \right )$')
+plt.legend(['Four Baffles - AD model', 'Four Baffles No Holes - AD model', 'Seven Random Baffles - AD model'])
+plt.savefig('Total2.png', bbox_inches = 'tight')
+plt.show()
+
 
 pfr3_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/pfr%203.txt'
 pfr3_firstrow = 1
