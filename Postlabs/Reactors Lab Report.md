@@ -21,7 +21,8 @@ Reactors can be found in chemical, biological and physical processes all around 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model and plug flow reactor (PFR) model.  In this lab, the set-up for the experiment modelled both a CMFR and PFR.
 
 #### Objective
-The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with
+The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model.
+
 #### Procedure
 The detailed procedure for the lab can be found [here](https://monroews.github.io/EnvEngLabTextbook/Reactor_Characteristics/Reactor_Characteristics.html#procedures)
 
@@ -30,19 +31,9 @@ Following the lab procedure, we ran 6 different reactor experiments.
 
 From test 1 to test 5, all the experiments use a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
-Test 6 is where the experiment is modelled as a PFR. The length
-0.000271 m3
+Test 6 is where the experiment is modelled as a PFR. The length  of the tubing was 12.5 ft and the inner diameter 0.03125 ft. Thus the volume is calculated to be 0.000271 m3. We used a flow rate of ____.
 
 
-
-```Python
-from math import pi
-from aguaclara.core.units import unit_registry as u
-length = 12.5*u.ft
-ID = 0.03125*u.ft
-pfr3_V = length*(pi*(ID)**2)/4
-pfr3_V.to(u.L)
-```
 ###### Test 1: CMFR with no baffles
 Test 1, the reactor is modelled as a CMFR with a stirrer in the center  on high speed.
 
@@ -57,6 +48,8 @@ Bucket with water = 3097g
 
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
+Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles.
+
 - opposing sides of the reactor
 - funky data cut it at around 4:25 pm
 
@@ -70,8 +63,10 @@ Bucket with water = 3075g
 
 3/13
 Note to self: remember to turn on photometer so you can read your data
+
 ###### Test 3: 4 baffles with 2 holes of 7.74 mm diameter (taped)
 
+Test 3 has the same set up as test 2 however this experiment used 4 baffles as opposed to 2.
 
 Red dye concentration used = 10 g/L
 Volume of red Dye = 800 microliters
@@ -82,6 +77,8 @@ Bucket with water = 3139 g
 Final measured concentration = -1.02 mg/L
 
 ###### Test 4: 4 baffles no hole, 14 cm in length and the reactor is 15.3 cm )taped
+
+
 
 Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
 
