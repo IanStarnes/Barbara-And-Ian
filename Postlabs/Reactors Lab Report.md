@@ -28,14 +28,28 @@ The detailed procedure for the lab can be found [here](https://monroews.github.i
 [For your description of exactly what you did it would be best to add the details of what the actual masses and volumes were that you used.]: #
 Following the lab procedure, we ran 6 different reactor experiments.
 
-###### Test 1: CMFR with no baffles
-just a stirrer on high speed
+From test 1 to test 5, all the experiments use a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
-Reactor Volume = 0.00254 m3
+Test 6 is where the experiment is modelled as a PFR. The length
+0.000271 m3
+
+
+
+```Python
+from math import pi
+from aguaclara.core.units import unit_registry as u
+length = 12.5*u.ft
+ID = 0.03125*u.ft
+pfr3_V = length*(pi*(ID)**2)/4
+pfr3_V.to(u.L)
+```
+###### Test 1: CMFR with no baffles
+Test 1, the reactor is modelled as a CMFR with a stirrer in the center  on high speed.
+
+
 Red dye concentration = 25.8 mg/L
 Volume of red dye = 765 microliters
-Flow rate =  380 ml/min
-(100 RPM)
+
 
 Mass of water remaining: 2537 g
 Bucket alone = 560g
@@ -46,10 +60,10 @@ Bucket with water = 3097g
 - opposing sides of the reactor
 - funky data cut it at around 4:25 pm
 
-Reactor Volume = 0.00254 m3
+
 Red dye concentration = 13 mg/L (from 100 g/L of red dye)
 volume of red dye =  400 microliters
-Flow rate = 380 mL/min
+
 
 Bucket alone = 492g
 Bucket with water = 3075g
@@ -58,7 +72,7 @@ Bucket with water = 3075g
 Note to self: remember to turn on photometer so you can read your data
 ###### Test 3: 4 baffles with 2 holes of 7.74 mm diameter (taped)
 
-Reactor Volume = 0.00254 m3
+
 Red dye concentration used = 10 g/L
 Volume of red Dye = 800 microliters
 
@@ -71,7 +85,7 @@ Final measured concentration = -1.02 mg/L
 
 Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
 
-Reactor Volume = 0.00254 m3
+
 Red dye concentration used = 10 g/L
 Volume of red Dye = 800 microliters
 
@@ -87,7 +101,6 @@ baffles vary in different number of holes and diameters
 
 Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
 
-Reactor Volume = 0.00254 m3
 Red dye conc used = 10 g/L
 Volume of red Dye = 800 microliters
 
@@ -110,6 +123,8 @@ Observation: test 1 we had the two pumps and then we removed the tubing that wou
 
 Volume of red Dye = 1000 microliters
 Diluted with 22 mL of water
+
+flow rate?? assuming it was the same
 
 there are three trials of plug flow
 
@@ -141,7 +156,7 @@ import aguaclara.research.environmental_processes_analysis as epa
 import aguaclara.core.utility as ut
 import numpy as np
 import matplotlib.pyplot as plt
-import math  
+from math import pi
 
 
 CMFR_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/30mgL_CMFR.tsv'
@@ -370,8 +385,9 @@ pfr3_concentration_data = epa.column_of_data(pfr3_path,pfr3_firstrow,1,-1,'mg/L'
 
 pfr3_concentration_data = pfr3_concentration_data - pfr3_concentration_data[0]
 length = 12.5*u.ft
-ID = 3/8*u.inch
-pfr3_V = length*(3.1415*(ID)**2)/4*u.L
+ID = 0.03125*u.ft
+pfr3_V = length*(pi*(ID)**2)/4
+pfr3_V.to(u.L)
 pfr3_V
 pfr3_Q = 380 * u.mL/u.min
 pfr3_theta_hydraulic = (four_baffle_V/four_baffle_Q).to(u.s)
