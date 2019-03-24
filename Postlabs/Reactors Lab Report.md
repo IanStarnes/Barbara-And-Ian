@@ -1,7 +1,7 @@
 # Reactor Characteristics
 #### Ian Starnes and Barbara Oramah
 ##### Lab 5 Report, Group 6
-##### Time (hr) Spent on Lab Report: Ian Starnes - 4  | Barbara Oramah - 4
+##### Time (hr) Spent on Lab Report: Ian Starnes - 6  | Barbara Oramah - 6
 
 
 ### Table of Contents
@@ -34,9 +34,9 @@ Test 6 is where the experiment is modelled as a PFR. The length  of the tubing w
 
 
 ###### Test 1: CMFR with no baffles
-Test 1, the reactor is modelled as a CMFR with a stirrer in the center on a high speed.
+Test 1, the reactor is modelled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
 
-Red dye concentration = 25.8 mg/L
+Red dye concentration = 100 g/L
 Volume of red dye = 765 microliters
 
 
@@ -44,6 +44,8 @@ Volume of red dye = 765 microliters
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
 Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles.
+
+The concentration for the tracer is 100 g/L and the volume added was 400 microliters.
 
 
 
@@ -120,6 +122,8 @@ Final measured concentration = 0 mg/L (ran until there is no dye)
 
 4. Report the values of t⋆ at F = 0.1 for each of your experiments. Do they meet your expectations?
 
+The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆
+
 5. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
 
 6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
@@ -157,7 +161,9 @@ For this experiment four different baffles were used. These baffles forced the f
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
 
 #### Conclusion
+
 #### Suggestions
+
 #### References
 
 #### Appendix
