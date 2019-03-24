@@ -78,8 +78,6 @@ Final measured concentration = -1.02 mg/L
 
 ###### Test 4: 4 baffles no hole, 14 cm in length and the reactor is 15.3 cm )taped
 
-
-
 Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
 
 
@@ -142,6 +140,34 @@ Final measured concentration = 0 mg/L (ran until there is no dye)
 
 6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
 
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=310 width=927> </p>
+
+**Figure 1** CMFR
+
+The CMFR model almost perfectly agrees with the measured dye effluent concentration as expected.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/2%20baffles.png?raw=true" heights=310 width=927> </p>
+
+**Figure 1** Two Baffles
+
+For the experiment with two baffles, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=310 width=927> </p>
+
+**Figure 2** Four Baffles
+
+For the experiment with four baffles, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model.
+
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_noholes.png?raw=true" heights=310 width=927> </p>
+
+**Figure 4** Four Baffles with no holes
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/seven_baffle.png?raw=true" heights=310 width=927> </p>
+
+**Figure 5** Seven Baffles
+
 #### Conclusion
 #### Suggestions
 #### References
@@ -178,7 +204,7 @@ print('The tracer residence time was',ut.round_sf(CMFR_CMFR.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(CMFR_CMFR.theta/CMFR_theta_hydraulic).magnitude)
 
 CMFR_CMFR_model = CMFR_CMFR.C_bar * epa.E_CMFR_N(CMFR_time_data/CMFR_CMFR.theta,CMFR_CMFR.N)
-plt.plot(CMFR_time_data.to(u.min), CMFR_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_time_data.to(u.min), CMFR_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(CMFR_time_data.to(u.min), CMFR_CMFR_model,'b')
 
 plt.xlabel(r'$time (min)$')
@@ -225,16 +251,14 @@ print('The ratio of tracer to hydraulic residence time was',(one_baffle_AD.theta
 one_baffle_AD_model = (one_baffle_AD.C_bar*epa.E_Advective_Dispersion((one_baffle_time_data/one_baffle_AD.theta).to_base_units(), one_baffle_AD.Pe)).to(u.mg/u.L)
 
 
-plt.plot(one_baffle_time_data.to(u.s), one_baffle_concentration_data.to(u.mg/u.L),'r')
+plt.plot(one_baffle_time_data.to(u.s), one_baffle_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(one_baffle_time_data.to(u.s), one_baffle_CMFR_model,'b')
 plt.plot(one_baffle_time_data.to(u.s), one_baffle_AD_model,'g')
-plt.xlabel(r'$time (min)$')
+plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
-plt.savefig('2_baffles.png', bbox_inches = 'tight')
+plt.savefig('2 baffles.png', bbox_inches = 'tight')
 plt.show()
-
-
 
 
 four_baffle_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/4%20BAFFLES.txt'
@@ -271,10 +295,10 @@ print('The ratio of tracer to hydraulic residence time was',(four_baffle_AD.thet
 four_baffle_AD_model = (four_baffle_AD.C_bar*epa.E_Advective_Dispersion((four_baffle_time_data/four_baffle_AD.theta).to_base_units(), four_baffle_AD.Pe)).to(u.mg/u.L)
 
 
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'r')
+plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
 plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'g')
-plt.xlabel(r'$time (min)$')
+plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('four_baffles.png', bbox_inches = 'tight')
@@ -316,13 +340,13 @@ print('The ratio of tracer to hydraulic residence time was',(four_baffle_noholes
 four_baffle_noholes_AD_model = (four_baffle_noholes_AD.C_bar*epa.E_Advective_Dispersion((four_baffle_noholes_time_data/four_baffle_noholes_AD.theta).to_base_units(), four_baffle_noholes_AD.Pe)).to(u.mg/u.L)
 
 
-plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'r')
+plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'b')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'g')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
-plt.xlabel(r'$time (min)$')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c.')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
+plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye No holes','CMFR Model q', 'AD Model q','Measured dye Holes','CMFR Model 2', 'AD Model 2'])
 plt.savefig('four_baffle_noholes.png', bbox_inches = 'tight')
@@ -360,16 +384,16 @@ print('The ratio of tracer to hydraulic residence time was',(seven_baffle_AD.the
 
 seven_baffle_AD_model = (seven_baffle_AD.C_bar*epa.E_Advective_Dispersion((seven_baffle_time_data/seven_baffle_AD.theta).to_base_units(), seven_baffle_AD.Pe)).to(u.mg/u.L)
 
-plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_concentration_data.to(u.mg/u.L),'r')
+plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_CMFR_model,'b')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model,'g')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
-plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'k')
-plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'m')
-plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'b')
-plt.xlabel(r'$time (min)$')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
+#plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
+#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'k')
+#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'m')
+#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'b')
+plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye seven baffles','CMFR Model q', 'AD Model q','Measured dye Holes','CMFR Model 2', 'AD Model 2','Measured dye No holes','CMFR Model q', 'AD Model q'])
 plt.savefig('seven_baffle.png', bbox_inches = 'tight')
@@ -378,16 +402,17 @@ plt.show()
 pfr3_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/pfr%203.txt'
 pfr3_firstrow = 1
 pfr3_time_data = (epa.column_of_time(pfr3_path,pfr3_firstrow,-1)).to(u.s)
+pfr3_time_data
 pfr3_concentration_data = epa.column_of_data(pfr3_path,pfr3_firstrow,1,-1,'mg/L')
+pfr3_concentration_data
 
 pfr3_concentration_data = pfr3_concentration_data - pfr3_concentration_data[0]
 length = 12.5*u.ft
 ID = 0.03125*u.ft
 pfr3_V = length*(pi*(ID)**2)/4
 pfr3_V.to(u.L)
-pfr3_V
 pfr3_Q = 380 * u.mL/u.min
-pfr3_theta_hydraulic = (four_baffle_V/four_baffle_Q).to(u.s)
+pfr3_theta_hydraulic = (pfr3_V/pfr3_Q).to(u.s)
 pfr3_C_bar_guess = np.max(pfr3_concentration_data)/2
 
 pfr3_CMFR = epa.Solver_CMFR_N(pfr3_time_data, pfr3_concentration_data, pfr3_theta_hydraulic, pfr3_C_bar_guess)
