@@ -36,11 +36,6 @@ Test 6 is where the experiment is modelled as a PFR. The length  of the tubing w
 ###### Test 1: CMFR with no baffles
 Test 1, the reactor is modelled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
 
-Red dye concentration = 100 g/L
-Volume of red dye = 765 microliters
-
-
-
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
 Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles.
@@ -48,51 +43,26 @@ Test 2 is a reactor where we used 2 baffles that was taped around the edges with
 The concentration for the tracer is 100 g/L and the volume added was 400 microliters.
 
 
-
-Red dye concentration = 13 mg/L (from 100 g/L of red dye)
-volume of red dye =  400 microliters
-
-
-
 ###### Test 3: 4 baffles with 2 holes of 7.74 mm diameter (taped)
 
 Test 3 has the same set up as test 2 however this experiment used 4 baffles as opposed to 2. The red dye that was added however had a concentration of 10g/L and we added the tracer volume of 800 microliters.
 
-Red dye concentration used = 10 g/L
-Volume of red Dye = 800 microliters
+###### Test 4: 4 baffles no hole
 
+Test 4 used 4 baffles that had no holes and were 14 cm in width. The reactor has a width of 15.3 cm, therefore was 1.3 cm of space. The baffles were placed on alternating sides of the reactor and were taped with the Gorilla Glue Tape.
 
-Final measured concentration = -1.02 mg/L
-
-###### Test 4: 4 baffles no hole, 14 cm in length and the reactor is 15.3 cm )taped
-
-Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
-
-
-Red dye concentration used = 10 g/L
-Volume of red Dye = 800 microliters
-
-
-
-Final measured concentration =  -1.08 mg/L
+The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
 
 ###### Test 5: 7 random baffles but evenly spaced (no tape)
-baffles vary in different number of holes and diameters
 
+Test 5 consisted of seven baffles that varied in different number of holes and diameters. They were evenly spaced within the reactor and were not taped down.
 
-Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
-
-Red dye conc used = 10 g/L
-Volume of red Dye = 800 microliters
-
-
-
-Final measured concentration = -0.3 mg/L
+The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
 ###### Test 6: Plug Flow
 
-Observations:
+
 
 length = 12.5 ft
 ID = 3/8th inch
@@ -154,11 +124,16 @@ For the experiment with four baffles with alternating orientation, again with 2 
 
 For this experiment four different baffles were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
 
+Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
+
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
 **Figure 5** Seven Baffles
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
+
+Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
+
 
 #### Conclusion
 
