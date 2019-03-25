@@ -16,12 +16,12 @@
 
 #### Introduction
 
-Reactors can be found in chemical, biological and physical processes all around the environment. Reactors can be defined by as real or imaginary boundaries and closed and open, such as a lake or a section of a river respectively.
+Reactors can be found in chemical, biological and physical processes all around the environment. Reactors can be defined by as real or imaginary boundaries and closed and open, such as a lake or a section of a river, respectively.
 
-There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. The reactors can be
+There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
 #### Objective
-The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align.
+The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align. The analysis of this data will help in designing a chlorine contact tank which should optimize the contact time between the chlorine and any pathogens in the water.
 
 #### Procedure
 The detailed procedure for the lab can be found [here](https://monroews.github.io/EnvEngLabTextbook/Reactor_Characteristics/Reactor_Characteristics.html#procedures)
@@ -30,11 +30,9 @@ Following the cited lab procedure, we ran 6 different reactor experiments over a
 
 From test 1 to test 5, all the experiments used a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
-Test 6 is where the experiment is modelled as a PFR. The length  of the tubing was 12.5 ft and the inner diameter 0.03125 ft. Thus the volume is calculated to be 0.000271 m3. The flow rate was also at 380 mL/min.
-
 
 ###### Test 1: CMFR with no baffles
-Test 1, the reactor is modelled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
+Test 1, the reactor is modeled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
 
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
@@ -60,26 +58,6 @@ Test 5 consisted of seven baffles that varied in different number of holes and d
 
 The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
-###### Test 6: Plug Flow
-
-
-
-length = 12.5 ft
-ID = 3/8th inch
-
-Reactor Volume = m3
-Red dye conc used = 10 g/L
-
-Observation: test 1 we had the two pumps and then we removed the tubing that would pump in the influent.
-
-Volume of red Dye = 1000 microliters
-Diluted with 22 mL of water
-
-flow rate?? assuming it was the same
-
-there are three trials of plug flow
-
-Final measured concentration = 0 mg/L (ran until there is no dye)
 
 #### Data Analysis
 
@@ -152,14 +130,19 @@ Observations: we observed some side slip through the edges of the baffles becaus
 #### References
 
 #### Appendix
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
 import aguaclara.core.utility as ut
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 from math import pi
+from scipy import integrate
+from sklearn import preprocessing
 
+# CMFR Test 1
 
 CMFR_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/30mgL_CMFR.tsv'
 
@@ -171,16 +154,30 @@ CMFR_concentration_data = epa.column_of_data(CMFR_path,CMFR_firstrow,1,-1,'mg/L'
 CMFR_V = 2.54*u.L
 CMFR_Q = 380 * u.mL/u.min
 
-
 CMFR_theta_hydraulic = (CMFR_V/CMFR_Q).to(u.s)
 CMFR_C_bar_guess = np.max(CMFR_concentration_data)
 
 CMFR_CMFR = epa.Solver_CMFR_N(CMFR_time_data, CMFR_concentration_data, CMFR_theta_hydraulic, CMFR_C_bar_guess)
 
+CMFR_tr=100 * u.g/u.L
+CMFR_vtr=0.000765 * u.L
+t_star_CMFR = CMFR_time_data/CMFR_theta_hydraulic
+CMFR_E = ((CMFR_concentration_data*CMFR_V)/(CMFR_CMFR.C_bar))
+CMFR_F = integrate.cumtrapz(CMFR_E,t_star_CMFR, initial=0)
+CMFR_F = CMFR_F/CMFR_F[len(CMFR_F)-1]
+i=0
+j=0
+while j==0:
+  if CMFR_F[i] > 0.1 :
+    j=i
+  i+=1
+CMFR_time_0_1=t_star_CMFR[j]
+
 print('The model estimated mass of tracer injected was',ut.round_sf(CMFR_CMFR.C_bar*CMFR_V ,2) )
 print('The model estimate of the number of reactors in series was', CMFR_CMFR.N)
 print('The tracer residence time was',ut.round_sf(CMFR_CMFR.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(CMFR_CMFR.theta/CMFR_theta_hydraulic).magnitude)
+print('The value of t_star at F=0.1 was ',ut.round_sf(CMFR_time_0_1,2))
 
 CMFR_CMFR_model = CMFR_CMFR.C_bar * epa.E_CMFR_N(CMFR_time_data/CMFR_CMFR.theta,CMFR_CMFR.N)
 plt.plot(CMFR_time_data.to(u.min), CMFR_concentration_data.to(u.mg/u.L),'r.')
@@ -192,7 +189,7 @@ plt.legend(['Measured dye','CMFR Model'])
 plt.savefig('CMFR.png', bbox_inches = 'tight')
 plt.show()
 
-
+# 2 Baffles Holes on Alternating Sides - Test 2
 
 one_baffle_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/2%20BAFFLES_CMFR.xls'
 
@@ -221,10 +218,25 @@ one_baffle_AD.C_bar
 one_baffle_AD.Pe
 one_baffle_AD.theta
 
+one_baffle_tr= 100 * u.g/u.L
+one_baffle_vtr=0.000765 * u.L
+t_star_one_baffle = one_baffle_time_data/one_baffle_theta_hydraulic
+one_baffle_E = ((one_baffle_concentration_data*one_baffle_V)/(one_baffle_CMFR.C_bar))
+one_baffle_F = integrate.cumtrapz(one_baffle_E,t_star_one_baffle, initial=0)
+one_baffle_F = one_baffle_F/one_baffle_F[len(one_baffle_F)-1]
+i=0
+j=0
+while j==0:
+  if one_baffle_F[i] > 0.1 :
+    j=i
+  i+=1
+one_baffle_time_0_1=t_star_one_baffle[j]
+
 print('The model estimated mass of tracer injected was',ut.round_sf(one_baffle_AD.C_bar*one_baffle_V ,2) )
 print('The model estimate of the Peclet number was', one_baffle_AD.Pe)
 print('The tracer residence time was',ut.round_sf(one_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(one_baffle_AD.theta/one_baffle_theta_hydraulic).magnitude)
+print('The value of t_star at F=0.1 was ',ut.round_sf(one_baffle_time_0_1,2))
 
 
 one_baffle_AD_model = (one_baffle_AD.C_bar*epa.E_Advective_Dispersion((one_baffle_time_data/one_baffle_AD.theta).to_base_units(), one_baffle_AD.Pe)).to(u.mg/u.L)
@@ -239,13 +251,12 @@ plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('2 baffles.png', bbox_inches = 'tight')
 plt.show()
 
+# 4 Baffles hole on alternating sides - Test 3
 
 four_baffle_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/4%20BAFFLES.txt'
 four_baffle_firstrow = 1
 four_baffle_time_data = (epa.column_of_time(four_baffle_path,four_baffle_firstrow,-1)).to(u.s)
 four_baffle_concentration_data = epa.column_of_data(four_baffle_path,four_baffle_firstrow,1,-1,'mg/L')
-four_baffle_concentration_data
-
 
 four_baffle_concentration_data = four_baffle_concentration_data - four_baffle_concentration_data[0]
 four_baffle_V = 2.54*u.L
@@ -258,7 +269,6 @@ four_baffle_CMFR.C_bar
 four_baffle_CMFR.N
 four_baffle_CMFR.theta.to(u.s)
 
-
 four_baffle_CMFR_model = (four_baffle_CMFR.C_bar*epa.E_CMFR_N(four_baffle_time_data/four_baffle_CMFR.theta, four_baffle_CMFR.N)).to(u.mg/u.L)
 
 four_baffle_AD = epa.Solver_AD_Pe(four_baffle_time_data, four_baffle_concentration_data, four_baffle_theta_hydraulic, four_baffle_C_bar_guess)
@@ -266,10 +276,25 @@ four_baffle_AD.C_bar
 four_baffle_AD.Pe
 four_baffle_AD.theta
 
+four_baffle_tr=100 * u.g/u.L
+four_baffle_vtr=0.000765 * u.L
+t_star_four_baffle = four_baffle_time_data/four_baffle_theta_hydraulic
+four_baffle_E = ((four_baffle_concentration_data*four_baffle_V)/(four_baffle_CMFR.C_bar))
+four_baffle_F = integrate.cumtrapz(four_baffle_E,t_star_four_baffle, initial=0)
+four_baffle_F = four_baffle_F/four_baffle_F[len(four_baffle_F)-1]
+i=0
+j=0
+while j==0:
+  if four_baffle_F[i] > 0.1 :
+    j=i
+  i+=1
+four_baffle_time_0_1=t_star_four_baffle[j]
+
 print('The model estimated mass of tracer injected was',ut.round_sf(four_baffle_AD.C_bar*four_baffle_V ,2) )
 print('The model estimate of the Peclet number was', four_baffle_AD.Pe)
 print('The tracer residence time was',ut.round_sf(four_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(four_baffle_AD.theta/four_baffle_theta_hydraulic).magnitude)
+print('The value of t_star at F=0.1 was ',ut.round_sf(four_baffle_time_0_1,2))
 
 four_baffle_AD_model = (four_baffle_AD.C_bar*epa.E_Advective_Dispersion((four_baffle_time_data/four_baffle_AD.theta).to_base_units(), four_baffle_AD.Pe)).to(u.mg/u.L)
 
@@ -283,12 +308,12 @@ plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('four_baffles.png', bbox_inches = 'tight')
 plt.show()
 
+# 4 Baffles no holes gap on alternating sides - Test 4
 
 four_baffle_noholes_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/4%20baffles%20no%20holes.txt'
 four_baffle_noholes_firstrow = 1
 four_baffle_noholes_time_data = (epa.column_of_time(four_baffle_noholes_path,four_baffle_noholes_firstrow,-1)).to(u.s)
 four_baffle_noholes_concentration_data = epa.column_of_data(four_baffle_noholes_path,four_baffle_noholes_firstrow,1,-1,'mg/L')
-four_baffle_noholes_concentration_data
 
 
 four_baffle_noholes_concentration_data = four_baffle_noholes_concentration_data - four_baffle_noholes_concentration_data[0]
@@ -310,11 +335,25 @@ four_baffle_noholes_AD.C_bar
 four_baffle_noholes_AD.Pe
 four_baffle_noholes_AD.theta
 
+four_baffle_noholes_tr=100 * u.g/u.L
+four_baffle_noholes_vtr=0.000765 * u.L
+t_star_four_baffle_noholes = four_baffle_noholes_time_data/four_baffle_noholes_theta_hydraulic
+four_baffle_noholes_E = ((four_baffle_noholes_concentration_data*four_baffle_noholes_V)/(four_baffle_noholes_CMFR.C_bar))
+four_baffle_noholes_F = integrate.cumtrapz(four_baffle_noholes_E,t_star_four_baffle_noholes, initial=0)
+four_baffle_noholes_F = four_baffle_noholes_F/four_baffle_noholes_F[len(four_baffle_noholes_F)-1]
+i=0
+j=0
+while j==0:
+  if four_baffle_noholes_F[i] > 0.1 :
+    j=i
+  i+=1
+four_baffle_noholes_time_0_1=t_star_four_baffle_noholes[j]
+
 print('The model estimated mass of tracer injected was',ut.round_sf(four_baffle_noholes_AD.C_bar*four_baffle_noholes_V ,2) )
 print('The model estimate of the Peclet number was', four_baffle_noholes_AD.Pe)
 print('The tracer residence time was',ut.round_sf(four_baffle_noholes_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(four_baffle_noholes_AD.theta/four_baffle_noholes_theta_hydraulic).magnitude)
-
+print('The value of t_star at F=0.1 was ',ut.round_sf(four_baffle_noholes_time_0_1,2))
 
 four_baffle_noholes_AD_model = (four_baffle_noholes_AD.C_bar*epa.E_Advective_Dispersion((four_baffle_noholes_time_data/four_baffle_noholes_AD.theta).to_base_units(), four_baffle_noholes_AD.Pe)).to(u.mg/u.L)
 
@@ -322,21 +361,18 @@ four_baffle_noholes_AD_model = (four_baffle_noholes_AD.C_bar*epa.E_Advective_Dis
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'b')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'g')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c.')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
 plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye No holes','CMFR Model', 'AD Model' ])
 plt.savefig('four_baffle_no_holes.png', bbox_inches = 'tight')
 plt.show()
 
+# 7 Baffles of random baffles - Test 5
 
 seven_baffle_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/7%20baffles.txt'
 seven_baffle_firstrow = 1
 seven_baffle_time_data = (epa.column_of_time(seven_baffle_path,seven_baffle_firstrow,-1)).to(u.s)
 seven_baffle_concentration_data = epa.column_of_data(seven_baffle_path,seven_baffle_firstrow,1,-1,'mg/L')
-seven_baffle_concentration_data
 
 seven_baffle_concentration_data = seven_baffle_concentration_data - seven_baffle_concentration_data[0]
 seven_baffle_V = 2.54*u.L
@@ -356,30 +392,38 @@ seven_baffle_AD.C_bar
 seven_baffle_AD.Pe
 seven_baffle_AD.theta
 
+seven_baffle_tr=100 * u.g/u.L
+seven_baffle_vtr=0.000765 * u.L
+t_star_seven_baffle = seven_baffle_time_data/seven_baffle_theta_hydraulic
+seven_baffle_E = ((seven_baffle_concentration_data*seven_baffle_V)/(seven_baffle_CMFR.C_bar))
+seven_baffle_F = integrate.cumtrapz(seven_baffle_E,t_star_seven_baffle, initial=0)
+seven_baffle_F = seven_baffle_F/seven_baffle_F[len(seven_baffle_F)-1]
+i=0
+j=0
+while j==0:
+  if seven_baffle_F[i] > 0.1 :
+    j=i
+  i+=1
+seven_baffle_time_0_1=t_star_seven_baffle[j]
+
 print('The model estimated mass of tracer injected was',ut.round_sf(seven_baffle_AD.C_bar*seven_baffle_V ,2) )
 print('The model estimate of the Peclet number was', seven_baffle_AD.Pe)
 print('The tracer residence time was',ut.round_sf(seven_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(seven_baffle_AD.theta/seven_baffle_theta_hydraulic).magnitude)
+print('The value of t_star at F=0.1 was ',ut.round_sf(seven_baffle_time_0_1,2))
 
 seven_baffle_AD_model = (seven_baffle_AD.C_bar*epa.E_Advective_Dispersion((seven_baffle_time_data/seven_baffle_AD.theta).to_base_units(), seven_baffle_AD.Pe)).to(u.mg/u.L)
 
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_concentration_data.to(u.mg/u.L),'r.')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_CMFR_model,'b')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model,'g')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
-#plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
-#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_concentration_data.to(u.mg/u.L),'k')
-#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_CMFR_model,'m')
-#plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model,'b')
-
 plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye seven baffles','CMFR Model ', 'AD Model'])
 plt.savefig('sevenbaffle.png', bbox_inches = 'tight')
 plt.show()
 
-
+# Plot comparing CMFR to Two baffles with normalized concentrations
 
 plt.plot(CMFR_time_data.to(u.s), CMFR_CMFR_model,'')
 plt.plot(one_baffle_time_data.to(u.s), one_baffle_CMFR_model*1.91,'')
@@ -389,62 +433,15 @@ plt.legend(['CMFR - CFMR model', 'Two Baffles - CMFR model'])
 plt.savefig('Total.png', bbox_inches = 'tight')
 plt.show()
 
+# Plot comparing 4 baffles, 4 baffles no holes, and 7 baffles
 
 plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model*9,56,'')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model*9.56, color='orange')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model*9.56, color = 'red')
-
 plt.xlabel(r'$time (seconds)$')
 plt.ylabel(r'Normailized Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Four Baffles - AD model', 'Four Baffles No Holes - AD model', 'Seven Random Baffles - AD model'])
 plt.savefig('Total2.png', bbox_inches = 'tight')
 plt.show()
 
-
-pfr3_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/pfr%203.txt'
-pfr3_firstrow = 1
-pfr3_time_data = (epa.column_of_time(pfr3_path,pfr3_firstrow,-1)).to(u.s)
-pfr3_time_data
-pfr3_concentration_data = epa.column_of_data(pfr3_path,pfr3_firstrow,1,-1,'mg/L')
-pfr3_concentration_data
-
-pfr3_concentration_data = pfr3_concentration_data - pfr3_concentration_data[0]
-length = 12.5*u.ft
-ID = 0.03125*u.ft
-pfr3_V = length*(pi*(ID)**2)/4
-pfr3_V.to(u.L)
-pfr3_Q = 380 * u.mL/u.min
-pfr3_theta_hydraulic = (pfr3_V/pfr3_Q).to(u.s)
-pfr3_C_bar_guess = np.max(pfr3_concentration_data)/2
-
-pfr3_CMFR = epa.Solver_CMFR_N(pfr3_time_data, pfr3_concentration_data, pfr3_theta_hydraulic, pfr3_C_bar_guess)
-pfr3_CMFR.C_bar
-pfr3_CMFR.N
-pfr3_CMFR.theta.to(u.s)
-
-pfr3_CMFR_model = (pfr3_CMFR.C_bar*epa.E_CMFR_N(pfr3_time_data /pfr3_CMFR.theta, pfr3_CMFR.N)).to(u.mg/u.L)
-
-pfr3_AD = epa.Solver_AD_Pe(pfr3_time_data, pfr3_concentration_data, pfr3_theta_hydraulic, pfr3_C_bar_guess)
-pfr3_AD.C_bar
-pfr3_AD.Pe
-pfr3_AD.theta
-
-print('The model estimated mass of tracer injected was',ut.round_sf(pfr3_AD.C_bar*pfr3_V ,2) )
-print('The model estimate of the Peclet number was', pfr3_AD.Pe)
-print('The tracer residence time was',ut.round_sf(pfr3_AD.theta ,2))
-print('The ratio of tracer to hydraulic residence time was',(pfr3_AD.theta/pfr3_theta_hydraulic).magnitude)
-
-pfr3_AD_model = (pfr3_AD.C_bar*epa.E_Advective_Dispersion((pfr3_time_data/pfr3_AD.theta).to_base_units(), pfr3_AD.Pe)).to(u.mg/u.L)
-
-plt.plot(pfr3_time_data.to(u.s), pfr3_concentration_data.to(u.mg/u.L),'r')
-plt.plot(pfr3_time_data.to(u.s), pfr3_CMFR_model,'b')
-plt.plot(pfr3_time_data.to(u.s), pfr3_AD_model,'g')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_concentration_data.to(u.mg/u.L),'c')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_CMFR_model,'b')
-plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model,'y')
-plt.xlabel(r'$time (min)$')
-plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
-plt.legend(['Measured dye No holes','CMFR Model q', 'AD Model q','Measured dye Holes','CMFR Model 2', 'AD Model 2'])
-plt.savefig('pfr3.png', bbox_inches = 'tight')
-plt.show()
 ```
