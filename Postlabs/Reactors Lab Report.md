@@ -101,26 +101,34 @@ The time for 10% of the pulse to arrive at the effluent of a CMFR is approximate
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=110 width=427> </p>
 
-**Figure 1** CMFR
+<p align="center">
+<b>Figure 1 </b>: CMFR
+</p>
 
 The CMFR model almost perfectly agrees with the measured dye effluent concentration as expected.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/2%20baffles.png?raw=true" heights=110 width=427> </p>
 
-**Figure 2** Two Baffles
+<p align="center">
+<b>Figure 2 </b>: Two Baffles
+</p>
+
 
 For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
-**Figure 3** Four Baffles
+<p align="center"> <b>Figure 3 </b>: Three Baffles </p>
 
 For the experiment with four baffles with alternating orientation, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled well by both the CMFR and AD model. However, the CMFR model expected the dye to leave the reactor slightly more quickly that it did.
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_no_holes.png?raw=true" heights=110 width=427> </p>
 
-**Figure 4** Four Baffles with no holes
+<p align="center">
+<b>Figure 4 </b>: Four Baffles with no holes
+</p>
+
 
 For this experiment four different baffles were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
 
@@ -128,7 +136,9 @@ Observations: There are some dead zones in this test. The dye is not completely 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
-**Figure 5** Seven Baffles
+<p align="center">
+<b>Figure 4 </b>: Seven Baffles
+</p>
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
 
