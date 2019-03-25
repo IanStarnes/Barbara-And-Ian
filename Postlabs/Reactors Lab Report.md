@@ -194,6 +194,7 @@ plt.show()
 one_baffle_path = 'https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Reactor%20Characteristics%20Data/2%20BAFFLES_CMFR.xls'
 
 one_baffle_firstrow = 1
+
 one_baffle_time_data = (epa.column_of_time(one_baffle_path,one_baffle_firstrow,-1)).to(u.s)
 one_baffle_time_data
 one_baffle_concentration_data = epa.column_of_data(one_baffle_path,one_baffle_firstrow,1,-1,'mg/L')
@@ -439,7 +440,7 @@ plt.plot(four_baffle_time_data.to(u.s), four_baffle_AD_model*9,56,'')
 plt.plot(four_baffle_noholes_time_data.to(u.s), four_baffle_noholes_AD_model*9.56, color='orange')
 plt.plot(seven_baffle_time_data.to(u.s), seven_baffle_AD_model*9.56, color = 'red')
 plt.xlabel(r'$time (seconds)$')
-plt.ylabel(r'Normailized Concentration $\left ( \frac{mg}{L} \right )$')
+plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Four Baffles - AD model', 'Four Baffles No Holes - AD model', 'Seven Random Baffles - AD model'])
 plt.savefig('Total2.png', bbox_inches = 'tight')
 plt.show()
