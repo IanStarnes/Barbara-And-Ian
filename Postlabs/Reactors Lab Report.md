@@ -81,7 +81,7 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 </p>
 
 
-For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
+For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent. 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
@@ -97,15 +97,19 @@ For the experiment with four baffles with alternating orientation, again with 2 
 </p>
 
 
-For this experiment four different baffles were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
+For this experiment four baffles of a different type were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
 
 Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 4 </b>: Seven Baffles - Test 5
+<b>Figure 5 </b>: Seven Baffles - Test 5
 </p>
+
+In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
+
+Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
 
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 
@@ -152,11 +156,6 @@ The value of t_star at F=0.1 was  0.32 dimensionless
 6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
 
 
-
-
-In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
-
-Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
 
 
 #### Conclusion
