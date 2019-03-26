@@ -9,7 +9,9 @@
 - [Introduction](#Introduction)
 - [Objective](#Objective)
 - [Procedure](#Procedure)
+- [Results](#Results)
 - [Data Analysis](#Data-analysis)
+- [Recommendation](#Recommendation)
 - [Conclusion](#Conclusion)
 - [Suggestions](#Suggestions)
 - [Appendix](#Appendix)
@@ -20,8 +22,12 @@ Reactors can be found in chemical, biological and physical processes all around 
 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
-The advection d
+A CMFR model is well-mixed and are determined by a mass balance
+
+The advection dispersion is
 **Advection Dispersion model and CMFR need to be defined**
+
+$$ Pe = \frac {advective \space transport \space rate}{diffusive \space transport \space rate} $$
 
 #### Objective
 The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align. The analysis of this data will help in designing a chlorine contact tank which should optimize the contact time between the chlorine and any pathogens in the water.
@@ -32,7 +38,6 @@ The detailed procedure for the lab can be found [here](https://monroews.github.i
 Following the cited lab procedure, we ran 6 different reactor experiments over a span of 2 lab sessions.
 
 From test 1 to test 5, all the experiments used a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
-
 
 ###### Test 1: CMFR
 Test 1, the reactor is modeled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
@@ -56,11 +61,54 @@ Test 4 used 4 baffles that had no holes and were 14 cm in width. The reactor has
 Test 5 consisted of seven baffles that varied in different number of holes and diameters. They were evenly spaced within the reactor and were not taped down. The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
 
+#### Results
+
+The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆. The closer the value of t_star is to 1 represents that the tracer had a long residence time in the reactor.
+
+
+CMFR - Test 1:
+The model estimated mass of tracer injected was 71 milligram
+The model estimate of the number of reactors in series was 1.0389946839919435
+The tracer residence time was 290 second
+The ratio of tracer to hydraulic residence time was 0.7352838209477089
+The value of t_star at F=0.1 was  0.085 dimensionless
+
+Two Baffles - Test 2:
+The model estimated mass of tracer injected was 58 milligram
+The model estimate of the Peclet number was 2.4600771019084946
+The model estimate of the number of reactors in series was 2.2576044783306184
+The tracer residence time was 290 second
+The ratio of tracer to hydraulic residence time was 0.8303643524025305
+The value of t_star at F=0.1 was  0.35 dimensionless
+
+Four Baffles - Test 3:
+The model estimated mass of tracer injected was 4 milligram
+The model estimate of the Peclet number was 30.896910764354757
+The model estimate of the number of reactors in series was 16.46835709366021
+The tracer residence time was 340 second
+The ratio of tracer to hydraulic residence time was 0.8443532344425537
+The value of t_star at F=0.1 was  0.64 dimensionless
+
+Four Baffles no holes - Test 4:
+The model estimated mass of tracer injected was 7.9 milligram
+The model estimate of the Peclet number was 5.680727405199826
+The model estimate of the number of reactors in series was 4.00202944985461
+The tracer residence time was 320 second
+The ratio of tracer to hydraulic residence time was 0.7871234079228485
+The value of t_star at F=0.1 was  0.44 dimensionless
+
+Seven Baffles - Test 5:
+The model estimated mass of tracer injected was 15 milligram
+The model estimate of the Peclet number was 1.7719305592198877
+The model estimate of the number of reactors in series was 2.1143469851517653
+The tracer residence time was 340 second
+The ratio of tracer to hydraulic residence time was 0.8527618754211438
+The value of t_star at F=0.1 was  0.32 dimensionless
+
+
 #### Data Analysis
 
-A total of 7 different test were run. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analysed.
-
-
+A total of 5 different models were tested. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analysed.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=110 width=427> </p>
 
@@ -89,20 +137,19 @@ For the experiment with four baffles with alternating orientation, again with 2 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_5637.JPG?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 6 </b>: Images of four baffles
+<b>Figure 4 </b>: Images of four baffles
 </p>
-
-
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_no_holes.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 4 </b>: Four Baffles with no holes - Test 4
+<b>Figure 5 </b>: Four Baffles with no holes - Test 4
 </p>
+
 For this experiment four baffles of a different type were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_2780.png?raw=true" heights=110 width=427> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_2780.JPG?raw=true" heights=110 width=427> </p>
 
 <p align="center">
 <b>Figure 6 </b>: Images of four baffles with no holes.
@@ -114,7 +161,7 @@ There are some dead zones in this test. The dye is not completely mixed in the r
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 5 </b>: Seven Baffles - Test 5
+<b>Figure 7 </b>: Seven Baffles - Test 5
 </p>
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
@@ -122,86 +169,41 @@ In this experiment a random assortment of seven baffles was used. Again, the AD 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_1236.JPG?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 6 </b>: Images of seven baffles
+<b>Figure 8 </b>: Images of seven baffles
 </p>
 
-As Figure __ shows, there is short circuiting in the reactors. This is best seen at the edge of the baffles because they were not taped on the sides with Gorilla Glue Tape.
+As Figure 8 shows, there is short circuiting in the reactors. This is best seen at the edge of the baffles because they were not taped on the sides with Gorilla Glue Tape. The
+
+The number of reactors used in the CMFR model and the Peclet number from the AD model were similar for each reactor. The N and Pe increased from the CMFR to the 2 Baffles and increased from the 2 baffles to the 4 baffles. However, the 4 baffles had a larger N and Pe than the 4 baffles that did not have holes but rather was like a conventional chlorine contact tank. The seven baffles had lower N and Pe than 4 baffles, but this is likely due to the sides of the seven baffles not being tapes which caused short circuiting and random baffles being used instead of baffles with alternating sides with holes. So, the higher the Peclet number, the less dispersion and therefore, the reactor with 4 baffles with holes had the least dispersion.
+
+The value of t* at F = 0.1 for the CMFR is 0.085. This is close to the expected value of 0.01 for a CMFR. For the two baffles the value of t* at F = 0.1 was 0.35. This is a pretty good improvement from the CMFR. However, the four baffles was even better at a t* = 0.64. This was the largest value out of all of our reactors. The four baffles with no holes was slightly lower at t* = 0.44. Finally, the seven baffles had a t* = 0.32. All these values are expected from the data we got about the N and Pe numbers.
+
+The ratio of tracer to hydraulic residence time was less than one for all of the reactor as expected. This was the upper limit for chlorine contact tanks. Our four baffles reactor had a decent value of 0.84. This was the second best value, with the best value for the seven baffles. Since these values are less than the one, that means that there are dead zones or certain areas in the reactor that are not used. This causes the effective volume to be less than the volume of the reactor.
 
 
+#### Recommendation
 
+Full scale chlorine contact tank are typically designed as figure 9. The relative concentration of chlorine decreases as it goes through the baffle curtain system.
 
+<p align="center"> <img src="http://www.pretechnologies.com/thumb-w659-h484-images/chlorine-concentration-original-CFD.png" heights=110 width=427> </p>
 
-1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+<p align="center">
+<b>Figure 9 </b>: Chlorination contact tanks
+</p>
 
-2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
-
-
-3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
-
-CMFR - Test 1:
-The model estimate of the number of reactors in series was 1.04
-
-Two Baffles - Test 2:
-The model estimate of the Peclet number was 2.46
-The model estimate of the number of reactors in series was 2.26
-
-Four Baffles - Test 3:
-The model estimate of the Peclet number was 30.90
-The model estimate of the number of reactors in series was 16.47
-
-Four Baffles no holes - Test 4:
-The model estimate of the Peclet number was 5.68
-The model estimate of the number of reactors in series was 4.00
-
-Seven Random Baffles - Test 5:
-The model estimate of the Peclet number was 1.77
-The model estimate of the number of reactors in series was 2.11
-
-4. Report the values of t⋆ at F = 0.1 for each of your experiments. Do they meet your expectations?
-
-The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆. The closer the value of t_star is to 1 represents that the tracer had a long residence time in the reactor.
-
-CMFR - Test 1:
-The value of t_star at F=0.1 was  0.085 dimensionless
-
-Two Baffles - Test 2:
-The value of t_star at F=0.1 was  0.35 dimensionless
-
-Four Baffles - Test 3:
-The value of t_star at F=0.1 was  0.64 dimensionless
-
-Four Baffles no holes - Test 4:
-The value of t_star at F=0.1 was  0.44 dimensionless
-
-Seven Random Baffles - Test 5:
-The value of t_star at F=0.1 was  0.32 dimensionless
-
-
-5. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
-
-6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
-
-
-
-
-
-
-
-
-
-
-
-
+Based off the results in our tests, the best recommendation for a full scale chlorine contact is test 3. Test 4 follows a similar design but the flow is more constricted through the reactor. Test 4 had the highest t_star value which shows that the tracer spent the longest time in the reactor. Other tests paled in comparison for varying reasons. The CMFR model for example had the lowest t_star value which is not ideal as the water would not have high contact efficiency, thus lack of chlorination.
 
 
 #### Conclusion
 
-To conclude, the more baffles included in the
+This lab highlighted the different parameters of a reactor and how they can significantly effect the efficiency of each reactor. The reactors with more baffles closely followed an advection dispersion model. Moreover, test 3 to test 5 had the lower Peclet numbers which further supports the statement. The experiments that were taped were the most efficient as it prevented short circuiting occur in our system, which would reduce the t_star value at f = 0.1. The reactor that had the best t_star value at f = 0.1 was the reactor for four baffles that has holes on one side of the
 
 
 #### Suggestions
 
-#### References
+This lab for the most part ran very smoothly. The main difficulty for this lab was taping the Gorilla Glue Tape to the sides of the baffles.
+
+The photometer must be handled with great care, and a suggestion we have is make sure it is on and that you check the data you obtain from _ProCoDA_ to matches what is currently being observed in the experiment. If you believe that is not the case, there is a likelihood that there is an air bubble and you can lightly tap it to remove it.
 
 #### Appendix
 
