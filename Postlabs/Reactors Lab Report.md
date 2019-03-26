@@ -22,10 +22,12 @@ Reactors can be found in chemical, biological and physical processes all around 
 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
-A CMFR model is well-mixed and are determined by a mass balance
+A CMFR model is well-mixed and are modeled by a mass balance to determine the concentration of the tracer
 
 The advection dispersion is
 **Advection Dispersion model and CMFR need to be defined**
+
+The Peclet number is a dimensionless number that determine 
 
 $$ Pe = \frac {advective \space transport \space rate}{diffusive \space transport \space rate} $$
 
@@ -196,7 +198,7 @@ Based off the results in our tests, the best recommendation for a full scale chl
 
 #### Conclusion
 
-This lab highlighted the different parameters of a reactor and how they can significantly effect the efficiency of each reactor. The reactors with more baffles closely followed an advection dispersion model. Moreover, test 3 to test 5 had the lower Peclet numbers which further supports the statement. The experiments that were taped were the most efficient as it prevented short circuiting occur in our system, which would reduce the t_star value at f = 0.1. The reactor that had the best t_star value at f = 0.1 was the reactor for four baffles that has holes on one side of the
+This lab highlighted the different parameters of a reactor and how they can significantly effect the efficiency of each reactor. The reactors with more baffles closely followed an advection dispersion model. Moreover, test 3 had the highest Peclet number which further supports the statement. The experiments that were taped were the most efficient as it prevented short circuiting occur in our system, which would reduce the t_star value at f = 0.1. The reactor that had the best t_star value at f = 0.1 was the reactor for four baffles that has holes on one side of the baffle. The baffle hole were on alternating sides to force the flow to have the longest path. Therefore, we suggested this reactor for a chlorine contact tank.
 
 
 #### Suggestions
