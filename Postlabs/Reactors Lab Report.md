@@ -31,14 +31,12 @@ Following the cited lab procedure, we ran 6 different reactor experiments over a
 From test 1 to test 5, all the experiments used a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
 
-###### Test 1: CMFR with no baffles
+###### Test 1: CMFR 
 Test 1, the reactor is modeled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
 
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
 
-Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles.
-
-The concentration for the tracer is 100 g/L and the volume added was 400 microliters.
+Test 2 is a reactor where we used 2 baffles that was taped around the edges with Gorilla Glue Tape. The baffles were placed on the opposing side of the reactor at equidistances. The tape was used to ensure that the dye only travelled through the holes in the baffles. The concentration for the tracer is 100 g/L and the volume added was 400 microliters.
 
 
 ###### Test 3: 4 baffles with 2 holes of 7.74 mm diameter (taped)
@@ -47,19 +45,17 @@ Test 3 has the same set up as test 2 however this experiment used 4 baffles as o
 
 ###### Test 4: 4 baffles no hole
 
-Test 4 used 4 baffles that had no holes and were 14 cm in width. The reactor has a width of 15.3 cm, therefore was 1.3 cm of space. The baffles were placed on alternating sides of the reactor and were taped with the Gorilla Glue Tape.
-
-The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
+Test 4 used 4 baffles that had no holes and were 14 cm in width. The reactor has a width of 15.3 cm, therefore was 1.3 cm of space. The baffles were placed on alternating sides of the reactor and were taped with the Gorilla Glue Tape. The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
 
 ###### Test 5: 7 random baffles but evenly spaced (no tape)
 
-Test 5 consisted of seven baffles that varied in different number of holes and diameters. They were evenly spaced within the reactor and were not taped down.
-
-The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
+Test 5 consisted of seven baffles that varied in different number of holes and diameters. They were evenly spaced within the reactor and were not taped down. The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
 
 #### Data Analysis
+
+A total of 7 different test were run. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analyised.
 
 
 1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
@@ -81,7 +77,7 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 </p>
 
 
-For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent. 
+For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
