@@ -20,6 +20,8 @@ Reactors can be found in chemical, biological and physical processes all around 
 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
+**Advection Dispersion model and CMFR need to be defined**
+
 #### Objective
 The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align. The analysis of this data will help in designing a chlorine contact tank which should optimize the contact time between the chlorine and any pathogens in the water.
 
@@ -31,7 +33,7 @@ Following the cited lab procedure, we ran 6 different reactor experiments over a
 From test 1 to test 5, all the experiments used a consistent reactor volume of 0.00254 m3. Additionally the flow rate was kept the same at 380 mL/min (100 RPM).
 
 
-###### Test 1: CMFR 
+###### Test 1: CMFR
 Test 1, the reactor is modeled as a CMFR with a stirrer in the center on a high speed. The concentration for the tracer is 100 g/L and the volume added was 765 microliters.
 
 ###### Test 2: Two baffles with 2 holes of 7.74 mm diameter (taped)
@@ -55,7 +57,7 @@ Test 5 consisted of seven baffles that varied in different number of holes and d
 
 #### Data Analysis
 
-A total of 7 different test were run. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analyised.
+A total of 7 different test were run. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analysed.
 
 
 1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
@@ -77,7 +79,7 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 </p>
 
 
-For the experiment with two baffles with alternating orientation, with 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
+For the experiment, two baffles were used that have 4 holes of 7.74 mm diameter vertically aligned were placed so that the holes would be on alternating sides of the reactor. With 2 holes of 7.74 mm diameter under the water line, the data is modeled most accurately by the CMFR model. This is seen in the beginning of the experiment, where the CMFR model more closely aligns with the measured data during the initial spike in dye in the effluent.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
@@ -86,16 +88,34 @@ For the experiment with two baffles with alternating orientation, with 2 holes o
 For the experiment with four baffles with alternating orientation, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled well by both the CMFR and AD model. However, the CMFR model expected the dye to leave the reactor slightly more quickly that it did.
 
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_5637.JPG?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 6 </b>: Images of four baffles
+</p>
+
+
+
+
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_no_holes.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
 <b>Figure 4 </b>: Four Baffles with no holes - Test 4
 </p>
-
-
 For this experiment four baffles of a different type were used. These baffles forced the flow to go around the baffle on alternating sides of the reactor. The AD model more accurately represents the measured dye for this reactor.
 
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_2780.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 6 </b>: Images of four baffles with no holes.
+</p>
+
+There are some dead zones in this test. The dye is not completely mixed in the reactor. Figure 6 is a clear visual of the lack of mixing that occurred in the reactor.
 Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
+
+
+
+
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
@@ -105,7 +125,6 @@ Observations: There are some dead zones in this test. The dye is not completely 
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
 
-Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
 
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 
@@ -130,7 +149,7 @@ The model estimate of the number of reactors in series was 2.11
 
 4. Report the values of t⋆ at F = 0.1 for each of your experiments. Do they meet your expectations?
 
-The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆
+The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆. The closer the value of t_star is to 1 represents that the tracer had a long residence time in the reactor.
 
 CMFR - Test 1:
 The value of t_star at F=0.1 was  0.085 dimensionless
@@ -147,6 +166,7 @@ The value of t_star at F=0.1 was  0.44 dimensionless
 Seven Random Baffles - Test 5:
 The value of t_star at F=0.1 was  0.32 dimensionless
 
+
 5. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
 
 6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
@@ -154,7 +174,26 @@ The value of t_star at F=0.1 was  0.32 dimensionless
 
 
 
+
+
+
+
+
+
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_1236.JPG?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 6 </b>: Images of four baffles with no holes.
+</p>
+
+Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
+
+
 #### Conclusion
+
+To conclude, the more baffles included in the
+
 
 #### Suggestions
 
