@@ -59,7 +59,6 @@ Test 4 used 4 baffles that had no holes and were 14 cm in width. The reactor has
 
 Test 5 consisted of seven baffles that varied in different number of holes and diameters. They were evenly spaced within the reactor and were not taped down. The tracer concentration used was 10 g/L and a volume of 800 microliters was added.
 
-
 #### Results
 
 The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆. The closer the value of t_star is to 1 represents that the tracer had a long residence time in the reactor.
