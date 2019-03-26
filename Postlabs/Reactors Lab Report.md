@@ -20,6 +20,7 @@ Reactors can be found in chemical, biological and physical processes all around 
 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
+The advection d
 **Advection Dispersion model and CMFR need to be defined**
 
 #### Objective
@@ -60,9 +61,6 @@ Test 5 consisted of seven baffles that varied in different number of holes and d
 A total of 7 different test were run. This allows for an abundance of data to compare. The data will be presented individually and at the end of the data analysis is where differences and similarities of different models will be more carefully analysed.
 
 
-1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
-
-2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=110 width=427> </p>
 
@@ -111,10 +109,6 @@ For this experiment four baffles of a different type were used. These baffles fo
 </p>
 
 There are some dead zones in this test. The dye is not completely mixed in the reactor. Figure 6 is a clear visual of the lack of mixing that occurred in the reactor.
-Observations: There are some dead zones in this test. The dye is not completely mixed in the reactor
-
-
-
 
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
@@ -124,6 +118,22 @@ Observations: There are some dead zones in this test. The dye is not completely 
 </p>
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_1236.JPG?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 6 </b>: Images of seven baffles
+</p>
+
+As Figure __ shows, there is short circuiting in the reactors. This is best seen at the edge of the baffles because they were not taped on the sides with Gorilla Glue Tape.
+
+
+
+
+
+1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+
+2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
 
 
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
@@ -181,13 +191,7 @@ The value of t_star at F=0.1 was  0.32 dimensionless
 
 
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/Reactor%20Characteristics%20Photos/IMG_1236.JPG?raw=true" heights=110 width=427> </p>
 
-<p align="center">
-<b>Figure 6 </b>: Images of four baffles with no holes.
-</p>
-
-Observations: we observed some side slip through the edges of the baffles because we did not tape the sides
 
 
 #### Conclusion
