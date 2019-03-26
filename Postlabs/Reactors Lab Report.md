@@ -1,7 +1,7 @@
 # Reactor Characteristics
 #### Ian Starnes and Barbara Oramah
 ##### Lab 5 Report, Group 6
-##### Time (hr) Spent on Lab Report: Ian Starnes - 6  | Barbara Oramah - 6
+##### Time (hr) Spent on Lab Report: Ian Starnes - 10  | Barbara Oramah - 10
 
 
 ### Table of Contents
@@ -22,14 +22,11 @@ Reactors can be found in chemical, biological and physical processes all around 
 
 There are different types of reactor models. The most common idealised models are the batch reactor model, completely mixed flow reactor (CMFR) model, flow with dispersion (FDR) model and plug flow reactor (PFR) model. Important parameters for the reactors are the mixing level and residence time, which affect the degree of process reaction that occurs.
 
-A CMFR model is well-mixed and are modeled by a mass balance to determine the concentration of the tracer
-
-The advection dispersion is
-**Advection Dispersion model and CMFR need to be defined**
-
-The Peclet number is a dimensionless number that determine 
+The Peclet number is a dimensionless number that shows the dispersion within a reactor and it is defined as the following:
 
 $$ Pe = \frac {advective \space transport \space rate}{diffusive \space transport \space rate} $$
+
+A high Peclet number, shows that there is low dispersion in the reactor. A low Peclet is typical of a CMFR whereas plug flow has a high Peclet number. This number will be used throughout the report to reference the level of dispersion.
 
 #### Objective
 The objective for this experiment was to create different set-up to curate experimental data to see the different characteristics of a reactor. The measured data is compared with a CMFR model as well as an advection dispersion model to see how the models align. The analysis of this data will help in designing a chlorine contact tank which should optimize the contact time between the chlorine and any pathogens in the water.
@@ -68,14 +65,14 @@ Test 5 consisted of seven baffles that varied in different number of holes and d
 The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆. The closer the value of t_star is to 1 represents that the tracer had a long residence time in the reactor.
 
 
-CMFR - Test 1:
+__CMFR - Test 1:__
 The model estimated mass of tracer injected was 71 milligram
 The model estimate of the number of reactors in series was 1.0389946839919435
 The tracer residence time was 290 second
 The ratio of tracer to hydraulic residence time was 0.7352838209477089
 The value of t_star at F=0.1 was  0.085 dimensionless
 
-Two Baffles - Test 2:
+__Two Baffles - Test 2:__
 The model estimated mass of tracer injected was 58 milligram
 The model estimate of the Peclet number was 2.4600771019084946
 The model estimate of the number of reactors in series was 2.2576044783306184
@@ -83,7 +80,7 @@ The tracer residence time was 290 second
 The ratio of tracer to hydraulic residence time was 0.8303643524025305
 The value of t_star at F=0.1 was  0.35 dimensionless
 
-Four Baffles - Test 3:
+__Four Baffles - Test 3:__
 The model estimated mass of tracer injected was 4 milligram
 The model estimate of the Peclet number was 30.896910764354757
 The model estimate of the number of reactors in series was 16.46835709366021
@@ -91,7 +88,7 @@ The tracer residence time was 340 second
 The ratio of tracer to hydraulic residence time was 0.8443532344425537
 The value of t_star at F=0.1 was  0.64 dimensionless
 
-Four Baffles no holes - Test 4:
+__Four Baffles no holes - Test 4:__
 The model estimated mass of tracer injected was 7.9 milligram
 The model estimate of the Peclet number was 5.680727405199826
 The model estimate of the number of reactors in series was 4.00202944985461
@@ -99,7 +96,7 @@ The tracer residence time was 320 second
 The ratio of tracer to hydraulic residence time was 0.7871234079228485
 The value of t_star at F=0.1 was  0.44 dimensionless
 
-Seven Baffles - Test 5:
+__Seven Baffles - Test 5:__
 The model estimated mass of tracer injected was 15 milligram
 The model estimate of the Peclet number was 1.7719305592198877
 The model estimate of the number of reactors in series was 2.1143469851517653
@@ -203,7 +200,7 @@ This lab highlighted the different parameters of a reactor and how they can sign
 
 #### Suggestions
 
-This lab for the most part ran very smoothly. The main difficulty for this lab was taping the Gorilla Glue Tape to the sides of the baffles.
+This lab for the most part ran very smoothly. The main difficulty for this lab was taping the Gorilla Glue Tape to the sides of the baffles. We recommend taping the baffles in order to reduce the likelihood of short-circuiting in your system.
 
 The photometer must be handled with great care, and a suggestion we have is make sure it is on and that you check the data you obtain from _ProCoDA_ to matches what is currently being observed in the experiment. If you believe that is not the case, there is a likelihood that there is an air bubble and you can lightly tap it to remove it.
 
