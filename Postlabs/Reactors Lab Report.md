@@ -66,21 +66,10 @@ The tracer concentration used was 10 g/L and a volume of 800 microliters was add
 
 2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
 
-3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
-
-4. Report the values of t⋆ at F = 0.1 for each of your experiments. Do they meet your expectations?
-
-The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆
-
-5. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
-
-6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
-
-
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/CMFR.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 1 </b>: CMFR
+<b>Figure 1 </b>: CMFR - Test 1
 </p>
 
 The CMFR model almost perfectly agrees with the measured dye effluent concentration as expected.
@@ -88,7 +77,7 @@ The CMFR model almost perfectly agrees with the measured dye effluent concentrat
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/2%20baffles.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 2 </b>: Two Baffles
+<b>Figure 2 </b>: Two Baffles - Test 2
 </p>
 
 
@@ -96,7 +85,7 @@ For the experiment with two baffles with alternating orientation, with 2 holes o
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffles.png?raw=true" heights=110 width=427> </p>
 
-<p align="center"> <b>Figure 3 </b>: Three Baffles </p>
+<p align="center"> <b>Figure 3 </b>: Four Baffles - Test 3 </p>
 
 For the experiment with four baffles with alternating orientation, again with 2 holes of 7.74 mm diameter under the water line, the data is modeled well by both the CMFR and AD model. However, the CMFR model expected the dye to leave the reactor slightly more quickly that it did.
 
@@ -104,7 +93,7 @@ For the experiment with four baffles with alternating orientation, again with 2 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/four_baffle_no_holes.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 4 </b>: Four Baffles with no holes
+<b>Figure 4 </b>: Four Baffles with no holes - Test 4
 </p>
 
 
@@ -115,8 +104,55 @@ Observations: There are some dead zones in this test. The dye is not completely 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/sevenbaffle.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 4 </b>: Seven Baffles
+<b>Figure 4 </b>: Seven Baffles - Test 5
 </p>
+
+3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
+
+CMFR - Test 1:
+The model estimate of the number of reactors in series was 1.04
+
+Two Baffles - Test 2:
+The model estimate of the Peclet number was 2.46
+The model estimate of the number of reactors in series was 2.26
+
+Four Baffles - Test 3:
+The model estimate of the Peclet number was 30.90
+The model estimate of the number of reactors in series was 16.47
+
+Four Baffles no holes - Test 4:
+The model estimate of the Peclet number was 5.68
+The model estimate of the number of reactors in series was 4.00
+
+Seven Random Baffles - Test 5:
+The model estimate of the Peclet number was 1.77
+The model estimate of the number of reactors in series was 2.11
+
+4. Report the values of t⋆ at F = 0.1 for each of your experiments. Do they meet your expectations?
+
+The time for 10% of the pulse to arrive at the effluent of a CMFR is approximately 0.1 t⋆
+
+CMFR - Test 1:
+The value of t_star at F=0.1 was  0.085 dimensionless
+
+Two Baffles - Test 2:
+The value of t_star at F=0.1 was  0.35 dimensionless
+
+Four Baffles - Test 3:
+The value of t_star at F=0.1 was  0.64 dimensionless
+
+Four Baffles no holes - Test 4:
+The value of t_star at F=0.1 was  0.44 dimensionless
+
+Seven Random Baffles - Test 5:
+The value of t_star at F=0.1 was  0.32 dimensionless
+
+5. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
+
+6. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
+
+
+
 
 In this experiment a random assortment of seven baffles was used. Again, the AD model more accurately fits the measured data.
 
@@ -235,6 +271,7 @@ one_baffle_time_0_1=t_star_one_baffle[j]
 
 print('The model estimated mass of tracer injected was',ut.round_sf(one_baffle_AD.C_bar*one_baffle_V ,2) )
 print('The model estimate of the Peclet number was', one_baffle_AD.Pe)
+print('The model estimate of the number of reactors in series was', one_baffle_CMFR.N)
 print('The tracer residence time was',ut.round_sf(one_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(one_baffle_AD.theta/one_baffle_theta_hydraulic).magnitude)
 print('The value of t_star at F=0.1 was ',ut.round_sf(one_baffle_time_0_1,2))
@@ -293,6 +330,7 @@ four_baffle_time_0_1=t_star_four_baffle[j]
 
 print('The model estimated mass of tracer injected was',ut.round_sf(four_baffle_AD.C_bar*four_baffle_V ,2) )
 print('The model estimate of the Peclet number was', four_baffle_AD.Pe)
+print('The model estimate of the number of reactors in series was', four_baffle_CMFR.N)
 print('The tracer residence time was',ut.round_sf(four_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(four_baffle_AD.theta/four_baffle_theta_hydraulic).magnitude)
 print('The value of t_star at F=0.1 was ',ut.round_sf(four_baffle_time_0_1,2))
@@ -352,6 +390,7 @@ four_baffle_noholes_time_0_1=t_star_four_baffle_noholes[j]
 
 print('The model estimated mass of tracer injected was',ut.round_sf(four_baffle_noholes_AD.C_bar*four_baffle_noholes_V ,2) )
 print('The model estimate of the Peclet number was', four_baffle_noholes_AD.Pe)
+print('The model estimate of the number of reactors in series was', four_baffle_noholes_CMFR.N)
 print('The tracer residence time was',ut.round_sf(four_baffle_noholes_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(four_baffle_noholes_AD.theta/four_baffle_noholes_theta_hydraulic).magnitude)
 print('The value of t_star at F=0.1 was ',ut.round_sf(four_baffle_noholes_time_0_1,2))
@@ -409,6 +448,7 @@ seven_baffle_time_0_1=t_star_seven_baffle[j]
 
 print('The model estimated mass of tracer injected was',ut.round_sf(seven_baffle_AD.C_bar*seven_baffle_V ,2) )
 print('The model estimate of the Peclet number was', seven_baffle_AD.Pe)
+print('The model estimate of the number of reactors in series was', seven_baffle_CMFR.N)
 print('The tracer residence time was',ut.round_sf(seven_baffle_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(seven_baffle_AD.theta/seven_baffle_theta_hydraulic).magnitude)
 print('The value of t_star at F=0.1 was ',ut.round_sf(seven_baffle_time_0_1,2))
