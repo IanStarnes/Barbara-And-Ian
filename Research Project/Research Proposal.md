@@ -99,6 +99,23 @@ https://www.sciencedirect.com/science/article/pii/S1001074209601637
 https://permanent.access.gpo.gov/gpo70466/a_citizens_guide_to_activated_carbon_treatment.pdf
 
 
+Experimental Set-Up
+
+20% Activated carbon by mass
+80% sand
+Mixed together
+
+
+
+
+
+
+
+
+
+
+
+
 **Brainstorming**
 - Like looking at turbidity
 - grinding down some AC and seeing how the different sizes of AC will be
