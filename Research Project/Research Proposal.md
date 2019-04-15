@@ -101,10 +101,18 @@ https://permanent.access.gpo.gov/gpo70466/a_citizens_guide_to_activated_carbon_t
 
 Experimental Set-Up
 
-20% Activated carbon by mass
+20% Activated carbon(20-40 mesh size) by mass
 80% sand
 Mixed together
 
+Mass of sand = 121.975 g
+Multiply sand by 0.25 to get mass of AC
+Mass of activated carbon = 30.493 g
+
+75.156g mass remaining of mixed ration
+
+
+Main issue faced: air bubble in our system 
 
 
 
