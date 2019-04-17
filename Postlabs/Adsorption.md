@@ -1,5 +1,15 @@
-### Data Analysis and Questions: Lab 1, Group 6
+### Data Analysis and Questions: Lab , Group 6
 #### Ian Starnes and Barbara Oramah
+
+- Plot the breakthrough curves showing C/C0 versus time.
+
+- Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used.
+
+- Calculate the retardation coefficient (Radsorption) based on the time to breakthrough for the columns with and without activated carbon.
+
+- Calculate the q0 for each of the columns based on equation (97). Plot this as a function of the mass of activated carbon used.
+
+- What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
 
 ```python
 
@@ -57,8 +67,6 @@ def adsorption_data(C_column, dirpath):
 C_column = 1
 dirpath = "https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/Adsorption"
 
-
-
 metadata, filenames, C_data, time_data = adsorption_data(C_column,dirpath)
 metadata
 Column_D = 1 * u.inch
@@ -81,7 +89,6 @@ HRT = (porosity * Column_V/Flow_rate).to(u.s)
 for i in range(np.size(filenames)):
   C_data[i]=C_data[i]-C_data[i][0]
 
-
 #Create a graph of the columns that didn't have any activated carbon
 mylegend = []
 for i in range(np.size(filenames)):
@@ -91,9 +98,9 @@ for i in range(np.size(filenames)):
 
 plt.xlabel(r'$\frac{t}{\theta}$');
 plt.xlim(right=3,left=0);
-plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$');
+plt.ylabel(r'Red dye (C/Co) $\left (unitless\right )$');
 plt.legend(mylegend);
-plt.savefig('Examples/images/Sand_column')
+plt.savefig('images/Sand_column')
 plt.show()
 
 # create a graph of the columns that had different masses of activated carbon. Note that this includes systems with different flow rates!
@@ -105,8 +112,63 @@ for i in range(np.size(filenames)):
 
 plt.xlabel(r'$\frac{t}{\theta}$');
 plt.xlim(right=100,left=0);
-plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$');
+plt.ylabel(r'Red dye (C/Co) $\left ( unitless \right )$');
 plt.legend(mylegend);
-plt.savefig('Examples/images/Activated_carbon')
+plt.savefig('images/Activated_carbon')
+plt.show()
+
+
+# Question Two
+C_half = np.zeros(13) * (u.mg/u.L)
+time_half = np.zeros(13) * (u.s)
+C_half
+for i in range(np.size(filenames)):
+  for j in range(np.size(C_data[i])):
+    #if ((C_half[i-1] == 0) and ((C_data[i-1][j-1]/C_0) > 0.5)):
+    if ((C_data[i][j]/C_0) > 0.5):
+      C_half[i] = (C_data[i][j])
+      time_half[i]=(time_data[i][j])
+      break
+
+time_half
+#time_half[12]=0 *u.s
+time_half[2]=time_half[2]*5
+time_half[11]=time_half[11]*5
+C_half
+C_data[12]
+
+plt.plot(Mass_carbon,time_half);
+plt.yscale('log', basey=10)
+plt.ylabel(r'time');
+plt.xlabel(r'mass of activated carbon');
+plt.savefig('images/time_half')
+plt.show()
+
+# Question Three
+v_a = 1 * u.mm/u.s
+porosity = 0.4
+L_column = 15.2 * u.cm
+D_column = 1*u.inch
+A_column = pc.area_circle(D_column)
+V_column = A_column * L_column
+C_0 = 50 * u.mg/u.L
+q_0 = 0.08
+t_water = (L_column*porosity/v_a).to(u.s)
+t_mtz_target = time_half
+# set the breakthrough time to 30 minutes = 1800 s
+R_adsorption = t_mtz_target/t_water
+R_adsorption[11]=R_adsorption[11]*5
+R_adsorption
+plt.plot(Mass_carbon,R_adsorption);
+plt.ylabel(r'R_adsorption');
+plt.xlabel(r'mass of activated carbon');
+plt.savefig('images/R_adsorption')
+plt.show()
+
+q0=(R_adsorption-1)*(C_0*porosity*V_column/Mass_carbon)
+plt.plot(Mass_carbon,q0);
+plt.ylabel(r'mass of adsorbate per mass of adsorbent');
+plt.xlabel(r'mass of activated carbon');
+plt.savefig('images/q0')
 plt.show()
 ```
