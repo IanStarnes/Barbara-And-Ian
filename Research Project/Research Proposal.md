@@ -114,7 +114,17 @@ Mass of activated carbon = 30.493 g
 
 Main issue faced: air bubble in our system
 
-Volume of red dye, look at the 
+Volume of red dye, look at the
+
+
+17th April
+We tried running an experiment with -100 mesh (Used a ratio of 9:1 of sand and activated carbon )
+Observation : the AC is too fine and it went through the mesh of the filters. We also did not tighten the filter enough and we did not align the mesh well as that led to some sand escaping the filters
+
+We decided to face this issue for another day,
+
+running an experiment with the 20-40 AC mesh with a ratio of 9:1 sand and AC
+
 
 
 
