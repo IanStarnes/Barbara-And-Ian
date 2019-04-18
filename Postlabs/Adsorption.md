@@ -1,24 +1,74 @@
-### Data Analysis and Questions: Lab , Group 6
+### Data Analysis and Questions: Lab 6, Group 6
 #### Ian Starnes and Barbara Oramah
-
-- Plot the breakthrough curves showing C/C0 versus time.
-
-- Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used.
-
-- Calculate the retardation coefficient (Radsorption) based on the time to breakthrough for the columns with and without activated carbon.
-
-- Calculate the q0 for each of the columns based on equation (97). Plot this as a function of the mass of activated carbon used.
-
-- What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
-
-
-We learned from this analysis that, the more activated carbon in the filter
-
 
 ### Data Analysis
 
+- Plot the breakthrough curves showing C/C0 versus time.
+
+Breakthrough is defined as the time that mass of red dye goes passes through the filter when the activated carbon (the adsorbent) can no longer adsorb the red dye (the adsorbate).
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Sand_column.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 1 </b>: Breakthrough curves showing C/C0 vs. time with two different flow rates.
+</p>
+
+As time progresses, the red dye passes through through the filter with a concentration close to the influent. The steep slope increase represents the mass transfer zone breakthrough.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Activated_carbon.png?raw=true9" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 2 </b>: Tracer curves for columns with different masses of activated carbon vs. time over hydraulic residence time.
+</p>
+
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Activated_carbon%20close%20up.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 3 </b>: Figure 2 with tighter limits.
+</p>
+
+Figure 2 and Figure 3 shows clearly that filters with high mass of activated carbon take a longer amount of time to breakthrough.
+
+
+- Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/time_half.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 4 </b>: Time of when effluent concentration was 50% of influent concentration as a function of mass of activated carbon used.
+</p>
+
+With greater masses of activated carbon in the filter, there is positive correlation to the the increase in time for the effluent to reach 50% of the influent. This is not necessarily clear to see with small masses of activated carbon between 0 and 5 grams of activated carbon
+
+- Calculate the retardation coefficient (Radsorption) based on the time to breakthrough for the columns with and without activated carbon.
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/R_adsorption.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 5 </b>: Retardation coefficient as a function of mass of activated carbon used.
+</p>
+
+
+- Calculate the q0 for each of the columns based on equation (97). Plot this as a function of the mass of activated carbon used.
+
+<p align="center"> <img src="" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 6 </b>: q0 as a function of mass of activated carbon used.
+</p>
+
+q0 is defined as the mass of  adsorbate per mass of adsorbent.
+
+$$ q_0 = (R{adsorption} -1 )\frac{C_0\phi V_{column}}{M_{adsorbent}} $$
+
+- What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
+
+We learned from this analysis that, the more activated carbon in the filter..
 
 ### Conclusion
+
+In conclusion,
 
 
 ### Suggestion
@@ -131,6 +181,17 @@ plt.legend(mylegend);
 plt.savefig('images/Activated_carbon')
 plt.show()
 
+mylegend =[]
+for i in range(np.size(filenames)):
+  if (metadata['carbon (g)'][i] != 0):
+    plt.plot(time_data[i]/HRT[i] - Tubing_HRT[i]/HRT[i], C_data[i]/C_0,'-');
+    mylegend.append(str(ut.round_sf(metadata['carbon (g)'][i],3)) + ' g, ' + str(ut.round_sf(metadata['flow (mL/s)'][i],2)) + ' mL/s')
+plt.xlabel(r'$\frac{t}{\theta}$');
+plt.xlim(right=10,left=0);
+plt.ylabel(r'Red dye (C/Co) $\left ( unitless \right )$');
+plt.legend(mylegend);
+plt.savefig('images/Activated_carbon close up')
+plt.show()
 
 # Question Two
 C_half = np.zeros(13) * (u.mg/u.L)
@@ -151,10 +212,10 @@ time_half[11]=time_half[11]*5
 C_half
 C_data[12]
 
-plt.plot(Mass_carbon,time_half);
-plt.yscale('log', basey=10)
+plt.plot(Mass_carbon,time_half, 'o');
+#plt.yscale('log', basey=10)
 plt.ylabel(r'time');
-plt.xlabel(r'mass of activated carbon');
+plt.xlabel(r'mass of activated carbon (g)');
 plt.savefig('images/time_half')
 plt.show()
 
@@ -173,17 +234,17 @@ t_mtz_target = time_half
 R_adsorption = t_mtz_target/t_water
 R_adsorption[11]=R_adsorption[11]*5
 R_adsorption
-plt.plot(Mass_carbon,R_adsorption);
+plt.plot(Mass_carbon,R_adsorption, 'o');
 plt.ylabel(r'R_adsorption');
-plt.xlabel(r'mass of activated carbon');
+plt.xlabel(r'mass of activated carbon (g)');
 plt.savefig('images/R_adsorption')
 plt.show()
 
 # Question Four
 q0=(R_adsorption-1)*(C_0*porosity*V_column/Mass_carbon)
-plt.plot(Mass_carbon,q0);
-plt.ylabel(r'mass of adsorbate per mass of adsorbent');
-plt.xlabel(r'mass of activated carbon');
+plt.plot(Mass_carbon,q0, 'o');
+plt.ylabel(r'q0')
+plt.xlabel(r'mass of activated carbon (g)');
 plt.savefig('images/q0')
 plt.show()
 ```
