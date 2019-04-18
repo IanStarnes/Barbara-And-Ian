@@ -68,7 +68,9 @@ We learned from this analysis that, the more activated carbon in the filter..
 
 ### Conclusion
 
-In conclusion,
+In conclusion, it is evident that with a large quantity of activated carbon, the breakthrough time for the dye is significantly extended.
+
+With varying flow rates, the data is skewed with nonsense
 
 
 ### Suggestion
