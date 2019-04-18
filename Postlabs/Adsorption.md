@@ -11,6 +11,20 @@
 
 - What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
 
+
+We learned from this analysis that, the more activated carbon in the filter
+
+
+### Data Analysis
+
+
+### Conclusion
+
+
+### Suggestion
+
+
+### Appendix
 ```python
 
 from aguaclara.core.units import unit_registry as u
@@ -155,7 +169,7 @@ C_0 = 50 * u.mg/u.L
 q_0 = 0.08
 t_water = (L_column*porosity/v_a).to(u.s)
 t_mtz_target = time_half
-# set the breakthrough time to 30 minutes = 1800 s
+# set the breakthrough times of the dataset
 R_adsorption = t_mtz_target/t_water
 R_adsorption[11]=R_adsorption[11]*5
 R_adsorption
@@ -165,6 +179,7 @@ plt.xlabel(r'mass of activated carbon');
 plt.savefig('images/R_adsorption')
 plt.show()
 
+# Question Four
 q0=(R_adsorption-1)*(C_0*porosity*V_column/Mass_carbon)
 plt.plot(Mass_carbon,q0);
 plt.ylabel(r'mass of adsorbate per mass of adsorbent');

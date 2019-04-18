@@ -112,7 +112,9 @@ Mass of activated carbon = 30.493 g
 75.156g mass remaining of mixed ration
 
 
-Main issue faced: air bubble in our system 
+Main issue faced: air bubble in our system
+
+Volume of red dye, look at the 
 
 
 
