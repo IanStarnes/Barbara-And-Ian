@@ -13,7 +13,7 @@ Figure 1 is a graph that supports this statement where breakthrough curve of san
 <b>Figure 1 </b>: Breakthrough curves showing C/C0 vs. time with sand columns
 </p>
 
-Figure 2 and Figure 3 represents the graphs of experiments that had activated carbon in the filter. Te figures clearly show that filters with high mass of activated carbon take a longer amount of time to breakthrough. Figure 3 is a close up so it can be easier to compare with figure 1.
+Figure 2 and Figure 3 represents the graphs of experiments that had activated carbon in the filter. Te figures clearly show that filters with high mass of activated carbon take a longer amount of time to breakthrough. Figure 3 is a close up so it can be easier to compare with Figure 1.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Activated_carbon.png?raw=true9" heights=110 width=427> </p>
 
@@ -25,9 +25,8 @@ Figure 2 and Figure 3 represents the graphs of experiments that had activated ca
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Activated_carbon%20close%20up.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 3 </b>: Figure 2 with tighter limits.
+<b>Figure 3 </b>: Figure 2 with tighter limit constraints.
 </p>
-
 
 With greater masses of activated carbon in the filter, there is positive correlation to the the increase in time for the effluent to reach 50% of the influent, as shown in figure 4. This is not necessarily clear to see with small masses of activated carbon that are less than 5 grams.
 
@@ -37,8 +36,6 @@ With greater masses of activated carbon in the filter, there is positive correla
 <b>Figure 4 </b>: Time showing when effluent concentration was 50% of influent concentration as a function of mass of activated carbon used.
 </p>
 
-
-- Calculate the retardation coefficient (Radsorption) based on the time to breakthrough for the columns with and without activated carbon.
 
 The retardation factor is defined as the ratio of the time for the mass transfer zone to travel through the bed divided by the time for water to travel through the bed.
 
@@ -53,52 +50,48 @@ $$ R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
 
 | Mass of Activated Carbon (g) | Flow Rate (mL/s) | Retardation Coefficient |
 | ---------------------------- | ---------------- | ----------------------- |
-| 0.5                          |                  | 4.111                   |
-| 0.601                        | 0.5              | 3.947                   |
-| 0                            | 0.5              | 3.289                   |
-| 0                            | 0.5              | 3.207                   |
+| 0                            | 0.5              | 4.111                   |
+| 0                            | 0.5              | 3.947                   |
 | 0                            | 2.6              | 3.289                   |
-| 1.66                         | 0.5              | 2.878                   |
-| 2                            | 0.466            | 9.128                   |
-| 4                            | 0.466            | 14.227                  |
-| 13.8                         | 0.6              | 1.891                   |
+| 0                            | 0.5              | 3.207                   |
+| 0.5                          | 0.5              | 3.289                   |
+| 0.601                        | 0.5              | 2.878                   |
+| 1.66                         | 0.5              | 9.128                   |
+| 2                            | 0.466            | 14.227                  |
+| 4                            | 0.466            | 1.891                   |
 | 13.8                         | 2.6              | 2.796                   |
-| 15.63                        | 2.6              | 59.789                  |
-| 15                           | 0.5              | 84.294                  |
-| 29.34                        | 0.467            | 494.064                 |                             |                  |                         |
-
-
-
-
-
-- Calculate the q0 for each of the columns based on equation (97). Plot this as a function of the mass of activated carbon used.
-
-<p align="center"> <img src="" heights=110 width=427> </p>
-
+| 15                           | 0.5              | 59.789                  |
+| 15.63                        | 2.6              | 84.294                  |
+| 29.34                        | 0.467            | 494.064                 |
 <p align="center">
-<b>Figure 6 </b>: q0 as a function of mass of activated carbon used.
+<b>Table 1</b>: Retardation Factors of each data set
 </p>
+
 
 q0 is defined as the mass of  adsorbate per mass of adsorbent.
 
 $$ q_0 = (R{adsorption} -1 )\frac{C_0\phi V_{column}}{M_{adsorbent}} $$
 
-- What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
+Figure 6 shows the relationship between the mass of activated carbon and q0.
 
-This analysis shows that, the more activated carbon in the filter, the longer it takes for the breakthrough period to be reached. Some teams used different flow rates which caused the breakthrough time to occur faster than expected. This does not occur when a similar mass of activated carbon is used with a slower flow rate.
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/q0.png?raw=true" heights=110 width=427> </p>
 
-Recommendations for future labs is to have all the experiments to be run at the same flow rate, so comparisons can be made easier. Additionally,
-
+<p align="center">
+<b>Figure 6</b>: q0 as a function of mass of activated carbon used.
+</p>
 
 
 ### Conclusion
 
 In conclusion, this lab was focused on determining the breakthrough characteristics of red dye #40 using activated carbon and sand as the absorbent materials. It is evident that with a large quantity of activated carbon, the breakthrough time for the dye is significantly extended.
 
-With varying flow rates, the data is skewed with nonsense
-
+Some teams used different flow rates which caused the breakthrough time to occur faster than expected. This does not occur when a similar mass of activated carbon is used with a slower flow rate.
 
 ### Suggestion
+
+A common issue in this lab was air bubbles in the system. In the beginning of lab, the class should go over techniques to minimize the effect of air bubbles. This is particularly important when looking at the photometer and the tubing.
+
+Additionally, another recommendation for future labs is to have all the experiments to be run at the same flow rate, so comparisons can be made easier.
 
 
 ### Appendix
@@ -252,7 +245,8 @@ porosity = 0.4
 L_column = 15.2 * u.cm
 D_column = 1*u.inch
 A_column = pc.area_circle(D_column)
-V_column = A_column * L_column
+V_column = (A_column * L_column).to(u.L)
+V_column
 C_0 = 50 * u.mg/u.L
 q_0 = 0.08
 t_water = (L_column*porosity/v_a).to(u.s)
@@ -268,7 +262,9 @@ plt.savefig('images/R_adsorption')
 plt.show()
 
 # Question Four
-q0=(R_adsorption-1)*(C_0*porosity*V_column/Mass_carbon)
+q0=(R_adsorption-1)*(C_0*porosity*V_column/Mass_carbon.to(u.mg))
+
+q0
 plt.plot(Mass_carbon,q0, 'o');
 plt.ylabel(r'q0')
 plt.xlabel(r'mass of activated carbon (g)');
