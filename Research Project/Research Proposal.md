@@ -127,6 +127,22 @@ running an experiment with the 20-40 AC mesh with a ratio of 9:1 sand and AC
 
 
 
+19th April 2019
+
+Trying to figure out ways to change mesh filter for when we run -100 mesh AC. Promising observations with paper towels as a replacement.
+Ian is now very excited trying to find different types of paper filters to use in the lab.
+
+Current contenders:
+Kimwipe
+Brown Paper towel
+White paper towels
+Coffee Filter
+
+
+note from rosie: pressure build up
+note from ian: put mesh on both sides
+note from jiwon: we're doing amazing sweetie
+
 
 
 
