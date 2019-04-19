@@ -3,22 +3,22 @@
 
 ### Data Analysis
 
-- Plot the breakthrough curves showing C/C0 versus time.
+Breakthrough is defined as the time that mass of red dye goes passes through the filter when the activated carbon (the adsorbent) can no longer adsorb the red dye (the adsorbate). As time progresses, the red dye passes through through the filter with a concentration close to the influent. The steep slope increase represents the mass transfer zone breakthrough.
 
-Breakthrough is defined as the time that mass of red dye goes passes through the filter when the activated carbon (the adsorbent) can no longer adsorb the red dye (the adsorbate).
+Figure 1 is a graph that supports this statement where breakthrough curve of sand columns are plotted of C/C0 vs time over hydraulic residence time.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Sand_column.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 1 </b>: Breakthrough curves showing C/C0 vs. time with two different flow rates.
+<b>Figure 1 </b>: Breakthrough curves showing C/C0 vs. time with sand columns
 </p>
 
-As time progresses, the red dye passes through through the filter with a concentration close to the influent. The steep slope increase represents the mass transfer zone breakthrough.
+Figure 2 and Figure 3 represents the graphs of experiments that had activated carbon in the filter. Te figures clearly show that filters with high mass of activated carbon take a longer amount of time to breakthrough. Figure 3 is a close up so it can be easier to compare with figure 1.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Activated_carbon.png?raw=true9" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 2 </b>: Tracer curves for columns with different masses of activated carbon vs. time over hydraulic residence time.
+<b>Figure 2 </b>: Breakthrough curves for columns with different masses of activated carbon vs. time over hydraulic residence time.
 </p>
 
 
@@ -28,26 +28,47 @@ As time progresses, the red dye passes through through the filter with a concent
 <b>Figure 3 </b>: Figure 2 with tighter limits.
 </p>
 
-Figure 2 and Figure 3 shows clearly that filters with high mass of activated carbon take a longer amount of time to breakthrough.
 
-
-- Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used.
+With greater masses of activated carbon in the filter, there is positive correlation to the the increase in time for the effluent to reach 50% of the influent, as shown in figure 4. This is not necessarily clear to see with small masses of activated carbon that are less than 5 grams.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/time_half.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
-<b>Figure 4 </b>: Time of when effluent concentration was 50% of influent concentration as a function of mass of activated carbon used.
+<b>Figure 4 </b>: Time showing when effluent concentration was 50% of influent concentration as a function of mass of activated carbon used.
 </p>
 
-With greater masses of activated carbon in the filter, there is positive correlation to the the increase in time for the effluent to reach 50% of the influent. This is not necessarily clear to see with small masses of activated carbon between 0 and 5 grams of activated carbon
 
 - Calculate the retardation coefficient (Radsorption) based on the time to breakthrough for the columns with and without activated carbon.
+
+The retardation factor is defined as the ratio of the time for the mass transfer zone to travel through the bed divided by the time for water to travel through the bed.
+
+$$ R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
+
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/R_adsorption.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
 <b>Figure 5 </b>: Retardation coefficient as a function of mass of activated carbon used.
 </p>
+
+| Mass of Activated Carbon (g) | Flow Rate (mL/s) | Retardation Coefficient |
+| ---------------------------- | ---------------- | ----------------------- |
+| 0.5                          |                  | 4.111                   |
+| 0.601                        | 0.5              | 3.947                   |
+| 0                            | 0.5              | 3.289                   |
+| 0                            | 0.5              | 3.207                   |
+| 0                            | 2.6              | 3.289                   |
+| 1.66                         | 0.5              | 2.878                   |
+| 2                            | 0.466            | 9.128                   |
+| 4                            | 0.466            | 14.227                  |
+| 13.8                         | 0.6              | 1.891                   |
+| 13.8                         | 2.6              | 2.796                   |
+| 15.63                        | 2.6              | 59.789                  |
+| 15                           | 0.5              | 84.294                  |
+| 29.34                        | 0.467            | 494.064                 |                             |                  |                         |
+
+
+
 
 
 - Calculate the q0 for each of the columns based on equation (97). Plot this as a function of the mass of activated carbon used.
@@ -64,11 +85,15 @@ $$ q_0 = (R{adsorption} -1 )\frac{C_0\phi V_{column}}{M_{adsorbent}} $$
 
 - What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)?
 
-We learned from this analysis that, the more activated carbon in the filter..
+This analysis shows that, the more activated carbon in the filter, the longer it takes for the breakthrough period to be reached. Some teams used different flow rates which caused the breakthrough time to occur faster than expected. This does not occur when a similar mass of activated carbon is used with a slower flow rate.
+
+Recommendations for future labs is to have all the experiments to be run at the same flow rate, so comparisons can be made easier. Additionally,
+
+
 
 ### Conclusion
 
-In conclusion, it is evident that with a large quantity of activated carbon, the breakthrough time for the dye is significantly extended.
+In conclusion, this lab was focused on determining the breakthrough characteristics of red dye #40 using activated carbon and sand as the absorbent materials. It is evident that with a large quantity of activated carbon, the breakthrough time for the dye is significantly extended.
 
 With varying flow rates, the data is skewed with nonsense
 
