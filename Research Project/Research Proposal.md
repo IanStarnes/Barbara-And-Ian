@@ -143,6 +143,15 @@ note from rosie: pressure build up
 note from ian: put mesh on both sides
 note from jiwon: we're doing amazing sweetie
 
+24th April
+
+Running the -100 mesh for 2 days using 2 coffee filters as a mesh
+
+checked the flowrate: 17 tubing size
+set pump to 5 rpm  - flow rate recorded at 8 mL/min
+
+looking at table 2 pump tubing selection
+flow rate in 1 RPM gives 0.0467 mL/min  
 
 
 
