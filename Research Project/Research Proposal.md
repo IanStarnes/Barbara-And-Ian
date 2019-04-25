@@ -147,12 +147,24 @@ note from jiwon: we're doing amazing sweetie
 
 Running the -100 mesh for 2 days using 2 coffee filters as a mesh
 
-checked the flowrate: 17 tubing size
+checked the flow rate: 17 tubing size
 set pump to 5 rpm  - flow rate recorded at 8 mL/min
+
+(40 mL in 5 minutes)
 
 looking at table 2 pump tubing selection
 flow rate in 1 RPM gives 0.0467 mL/min  
 
+
+
+25th April 2019
+
+4-12 mesh arrived
+
+Ran experiment with 9 to 1 ratio
+
+Measure flow rate:
+- 35 mL in 2.5 minutes
 
 
 
