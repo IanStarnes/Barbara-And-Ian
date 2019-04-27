@@ -167,6 +167,12 @@ Measure flow rate:
 - 35 mL in 2.5 minutes
 
 
+26th April 2019
+
+20-40 mesh test
+ Measured flow rate:
+ - 28 mL in 2 minutes
+
 
 
 
