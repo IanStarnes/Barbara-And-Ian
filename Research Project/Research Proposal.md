@@ -173,6 +173,12 @@ Measure flow rate:
  Measured flow rate:
  - 28 mL in 2 minutes
 
+List of things to measure:
+- volume of Tubing
+- mass of activated carbon
+-
+
+
  ### Appendix
  ```python
 
@@ -187,9 +193,62 @@ Measure flow rate:
  from pathlib import Path
  import pandas as pd
 
+path20="https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Research%20Project/Mesh20_2.txt"
+mesh20time = (epa.column_of_time(path20,1,-1)).to(u.s)
+mesh20conc= epa.column_of_data(path20,1,1,-1,'mg/L')
 
+path4 ="https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Research%20Project/4-12%20mesh%209%20to%201%20ratio.xls"
+mesh4time = (epa.column_of_time(path4,1,-1)).to(u.s)
+mesh4conc= epa.column_of_data(path4,1,1,-1,'mg/L')
 
- ```
+path100 = "https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Research%20Project/mesh100_2.txt"
+mesh100time = (epa.column_of_time(path100,1,-1)).to(u.s)
+mesh100conc= epa.column_of_data(path100,1,1,-1,'mg/L')
+
+Column_D = 1 * u.inch
+Column_A = pc.area_circle(Column_D)
+Column_L = 15.2 * u.cm
+Column_V = Column_A * Column_L
+Tubing_V = 60 * u.mL
+
+Flow_rate_4 =14 * u.mL/u.s
+Flow_rate_20 = 14 * u.mL/u.s
+Flow_rate_100 = 8 * u.mL/u.s
+
+#temporary assumed mass for all - change later
+Mass_carbon_4= 14 * u.g
+Mass_carbon_20= 14 * u.g
+Mass_carbon_100= 14 * u.g
+
+Tubing_HRT_4 = Tubing_V/Flow_rate_4
+Tubing_HRT_20= Tubing_V/Flow_rate_20
+Tubing_HRT_100 = Tubing_V/Flow_rate_100
+
+#temporary assumed porosity for all - change later
+porosity_4 = 0.4
+porosity_20 = 0.4
+porosity_100 = 0.4
+
+C_0 = 50 * u.mg/u.L
+
+#estimate the HRT for all of the columns
+HRT_4 = (porosity_4 * Column_V/Flow_rate_4).to(u.s)
+HRT_20 = (porosity_20 * Column_V/Flow_rate_20).to(u.s)
+HRT_100 = (porosity_100 * Column_V/Flow_rate_100).to(u.s)
+
+#zero the concentration data by subtracting the value of the first data point from all data points. Do this in each data set.
+
+plt.plot(mesh4time/HRT_4 - Tubing_HRT_4/HRT_4, mesh4conc/C_0,'-');
+plt.plot(mesh20time/HRT_20 - Tubing_HRT_20/HRT_20, mesh20conc/C_0,'-')
+plt.plot(mesh100time/HRT_100 - Tubing_HRT_100/HRT_100, mesh100conc/C_0,'-')
+
+plt.xlabel(r'$\frac{t}{\theta}$');
+plt.ylabel(r'Red dye (C/Co) $\left (unitless\right )$');
+plt.legend(['4-12 mesh','20-40 mesh', '-100 mesh'])
+plt.savefig('images/research_diff_mesh')
+plt.show()
+
+```
 
 
 
