@@ -173,7 +173,23 @@ Measure flow rate:
  Measured flow rate:
  - 28 mL in 2 minutes
 
+ ### Appendix
+ ```python
 
+ from aguaclara.core.units import unit_registry as u
+ import aguaclara.research.environmental_processes_analysis as epa
+ import aguaclara.core.physchem as pc
+ import aguaclara.core.utility as ut
+ import numpy as np
+ import matplotlib.pyplot as plt
+ import collections
+ import os
+ from pathlib import Path
+ import pandas as pd
+
+
+
+ ```
 
 
 
