@@ -173,6 +173,24 @@ Measure flow rate:
  Measured flow rate:
  - 28 mL in 2 minutes
 
+
+
+29th April 2019
+
+We are interested in finding a material that will physically stop -100 mesh from flowing out of our filter.
+
+we will be measuring different mediums such as:
+
+Current contenders:
+Kimwipe
+Brown Paper towel
+White paper towels
+Coffee Filter
+
+We will be adding a pressure sensor in the influent stream and we will make a granular AC standard for our photometer so we can accurately measure how much AC is going through.
+
+
+
  ### Appendix
  ```python
 
