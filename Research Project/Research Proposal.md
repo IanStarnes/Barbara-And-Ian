@@ -189,6 +189,29 @@ Coffee Filter
 
 We will be adding a pressure sensor in the influent stream and we will make a granular AC standard for our photometer so we can accurately measure how much AC is going through.
 
+Running at 10 RPM
+
+Making an Activated Carbon Standard
+- running DI water (Blank Voltage) reading -0.43 mg/L
+
+0.6 g/L
+
+0.154 g in 500 mL = 0.308g/L
+
+
+White paper towels from Bench 7
+2200 cm of water - roughly 2.1 atm
+Concentration - -0.58 mg/L
+
+- made AC standard between experiments
+
+Brown paper towels from Bench 5/6
+Pressure -  1900 cm of water
+Concentration - 0.09 g/L
+
+
+
+
 
 
  ### Appendix
