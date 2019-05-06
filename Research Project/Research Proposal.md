@@ -173,25 +173,70 @@ Measure flow rate:
  Measured flow rate:
  - 28 mL in 2 minutes
 
+<<<<<<< HEAD
 List of things to measure:
 - volume of Tubing
 - mass of activated carbon
 -
+=======
+
+
+29th April 2019
+
+We are interested in finding a material that will physically stop -100 mesh from flowing out of our filter.
+
+we will be measuring different mediums such as:
+
+Current contenders:
+Kimwipe
+Brown Paper towel
+White paper towels
+Coffee Filter
+
+We will be adding a pressure sensor in the influent stream and we will make a granular AC standard for our photometer so we can accurately measure how much AC is going through.
+
+Running at 10 RPM
+
+Making an Activated Carbon Standard
+- running DI water (Blank Voltage) reading -0.43 mg/L
+
+0.6 g/L
+
+0.154 g in 500 mL = 0.308g/L
+
+
+White paper towels from Bench 7
+2200 cm of water - roughly 2.1 atm
+Concentration - -0.58 mg/L
+
+- made AC standard between experiments
+
+Brown paper towels from Bench 5/6
+Pressure -  1900 cm of water
+Concentration - 0.09 g/L
+
+Coffee filter
+pressure: 1650 cm of Water
+Concentraton: 0.58 g/L
+
+
+
+>>>>>>> 56f7dc3c857f3e293765226a984e91f4a8f76376
 
 
  ### Appendix
  ```python
 
- from aguaclara.core.units import unit_registry as u
- import aguaclara.research.environmental_processes_analysis as epa
- import aguaclara.core.physchem as pc
- import aguaclara.core.utility as ut
- import numpy as np
- import matplotlib.pyplot as plt
- import collections
- import os
- from pathlib import Path
- import pandas as pd
+from aguaclara.core.units import unit_registry as u
+import aguaclara.research.environmental_processes_analysis as epa
+import aguaclara.core.physchem as pc
+import aguaclara.core.utility as ut
+import numpy as np
+import matplotlib.pyplot as plt
+import collections
+import os
+from pathlib import Path
+import pandas as pd
 
 path20="https://raw.githubusercontent.com/IanStarnes/Barbara-And-Ian/master/Research%20Project/Mesh20_2.txt"
 mesh20time = (epa.column_of_time(path20,1,-1)).to(u.s)
