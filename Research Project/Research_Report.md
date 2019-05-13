@@ -1,9 +1,26 @@
-#Filter Efficiency of different mesh sizes of Activated Carbon
+# Filter Efficiency of different mesh sizes of Activated Carbon
 ### Research Project Report
 #### Ian Starnes and Barbara Oramah
 ##### Group 6
 
-## Introduction and Objectives
+
+
+### Table of Contents
+
+- [Introduction](#Introduction)
+- [Objective](#Objective)
+- [Procedure](#Procedure)
+- [Results](#Results)
+- [Data Analysis](#Data-analysis)
+- [Recommendation](#Recommendation)
+- [Conclusion](#Conclusion)
+- [Suggestions](#Suggestions)
+- [Appendix](#Appendix)
+
+
+## Introduction
+
+## Objectives
 
 ###### Write a paragraph on the goals of the experiment. Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
 
@@ -18,7 +35,7 @@ The goal of this experiment was to test several filters that have different size
 
 Figure 1 above displays a hypothetical breakthrough curve where the filter is effective at particle removal to begin with but then after some time it starts to allow particles through. The goal of our experiment was to find what type of activated carbon maximizes the time when the filter is effectively removing particles.
 
-## Procedures
+## Procedure
 
 ###### Provide an overview of the methods that you used in your investigation. The best procedures give an overview of the method with an explanation of why you used those methods. There is no need to restate the step-by-step procedures as outlined in the lab manual: it is sufficient to cite the lab manual (use a link to the url) and include information on any deviations from the manual procedures. When method development is part of the laboratory exercise, a detailed description of the methods should be included. Methods and procedures need to be detailed enough so that one of your classmates could duplicate your work.
 
@@ -39,7 +56,7 @@ Using the same procedure as the adsorption lab we obtained the concentration of 
 ###### Make sure that responses to specific questions and data analysis requested in the lab manual are included in this section. But don't answer the questions in a list format. Instead, include your answers as part of the narrative that is designed to meet your objectives.
 
 
-<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/research_diff_mesh_2.png?raw=true" heights=110 width=427> </p>
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/research_diff_mesh.png?raw=true" heights=110 width=427> </p>
 
 <p align="center">
 <b>Figure 2 </b>: Breakthrough curves for columns with different mesh sizes of activated carbon vs. time over hydraulic residence time.
@@ -50,11 +67,7 @@ The finer particles have a greater surface area available for the red dye to be 
 
 As we were running the -100 mesh experiment, an issue that we faced was activated carbon entering into the system. Our solution for preventing this was adding two ply of coffee filters between the wire mesh of the inlet and outlet of the filter. Though this stopped the activated carbon particles entering the system, we noticed that there was a build-up of pressure which caused a decrease in flow rate.
 
-The peristaltic tubing used in our apparatus was the 17 tubing size. In reference to [Table 2 in the  Acid Precipitation and Remediation of Acid Lakes](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#id3), the flow rate in 1 RPM/ID (mm) translates to 2.802 mL/min. This showed us that at 5 RPM the flow rate we should be approximately 14.01 mL/min.
-As seen from Table 1, the flow for the -100 mesh is half of what is should be. This implies that the total volume of water treated may not have been as promising as it appeared in Figure 1.
-
-
-This has implications of how truly effective the -100 mesh worked as a whole.
+The peristaltic tubing used in our apparatus was the 17 tubing size. In reference to [Table 2 in the  Acid Precipitation and Remediation of Acid Lakes](https://monroews.github.io/EnvEngLabTextbook/Acid_Rain/Acid_Rain.html#id3), the flow rate in 1 RPM/ID (mm) translates to 2.802 mL/min. This showed us that at 5 RPM the flow rate we should be approximately 14.01 mL/min. As seen from Table 1, the flow for the -100 mesh is half of what is should be. This implies that the total volume of water treated may not have been as promising as it appeared in Figure 1. This has major implications on how truly effective the -100 mesh worked as a whole.
 
 The varying flow rates were accounted for in Figure 2 as we looked at the flow rate for the different mesh sizes and obtained the concentration as a function of hydraulic residence time we were able to normalize the x axis.
 
@@ -71,16 +84,21 @@ $$R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
 
 We became interested in exploring different materials that could be used to prevent -100 mesh activated carbon entering the system. We used materials that were easily accessible in the lab such as white paper towels, brown paper towels and coffee filters. In our apparatus design, we included a pressure sensor between the pump and filter to record the pressure build-up for the different materials.
 
-We deduced that the optimal filter would strike a balance between pressure and as well as prevent activated
-
-
 | Material | Pressure (cm of water)| Activated Carbon concentration (g/L) |
 | --------- | ------------------ | ----------------------- |
 | White Paper Towels      | 2200                 | -                   |
 | Brown Paper Towels    | 1900                | 0.09          |
 | Coffee Filter   | 1650                 | 0.58
 <p align="center">
-<b>Table 2 </b>: Measured flow rates of different mesh sizes
+<b>Table 2</b>: Measured flow rates of different mesh sizes
+
+We deduced that the optimal filter would strike a balance between pressure and as well as prevent activated carbon entering the system. As mentioned in the procedure, we made calibrated the photometer register different activated carbon concentrations. This was done after the run for white paper towels, hence why there is no data for the activated carbon concentration in Table Two.  
+
+Focusing on brown paper towels and coffee filters in Table Two, it is evident that there are pros and cons for the two materials The brown paper towels caused a greater increase in pressure than the coffee filter. However, te
+
+
+
+
 
 
 
@@ -88,6 +106,7 @@ We deduced that the optimal filter would strike a balance between pressure and a
 
 ###### The conclusions section should not include any new observation. It is the place to summarize the results in a few sentences. Make sure you connect your conclusions to your objectives for doing the research.
 
+In conclusion, we were able to determine that the -100 mesh activated carbon was the best mesh size for removing Red Dye #40.
 
 
 
