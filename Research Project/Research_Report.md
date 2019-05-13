@@ -20,6 +20,9 @@
 
 ## Introduction
 
+Filtration is an important component in all water sanitation. Different mediums are used in filters, however we decided to focus on activated carbon and sand and how effective they are in removing contaminants in water.
+
+
 ## Objectives
 
 ###### Write a paragraph on the goals of the experiment. Why did you decide to do this experiment? Introduce your approach by explaining what needs to be done to meet your goal for your real world project. Explain what you hoped to learn through this research. How did you expect this experiment to guide your decisions about the real world project that you are working on?
@@ -73,6 +76,8 @@ The varying flow rates were accounted for in Figure 2 as we looked at the flow r
 
 $$R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
 
+It is diffi
+
 
 | Mesh Size | Flow Rate (mL/min) | Retardation Coefficient |
 | --------- | ------------------ | ----------------------- |
@@ -90,15 +95,11 @@ We became interested in exploring different materials that could be used to prev
 | Brown Paper Towels    | 1900                | 0.09          |
 | Coffee Filter   | 1650                 | 0.58
 <p align="center">
-<b>Table 2</b>: Measured flow rates of different mesh sizes
+<b>Table 2</b>: Different filter materials characteristics
 
 We deduced that the optimal filter would strike a balance between pressure and as well as prevent activated carbon entering the system. As mentioned in the procedure, we made calibrated the photometer register different activated carbon concentrations. This was done after the run for white paper towels, hence why there is no data for the activated carbon concentration in Table Two.  
 
-Focusing on brown paper towels and coffee filters in Table Two, it is evident that there are pros and cons for the two materials The brown paper towels caused a greater increase in pressure than the coffee filter. However, te
-
-
-
-
+Focusing on brown paper towels and coffee filters in Table Two, it is evident that there are pros and cons for the two materials The brown paper towels caused a greater increase in pressure than the coffee filter. However, the activated carbon concentration for the brown paper towel is less than that of the coffee filter. This shows that the brown paper towels was a better barrier against activated carbon entering the system. The trade-off is important to consider because though the goal is to stop activated carbon entering the system, we do not want to great of an increase in pressure. Increase in pressure could be an indicator that total volume of water treated might not be what it appears.
 
 
 
@@ -106,8 +107,13 @@ Focusing on brown paper towels and coffee filters in Table Two, it is evident th
 
 ###### The conclusions section should not include any new observation. It is the place to summarize the results in a few sentences. Make sure you connect your conclusions to your objectives for doing the research.
 
-In conclusion, we were able to determine that the -100 mesh activated carbon was the best mesh size for removing Red Dye #40.
+In conclusion, we were able to determine that the -100 mesh activated carbon was the best mesh size for removing Red Dye #40. In running experiments, it became evident that there was an increase in pressure in the -100 mesh filter because we observed a decrease in flow rate. The decrease in flow rate was linked to the coffee filters used t prevent activated carbon particles entering into the system.
 
+When determining the  
+
+In terms of improvement for this lab, we are very interested in exploring the Carmen-Kozeny equation to determine the pressure drop of fluid through a packed bed of solids.
+
+$$ \frac{h_l}{H_{FiSand}}=36k\frac{(1-\epsilon_{FiSand})^2\nu V_{Fi}}{\epsilon_{FiSand}^3 gD_{sand}^2}$$
 
 
 ## Suggestions
