@@ -20,7 +20,11 @@
 
 ## Introduction
 
-Filtration is an important component in all water sanitation. Different mediums are used in filters, however we decided to focus on activated carbon and sand and how effective they are in removing contaminants in water.
+Filtration is an important component in all water sanitation. Different mediums are used in filters, however we decided to focus on activated carbon and sand and how effective they are in removing contaminants in water. Activated carbon can be used in water treatment, primarily, to remove sediment and volatile organic compounds. It is also able to remove odor and taste from the water that goes through an activated carbon filter. However, it is not effective in dissolved inorganic compounds. It can be used in items on the household scale to large industrial scale filtration.
+
+
+
+
 
 
 ## Objectives
@@ -29,7 +33,7 @@ Filtration is an important component in all water sanitation. Different mediums 
 
 ###### This is the section where you can present the equations that you will be using. Format the equations using Latex to create a beautiful report.
 
-The goal of this experiment was to test several filters that have different size particles of activated carbon. This information is valuable when designing water treatment facilities. Activated carbon can be used in water treatment, primarily, to remove sediment and volatile organic compounds. It is also able to remove odor and taste from the water that goes through an activated carbon filter. However, it is not effective in dissolved inorganic compounds. It can be used in items on the household scale to large industrial scale filtration. Our research will help engineers decide what type of activated carbon is best for each type of filter. We expected that the smaller particle size carbon will be more effective and therefore it would be more likely to be used in engineering applications.
+The goal of this experiment was to test several filters that have different size particles of activated carbon. This information is valuable when designing water treatment facilities.  Our research will help engineers decide what type of activated carbon is best for each type of filter. We expected that the smaller particle size carbon will be more effective and therefore it would be more likely to be used in engineering applications.
 
 <p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/Screen%20Shot%202019-05-11%20at%201.46.44%20PM.png?raw=true" heights=110 width=427> </p>
 
@@ -67,6 +71,14 @@ Using the same procedure as the adsorption lab we obtained the concentration of 
 Figure 2 shows that the higher mesh size of -100 mesh had the longest breakthrough times. The 100 mesh experiment ran for three days, whereas  the 4-12 mesh experiment ran for less than half a day. The results were very promising as it proved our hypothesis that the finer the activated carbon used, the longer breakthrough will take to occur.
 
 The finer particles have a greater surface area available for the red dye to be adsorbed to.
+
+
+<p align="center"> <img src="https://github.com/IanStarnes/Barbara-And-Ian/blob/master/images/research_diff_mesh_2.png?raw=true" heights=110 width=427> </p>
+
+<p align="center">
+<b>Figure 3 </b>: Breakthrough curve slope for -100 mesh vs. time over hydraulic residence time.
+
+Figure 3 provides a closer look at the slope of the -100 mesh as it goes through breakthrough. The slope for the -100 mesh is not as steep as as the 20-40 mesh and 4-12 mesh experiments.
 
 As we were running the -100 mesh experiment, an issue that we faced was activated carbon entering into the system. Our solution for preventing this was adding two ply of coffee filters between the wire mesh of the inlet and outlet of the filter. Though this stopped the activated carbon particles entering the system, we noticed that there was a build-up of pressure which caused a decrease in flow rate.
 
@@ -111,11 +123,14 @@ In conclusion, we were able to determine that the -100 mesh activated carbon was
 
 When determining the  
 
-In terms of improvement for this lab, we are very interested in exploring the Carmen-Kozeny equation to determine the pressure drop of fluid through a packed bed of solids.
+
+
+
+In terms of future works that can be implemented in this research project, we are very interested in exploring the Carmen-Kozeny equation to determine the pressure drop of fluid through a packed bed of solids.
 
 $$ \frac{h_l}{H_{FiSand}}=36k\frac{(1-\epsilon_{FiSand})^2\nu V_{Fi}}{\epsilon_{FiSand}^3 gD_{sand}^2}$$
-
-
+<p align="center">
+<b>Equation 2</b>: Carmen-Kozeny Equation
 ## Suggestions
 
 ###### I value your thoughts on where changes are needed as well as what is working well. Please provide very clear ideas that I can add to the lab manual or change in how we run the lab. Include ideas for:
@@ -125,6 +140,10 @@ $$ \frac{h_l}{H_{FiSand}}=36k\frac{(1-\epsilon_{FiSand})^2\nu V_{Fi}}{\epsilon_{
 ###### making the experiment easier to understand (provide proposed change to the lab manual)
 ###### modifying the experiment to include some new experimental aspect related to the main topic
 ###### alternate ways to analyze the data (As we build better tools we can do cooler analysis!)
+
+
+
+
 
 ## Appendix
 
