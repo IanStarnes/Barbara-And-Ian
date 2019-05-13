@@ -153,7 +153,7 @@ set pump to 5 rpm  - flow rate recorded at 8 mL/min
 (40 mL in 5 minutes)
 
 looking at table 2 pump tubing selection
-flow rate in 1 RPM gives 0.0467 mL/min  
+flow rate in 1 RPM gives 0.0467 mL/s --> 2.802 mL/min
 
 
 
@@ -215,9 +215,12 @@ Brown paper towels from Bench 5/6
 Pressure -  1900 cm of water
 Concentration - 0.09 g/L
 
+<<<<<<< HEAD
 Coffee filter
 pressure: 1650 cm of Water
 Concentraton: 0.58 g/L
+=======
+>>>>>>> a49091ce113411ac068aacc746de1f7dd5da4e53
 
 
 
